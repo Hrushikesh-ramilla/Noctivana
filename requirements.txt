@@ -1,0 +1,16 @@
+numpy
+scipy
+librosa
+soundfile
+pydub
+torch
+torchvision
+tqdm
+opencv-python
+mediapipe
+dlib
+pandas
+simpleaudio
+scikit-learn
+matplotlib
+seaborn
