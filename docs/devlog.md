@@ -9,3 +9,8 @@
 - SGP30 @ 0x58 OK
 - BH1750 @ 0x23 OK
 
+
+## 2025-06-23 - scd40 working: 22.4C, 48pct RH, 812 ppm co2
+- First stable reading: 22.4C, 48.1% RH, 812 ppm CO2
+- Warmup was ~5min as expected
+
