@@ -14,3 +14,7 @@
 - First stable reading: 22.4C, 48.1% RH, 812 ppm CO2
 - Warmup was ~5min as expected
 
+
+## 2025-06-23 - bh1750 reading 340 lux under desk lamp, 0 with hand over it
+- BH1750 auto-range: 340 lux lit, ~0 covered. Working great.
+
