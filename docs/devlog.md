@@ -27,3 +27,8 @@
 - Tried googlevoicehat overlay first. Wrong device.
 - No audio device in arecord -l
 
+
+## 2025-06-24 - wrong overlay, thats for respeaker. trying i2s-mmap
+- googlevoicehat is for ReSpeaker HAT not INMP441
+- Trying generic i2s-mmap overlay
+
