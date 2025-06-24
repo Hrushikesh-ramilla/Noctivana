@@ -22,3 +22,8 @@
 ## 2025-06-23 - sgp30 needs 15s baseline warmup, readings stabilize after ~1min
 - SGP30 warmup: first 15s gives 0,400. After 1min: 12ppb TVOC, 410 ppm eCO2
 
+
+## 2025-06-24 - mic not detected, need dtoverlay=googlevoicehat-soundcard
+- Tried googlevoicehat overlay first. Wrong device.
+- No audio device in arecord -l
+
