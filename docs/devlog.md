@@ -32,3 +32,8 @@
 - googlevoicehat is for ReSpeaker HAT not INMP441
 - Trying generic i2s-mmap overlay
 
+
+## 2025-06-24 - still no audio device showing up in arecord -l
+- i2s-mmap also not working. Missing kernel module?
+- Trying: sudo modprobe snd-soc-simple-card
+
