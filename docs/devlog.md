@@ -57,3 +57,8 @@
 - Documented exact dtoverlay line in rpi_setup.md
 - Added modprobe step to avoid forgetting next time
 
+
+## 2025-06-24 - fixed mic test script, was hardcoded to wrong device index
+- device=0 was built-in audio, device=2 is I2S mic
+- Added device listing at top of test script
+
