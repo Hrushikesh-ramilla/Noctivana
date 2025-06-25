@@ -87,3 +87,8 @@
 - Auto-exposure ramps up gain, IR LED saturates entire frame
 - Need manual exposure control in picamera2
 
+
+## 2025-06-25 - fix: manual shutter speed in ir mode, picamera2 manual exposure
+- AeEnable=False, ExposureTime=33333us (1/30s), AnalogueGain=4.0
+- IR image now properly exposed, no blowout
+
