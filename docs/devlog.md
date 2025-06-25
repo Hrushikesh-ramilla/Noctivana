@@ -82,3 +82,8 @@
 - BH1750 drops below 5 lux -> enable IR LED -> camera sees crib
 - Full darkness test passed, doll visible via phone camera trick
 
+
+## 2025-06-25 - camera exposure blows out with ir led, everything white
+- Auto-exposure ramps up gain, IR LED saturates entire frame
+- Need manual exposure control in picamera2
+
