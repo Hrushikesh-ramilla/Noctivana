@@ -72,3 +72,8 @@
 - 2N2222: Base via 1kR from GPIO17, Collector drives LED ring
 - Can see IR on phone camera, covers full crib area
 
+
+## 2025-06-25 - ir led gpio control module
+- src/hardware/ir_led.py created
+- PWM brightness control via RPi.GPIO
+
