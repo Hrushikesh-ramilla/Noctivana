@@ -67,3 +67,8 @@
 - GPIO pin max ~16mA, IR LED needs ~100mA
 - Sourcing a 2N2222 NPN transistor to switch it
 
+
+## 2025-06-25 - ir led working with transistor switch, nice and bright
+- 2N2222: Base via 1kR from GPIO17, Collector drives LED ring
+- Can see IR on phone camera, covers full crib area
+
