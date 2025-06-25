@@ -77,3 +77,8 @@
 - src/hardware/ir_led.py created
 - PWM brightness control via RPi.GPIO
 
+
+## 2025-06-25 - night mode test: turn off lights + enable ir
+- BH1750 drops below 5 lux -> enable IR LED -> camera sees crib
+- Full darkness test passed, doll visible via phone camera trick
+
