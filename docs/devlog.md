@@ -62,3 +62,8 @@
 - device=0 was built-in audio, device=2 is I2S mic
 - Added device listing at top of test script
 
+
+## 2025-06-25 - ir led draws too much current from gpio pin directly
+- GPIO pin max ~16mA, IR LED needs ~100mA
+- Sourcing a 2N2222 NPN transistor to switch it
+
