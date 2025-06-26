@@ -106,3 +106,7 @@
 ## 2025-06-26 - forgot to update imports after restructure
 - Fixed relative imports in hardware modules after directory move
 
+
+## 2025-06-26 - add __init__.py to all packages
+- All src/ subdirs now have __init__.py for proper Python packaging
+
