@@ -110,3 +110,8 @@
 ## 2025-06-26 - add __init__.py to all packages
 - All src/ subdirs now have __init__.py for proper Python packaging
 
+
+## 2025-06-26 - replace all print() with logger calls in hardware modules
+- All hardware modules now use logging.getLogger(__name__)
+- No more bare print statements in library code
+
