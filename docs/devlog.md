@@ -130,3 +130,8 @@
 - Root cause: SGP30 needs ~15s to establish baseline after power-on
 - Any read before that returns tvoc=0, eco2=400
 
+
+## 2025-06-27 - fix sgp30 init: 3 retries with exponential backoff
+- Added 3-retry loop with 1s/2s/4s delays in SGP30.start()
+- Also added fallback to last-known value if read returns zero
+
