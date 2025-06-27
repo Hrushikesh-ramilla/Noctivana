@@ -125,3 +125,8 @@
 - Pinned working versions of all current deps
 - Will add tflite-runtime + pyzmq + paho-mqtt in next phase
 
+
+## 2025-06-27 - sgp30 occasionally returns 0 on first read after boot
+- Root cause: SGP30 needs ~15s to establish baseline after power-on
+- Any read before that returns tvoc=0, eco2=400
+
