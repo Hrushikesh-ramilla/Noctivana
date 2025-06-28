@@ -154,3 +154,8 @@
 - Topics as byte prefixes work correctly
 - Subscriber only gets messages matching its topic prefix
 
+
+## 2025-06-28 - env service config thresholds
+- temp_high: 28C, temp_low: 16C, co2_warn: 1000ppm, co2_crit: 2000ppm
+- all read from config.yaml
+
