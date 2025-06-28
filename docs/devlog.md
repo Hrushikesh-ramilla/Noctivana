@@ -368,3 +368,8 @@
 - Baby rolling over = optical flow spike then quiescence = 'no breathing'
 - Suppression: if vision/motion shows restless within last 10s, skip absence alarm
 
+
+## 2025-06-28 - basic zmq pub-sub working on localhost:5555
+- PUB socket on tcp://localhost:5555 sending hello every 1s
+- SUB socket receives correctly. ZMQ working.
+
