@@ -164,3 +164,8 @@
 - Subscriber script tested, receives env/climate messages correctly
 - JSON payload format confirmed working
 
+
+## 2025-06-28 - timestamps in zmq messages
+- Added ISO8601 ts field to all messages using time.time()
+- Standardized across all future services
+
