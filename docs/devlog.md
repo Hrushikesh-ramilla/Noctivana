@@ -159,3 +159,8 @@
 - temp_high: 28C, temp_low: 16C, co2_warn: 1000ppm, co2_crit: 2000ppm
 - all read from config.yaml
 
+
+## 2025-06-28 - env zmq test
+- Subscriber script tested, receives env/climate messages correctly
+- JSON payload format confirmed working
+
