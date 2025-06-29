@@ -403,3 +403,9 @@
 - yamnet_labels.csv added to models/ directory
 - 521 audio class labels
 
+
+## 2025-06-29 - first yamnet inference attempt, classifying everything as 'speech'
+- YAMNet loaded OK, inference runs in ~120ms
+- BUT all results: Speech: 0.97, everything else < 0.01
+- Input normalization is wrong
+
