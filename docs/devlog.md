@@ -186,3 +186,10 @@
 - Result: classifying everything as Speech 99%
 - Something is wrong with input format
 
+
+## 2025-06-29 - YAMNet input normalization bug
+- Was passing raw int16 (range -32768..32767) directly
+- YAMNet expects float32 in range [-1.0, 1.0]
+- Fix: divide by 32768.0 before inference
+- Now getting Speech:0.4, Baby cry:0.3, Music:0.1 on test clip
+
