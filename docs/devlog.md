@@ -174,3 +174,8 @@
 - Downloaded yamnet.tflite from TFHub (917KB)
 - Added models/README.md with source and license info
 
+
+## 2025-06-29 - models gitignore
+- Decided .tflite files under 5MB will be committed (yamnet=917KB, movenet=3.2MB)
+- Updated .gitignore to exclude only .bin files
+
