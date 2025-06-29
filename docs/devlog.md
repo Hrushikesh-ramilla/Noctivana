@@ -169,3 +169,8 @@
 - Added ISO8601 ts field to all messages using time.time()
 - Standardized across all future services
 
+
+## 2025-06-29 - YAMNet download
+- Downloaded yamnet.tflite from TFHub (917KB)
+- Added models/README.md with source and license info
+
