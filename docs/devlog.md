@@ -398,3 +398,8 @@
 - Actually yamnet.tflite is only 917KB - commit it
 - Updated .gitignore: only exclude .bin, keep .tflite < 5MB
 
+
+## 2025-06-29 - yamnet label map csv
+- yamnet_labels.csv added to models/ directory
+- 521 audio class labels
+
