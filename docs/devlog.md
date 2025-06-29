@@ -409,3 +409,10 @@
 - BUT all results: Speech: 0.97, everything else < 0.01
 - Input normalization is wrong
 
+
+## 2025-06-29 - fix: yamnet expects [-1,1] float, was passing uint16
+- Mic records int16 range -32768..32767
+- YAMNet expects float32 in [-1.0, 1.0]
+- Fix: audio.astype(float32) / 32768.0
+- Now: Baby cry: 0.41, Speech: 0.28, Silence: 0.12 on test clip
+
