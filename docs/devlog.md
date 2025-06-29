@@ -179,3 +179,10 @@
 - Decided .tflite files under 5MB will be committed (yamnet=917KB, movenet=3.2MB)
 - Updated .gitignore to exclude only .bin files
 
+
+## 2025-06-29 - first YAMNet inference attempt
+- yamnet.tflite loaded OK
+- Ran on 0.96s audio window
+- Result: classifying everything as Speech 99%
+- Something is wrong with input format
+
