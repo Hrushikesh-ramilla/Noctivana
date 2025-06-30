@@ -454,3 +454,8 @@
 - Butterworth order 2, bandpass 0.2-2.0Hz for respiration range
 - Energy threshold: >1e-4 RMS = breath detected
 
+
+## 2025-06-30 - breath detection better but still not great, will rely on vitals module
+- Acoustic breath = supplementary AUD-02 feature
+- Primary respiratory monitoring = optical flow (vitals_service)
+
