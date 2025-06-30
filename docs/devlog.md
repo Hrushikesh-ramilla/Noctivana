@@ -211,3 +211,8 @@
 - Getting false 'breath detected' from electrical noise
 - Increased filter order and added energy threshold
 
+
+## 2025-06-30 - breath detection accepted as supplementary
+- Acoustic breath is fallback to optical flow vitals
+- Will not rely on it for primary detection
+
