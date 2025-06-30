@@ -205,3 +205,9 @@
 - Need to map Baby cry (index ~22), Screaming (index ~80) etc
 - Label CSV needed for proper mapping
 
+
+## 2025-06-30 - breath detection issue
+- Bandpass filter 0.2-2Hz picks up AC hum (50Hz harmonics leaking through?)
+- Getting false 'breath detected' from electrical noise
+- Increased filter order and added energy threshold
+
