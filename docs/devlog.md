@@ -438,3 +438,8 @@
 - 0.48s hop gives 2 classifications/sec
 - Good real-time response for cry detection
 
+
+## 2025-06-30 - audio_service publishing to zmq topic audio/cry, tested
+- ZMQ subscriber confirms audio/cry messages arriving
+- Payload: {cry_type, confidence, top_label, top3}
+
