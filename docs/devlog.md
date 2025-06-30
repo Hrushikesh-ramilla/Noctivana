@@ -443,3 +443,9 @@
 - ZMQ subscriber confirms audio/cry messages arriving
 - Payload: {cry_type, confidence, top_label, top3}
 
+
+## 2025-06-30 - breath detection is really noisy, picking up AC hum as breathing
+- Bandpass filter catching 50Hz electrical hum harmonics
+- Even with cutoff at 2Hz, some interference
+- Will treat acoustic breath as secondary to optical flow
+
