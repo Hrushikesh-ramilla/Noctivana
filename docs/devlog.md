@@ -449,3 +449,8 @@
 - Even with cutoff at 2Hz, some interference
 - Will treat acoustic breath as secondary to optical flow
 
+
+## 2025-06-30 - add bandpass filter 0.2-2hz for breath acoustic detection
+- Butterworth order 2, bandpass 0.2-2.0Hz for respiration range
+- Energy threshold: >1e-4 RMS = breath detected
+
