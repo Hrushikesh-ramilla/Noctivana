@@ -433,3 +433,8 @@
 - Top 5 output is enough, need label->category mapping
 - Added cry_mapping.yaml for audio classifier
 
+
+## 2025-06-30 - audio service runs in loop, 0.96s windows with 0.48s overlap
+- 0.48s hop gives 2 classifications/sec
+- Good real-time response for cry detection
+
