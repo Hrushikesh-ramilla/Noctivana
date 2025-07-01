@@ -464,3 +464,9 @@
 - Split into 3 threads: CryThread, DBThread, BreathThread
 - Shared mic buffer accessed from multiple threads
 
+
+## 2025-07-01 - audio_service threading causing race condition on mic buffer
+- Two threads read mic._buf simultaneously
+- Partial write during callback = corrupted window
+- Fix: use threading.Lock on buffer + Queue for thread communication
+
