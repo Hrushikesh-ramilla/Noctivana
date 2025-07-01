@@ -216,3 +216,8 @@
 - Acoustic breath is fallback to optical flow vitals
 - Will not rely on it for primary detection
 
+
+## 2025-07-01 - audio service threading
+- Added separate threads for cry inference, db monitoring
+- Race condition immediately on shared mic buffer
+
