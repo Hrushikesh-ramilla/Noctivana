@@ -470,3 +470,8 @@
 - Partial write during callback = corrupted window
 - Fix: use threading.Lock on buffer + Queue for thread communication
 
+
+## 2025-07-01 - fix race condition: use queue.Queue instead of shared list
+- Replaced shared list with collections.deque(maxlen=100) + Lock
+- Thread-safe reads confirmed with concurrent stress test
+
