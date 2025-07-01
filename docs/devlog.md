@@ -221,3 +221,9 @@
 - Added separate threads for cry inference, db monitoring
 - Race condition immediately on shared mic buffer
 
+
+## 2025-07-01 - threading race condition
+- Two threads reading mic._buf simultaneously
+- One gets partial write during callback update
+- Fix: replace list with collections.deque(maxlen=N) + threading.Lock
+
