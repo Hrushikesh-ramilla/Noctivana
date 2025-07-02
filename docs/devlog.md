@@ -233,3 +233,9 @@
 - 3.2MB INT8 quantized
 - Input: [1,192,192,3] uint8 | Output: [1,1,17,3] keypoints
 
+
+## 2025-07-02 - MoveNet runs on Pi
+- ~100ms per frame at 192x192 input
+- 10fps possible in theory, 5fps our target
+- BUT: detecting my desk chair as a person?? Keypoints all over furniture
+
