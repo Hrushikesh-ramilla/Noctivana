@@ -475,3 +475,9 @@
 - Replaced shared list with collections.deque(maxlen=100) + Lock
 - Thread-safe reads confirmed with concurrent stress test
 
+
+## 2025-07-02 - movenet runs on pi, ~100ms per frame at 192x192 input
+- tflite_runtime INT8 model: 95-115ms per inference
+- 5fps target = 200ms budget per frame. We use 100ms for inference alone.
+- Leaving 100ms for preprocessing + zmq publish
+
