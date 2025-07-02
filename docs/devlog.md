@@ -487,3 +487,9 @@
 - Desk chair + PC monitor = 'torso'
 - Must crop to crib ROI before inference
 
+
+## 2025-07-02 - need to crop to crib region before feeding movenet
+- Plan: extract crib bounding box coordinates
+- Crop frame to that region
+- Upscale to 192x192 for inference
+
