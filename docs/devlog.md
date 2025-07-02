@@ -481,3 +481,9 @@
 - 5fps target = 200ms budget per frame. We use 100ms for inference alone.
 - Leaving 100ms for preprocessing + zmq publish
 
+
+## 2025-07-02 - movenet detecting poses... but its finding my desk chair as a person
+- MoveNet detects any human-shape object
+- Desk chair + PC monitor = 'torso'
+- Must crop to crib ROI before inference
+
