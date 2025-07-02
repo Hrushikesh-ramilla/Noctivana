@@ -503,3 +503,9 @@
 - Using cv2.circle to draw keypoints by confidence (green=high, red=low)
 - Very helpful to see which keypoints survive from ceiling angle
 
+
+## 2025-07-02 - add debug/ to gitignore
+- Accidentally committed debug/*.jpg test frames
+- git rm --cached debug/
+- Added debug/ to .gitignore
+
