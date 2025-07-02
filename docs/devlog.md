@@ -227,3 +227,9 @@
 - One gets partial write during callback update
 - Fix: replace list with collections.deque(maxlen=N) + threading.Lock
 
+
+## 2025-07-02 - MoveNet download
+- movenet_lightning.tflite downloaded from TFHub
+- 3.2MB INT8 quantized
+- Input: [1,192,192,3] uint8 | Output: [1,1,17,3] keypoints
+
