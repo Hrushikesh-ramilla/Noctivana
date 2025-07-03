@@ -526,3 +526,9 @@
 - Prone (face-down): 8/10 detected
 - Side: 4/10 - shoulder/hip angle ambiguous from top-down camera
 
+
+## 2025-07-03 - side detection: use hip rotation angle, threshold at 45deg
+- Compute left_hip vs right_hip y-coordinate difference
+- Large y-diff = body is rotated = side position
+- Marginally better: 5/10 now
+
