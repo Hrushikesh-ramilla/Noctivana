@@ -263,3 +263,9 @@
 - Side: garbage - shoulder/hip angle ambiguous from top-down view
 - Side detection will be lowest priority
 
+
+## 2025-07-03 - camera resource leak
+- On SIGTERM vision service exits but camera fd not released
+- picamera2 stays open, next launch fails
+- Fix: add atexit handler + explicit camera.stop() in try/finally
+
