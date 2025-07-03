@@ -532,3 +532,8 @@
 - Large y-diff = body is rotated = side position
 - Marginally better: 5/10 now
 
+
+## 2025-07-03 - vision service captures at 5fps, runs movenet, publishes pose
+- Vision service loop: capture -> ROI crop -> upscale -> MoveNet -> classify -> ZMQ
+- First full pipeline working end to end
+
