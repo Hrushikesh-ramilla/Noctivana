@@ -269,3 +269,9 @@
 - picamera2 stays open, next launch fails
 - Fix: add atexit handler + explicit camera.stop() in try/finally
 
+
+## 2025-07-03 - memory baseline
+- vision_service with MoveNet: 580MB RSS
+- Within budget (600MB allocated)
+- psutil.Process().memory_info().rss
+
