@@ -515,3 +515,8 @@
 - Prone: face conf < 0.25, back keypoints present
 - Side: intermediate, shoulder angle ~45deg
 
+
+## 2025-07-03 - prone = face keypoints low confidence + back keypoints visible
+- Prone rule: nose+eyes+ears all < prone_conf AND shoulder+hip conf > 0.2
+- Confidence score: 1.0 - face_conf (higher = more confident prone)
+
