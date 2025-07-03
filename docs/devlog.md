@@ -509,3 +509,9 @@
 - git rm --cached debug/
 - Added debug/ to .gitignore
 
+
+## 2025-07-03 - pose classification logic: use shoulder-hip angle relative to camera
+- Supine: face keypoints visible (conf>0.4) + back keypoints visible
+- Prone: face conf < 0.25, back keypoints present
+- Side: intermediate, shoulder angle ~45deg
+
