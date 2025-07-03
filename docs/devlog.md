@@ -520,3 +520,9 @@
 - Prone rule: nose+eyes+ears all < prone_conf AND shoulder+hip conf > 0.2
 - Confidence score: 1.0 - face_conf (higher = more confident prone)
 
+
+## 2025-07-03 - tested with doll in crib: supine works, prone works, side is garbage
+- Supine (face-up): 10/10 detected correctly
+- Prone (face-down): 8/10 detected
+- Side: 4/10 - shoulder/hip angle ambiguous from top-down camera
+
