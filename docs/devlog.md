@@ -256,3 +256,10 @@
 - Accidentally committed some test jpg frames
 - Added *.jpg to .gitignore and git rm --cached
 
+
+## 2025-07-03 - first classifier test with doll
+- Supine: works reliably (face up, shoulders visible)
+- Prone: works (face hidden, back keypoints up)
+- Side: garbage - shoulder/hip angle ambiguous from top-down view
+- Side detection will be lowest priority
+
