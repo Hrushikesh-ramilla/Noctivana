@@ -560,3 +560,9 @@
 - Peaks detected everywhere because signal is so noisy
 - Switching to FFT-based dominant frequency approach
 
+
+## 2025-07-05 - trying fft instead of peak counting for resp rate
+- FFT on 30-second window of optical flow magnitude
+- Dominant frequency in 0.15-1Hz range = respiration rate
+- Should be more robust than peak counting
+
