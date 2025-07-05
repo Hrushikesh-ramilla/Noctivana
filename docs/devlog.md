@@ -554,3 +554,9 @@
 - Added psutil==5.9.8 to requirements.txt
 - Used for memory monitoring in resource_monitor.py
 
+
+## 2025-07-05 - respiratory rate from peak counting: values 5-60 bpm lol
+- Peak counting method: find_peaks() on optical flow signal
+- Peaks detected everywhere because signal is so noisy
+- Switching to FFT-based dominant frequency approach
+
