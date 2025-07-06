@@ -577,3 +577,9 @@
 - scipy.signal.butter(2, [0.15, 1.0], btype='band', fs=5)
 - Applied before FFT to isolate respiratory frequency range
 
+
+## 2025-07-06 - but it still jumps +-8 bpm between windows randomly
+- Window-to-window variation: 18->26->22->30->20 bpm
+- FFT resolution issue: 30 frames = 6 sec, poor freq resolution
+- Adding EMA smoothing between windows
+
