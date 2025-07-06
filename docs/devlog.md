@@ -589,3 +589,8 @@
 - Reduces variance but adds responsiveness lag
 - Acceptable tradeoff for trend monitoring
 
+
+## 2025-07-06 - vitals service publishes resp rate to zmq topic vitals/resp
+- ZMQ topic: vitals/resp {bpm, confidence, method}
+- method='optical_flow', confidence=FFT peak ratio
+
