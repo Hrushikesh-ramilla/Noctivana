@@ -572,3 +572,8 @@
 - FFT on full window -> dominant freq -> bpm
 - Reduces variance compared to 10-second windows
 
+
+## 2025-07-06 - butterworth bandpass filter 0.15-1.0hz for resp signal
+- scipy.signal.butter(2, [0.15, 1.0], btype='band', fs=5)
+- Applied before FFT to isolate respiratory frequency range
+
