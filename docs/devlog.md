@@ -293,3 +293,8 @@
 - Dominant frequency in 0.15-1Hz range now detected reliably
 - Estimated 18-35 bpm range (physiological for infant)
 
+
+## 2025-07-06 - resp rate stable-ish
+- With EMA alpha=0.3: ±5 bpm from metronome reference at 30 bpm
+- Target is ±4 bpm in 80% of windows - close but not there
+
