@@ -583,3 +583,9 @@
 - FFT resolution issue: 30 frames = 6 sec, poor freq resolution
 - Adding EMA smoothing between windows
 
+
+## 2025-07-06 - add exponential moving average to smooth between windows
+- EMA alpha=0.3: new_bpm = 0.3*raw + 0.7*prev
+- Reduces variance but adds responsiveness lag
+- Acceptable tradeoff for trend monitoring
+
