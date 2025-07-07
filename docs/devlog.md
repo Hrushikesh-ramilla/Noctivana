@@ -298,3 +298,9 @@
 - With EMA alpha=0.3: ±5 bpm from metronome reference at 30 bpm
 - Target is ±4 bpm in 80% of windows - close but not there
 
+
+## 2025-07-07 - vitals dependency on vision
+- vitals_service needs pose keypoints from vision_service for chest ROI
+- Can't import directly (separate processes)
+- Solution: vitals subscribes to vision/pose topic and caches latest keypoints
+
