@@ -606,3 +606,8 @@
 - Mandatory: {topic: str, ts: float, data: dict}
 - All services updated to use encode()/decode() helpers
 
+
+## 2025-07-07 - update env_service to use new zmq protocol
+- env_service now uses zmq_protocol.encode() for all publishes
+- Subscriber test confirms format compatibility
+
