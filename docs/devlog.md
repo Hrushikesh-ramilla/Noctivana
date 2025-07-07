@@ -304,3 +304,9 @@
 - Can't import directly (separate processes)
 - Solution: vitals subscribes to vision/pose topic and caches latest keypoints
 
+
+## 2025-07-07 - first multi-service test
+- Started audio, vision, vitals, env simultaneously
+- All publish to ZMQ without conflict
+- ZMQ proxy needed next to route messages between subscribers
+
