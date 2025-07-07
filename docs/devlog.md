@@ -611,3 +611,8 @@
 - env_service now uses zmq_protocol.encode() for all publishes
 - Subscriber test confirms format compatibility
 
+
+## 2025-07-07 - update audio_service to use new zmq protocol
+- audio_service updated to standard message format
+- Existing subscribers still receive messages correctly
+
