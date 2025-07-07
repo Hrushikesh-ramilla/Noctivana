@@ -626,3 +626,9 @@
 - vitals_service updated. All 4 services now use same format.
 - Ready for alert_engine to subscribe to all
 
+
+## 2025-07-07 - solution: vitals subscribes to vision/pose and caches latest keypoints
+- vitals_service.pose_sub = Subscriber(['vision/pose'])
+- poll every frame, cache latest keypoints
+- chest_roi extraction uses cached keypoints
+
