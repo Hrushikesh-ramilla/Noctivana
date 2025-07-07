@@ -600,3 +600,9 @@
 - Cannot import vision_service directly (separate processes)
 - Solution: subscribe to vision/pose ZMQ topic
 
+
+## 2025-07-07 - zmq message protocol: json with mandatory fields topic, ts, data
+- Protocol defined in src/utils/zmq_protocol.py
+- Mandatory: {topic: str, ts: float, data: dict}
+- All services updated to use encode()/decode() helpers
+
