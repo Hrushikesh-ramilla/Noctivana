@@ -621,3 +621,8 @@
 - vision_service: all pub.send() calls use standard format
 - Pose, occlusion, motion messages all standardized
 
+
+## 2025-07-07 - update vitals_service to use new zmq protocol
+- vitals_service updated. All 4 services now use same format.
+- Ready for alert_engine to subscribe to all
+
