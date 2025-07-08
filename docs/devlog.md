@@ -654,3 +654,9 @@
 - vision_service: if night_mode -> CLAHE before MoveNet inference
 - Only applied in IR mode (adds 5ms overhead)
 
+
+## 2025-07-08 - face occlusion: comparing face keypoint visibility scores
+- face_conf = mean confidence of [nose, l_eye, r_eye, l_ear, r_ear]
+- If face_conf < 0.2 AND body visible -> possible occlusion
+- Temporal filter: sustained >3s before flagging
+
