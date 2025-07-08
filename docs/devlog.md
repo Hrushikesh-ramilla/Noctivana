@@ -328,3 +328,10 @@
 - MoveNet accuracy in IR: ~75% vs ~95% day
 - Acceptable for monitoring, especially for prone/occlusion
 
+
+## 2025-07-08 - occlusion first results
+- Blanket over face: triggers correctly after 3s
+- But: baby turning head sideways = false positive
+- Head turn: face keypoints drop but body still visible
+- Need to distinguish head turn from actual blockage
+
