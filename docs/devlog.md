@@ -315,3 +315,10 @@
 - BH1750 drops below 5 lux -> IR LED on -> camera switches to manual exposure
 - Can see doll in complete darkness
 
+
+## 2025-07-08 - MoveNet accuracy drops in IR mode
+- Normal mode: ~95% keypoint confidence
+- IR mode: ~55% keypoint confidence
+- Grainy IR image loses fine detail
+- Need to improve contrast before inference
+
