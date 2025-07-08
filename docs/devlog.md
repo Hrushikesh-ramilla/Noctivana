@@ -310,3 +310,8 @@
 - All publish to ZMQ without conflict
 - ZMQ proxy needed next to route messages between subscribers
 
+
+## 2025-07-08 - night mode works
+- BH1750 drops below 5 lux -> IR LED on -> camera switches to manual exposure
+- Can see doll in complete darkness
+
