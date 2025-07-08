@@ -643,3 +643,9 @@
 - cv2.equalizeHist() on grayscale IR frame
 - Global histogram equalization: boosts contrast but also noise
 
+
+## 2025-07-08 - CLAHE adaptive hist eq works better than global
+- cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8,8))
+- Adaptive per-tile normalization preserves local features better
+- MoveNet keypoint confidence improves +12% vs no equalization
+
