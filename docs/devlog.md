@@ -638,3 +638,8 @@
 - night_mode.py NightModeController class implemented
 - Smooth threshold with 1.5s transition buffer
 
+
+## 2025-07-08 - experiment: histogram equalization on ir frames
+- cv2.equalizeHist() on grayscale IR frame
+- Global histogram equalization: boosts contrast but also noise
+
