@@ -322,3 +322,9 @@
 - Grainy IR image loses fine detail
 - Need to improve contrast before inference
 
+
+## 2025-07-08 - CLAHE in IR mode
+- CLAHE clipLimit=3.0 gives better local contrast
+- MoveNet accuracy in IR: ~75% vs ~95% day
+- Acceptable for monitoring, especially for prone/occlusion
+
