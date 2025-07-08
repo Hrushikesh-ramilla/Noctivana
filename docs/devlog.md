@@ -632,3 +632,9 @@
 - poll every frame, cache latest keypoints
 - chest_roi extraction uses cached keypoints
 
+
+## 2025-07-08 - night mode threshold: < 5 lux triggers ir led on + exposure fix
+- BH1750 lux < 5.0 -> night mode
+- night_mode.py NightModeController class implemented
+- Smooth threshold with 1.5s transition buffer
+
