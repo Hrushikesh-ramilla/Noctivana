@@ -692,3 +692,8 @@
 - low: 2-8% pixels changed
 - restless: >8% pixels changed
 
+
+## 2025-07-09 - add motion tracking to vision_service, publishes vision/motion
+- vision/motion message: {level, changed_pct, window_avg}
+- Published every other frame to save CPU
+
