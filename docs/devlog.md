@@ -676,3 +676,8 @@
 - If only ears visible, estimate full facial bbox from ear positions
 - Helps measure coverage percentage more accurately
 
+
+## 2025-07-09 - temporal filter: need sustained occlusion >3 seconds
+- 3s sustained occlusion before alert (VIS-02 requirement)
+- Prevents false alert from baby momentarily covering face with hand
+
