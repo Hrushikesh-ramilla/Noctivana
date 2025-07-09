@@ -660,3 +660,9 @@
 - If face_conf < 0.2 AND body visible -> possible occlusion
 - Temporal filter: sustained >3s before flagging
 
+
+## 2025-07-09 - face occlusion: head turn vs actual blockage distinction
+- Head turn: face conf drops but body also rotates (body_conf drops too)
+- Occlusion: face conf drops but shoulders/hips remain visible
+- body_mean > 0.10 guard added to daytime algorithm
+
