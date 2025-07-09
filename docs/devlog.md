@@ -341,3 +341,8 @@
 - If body visible + face hidden = likely actual occlusion
 - Added body_mean > 0.1 guard for daytime mode
 
+
+## 2025-07-09 - occlusion test results
+- 8/10 detected with various blanket placements
+- 2 misses: very thin/translucent blanket (keypoints visible through it)
+
