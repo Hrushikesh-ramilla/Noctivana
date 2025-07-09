@@ -335,3 +335,9 @@
 - Head turn: face keypoints drop but body still visible
 - Need to distinguish head turn from actual blockage
 
+
+## 2025-07-09 - head turn guard
+- If body keypoints invisible too = person is face-down but also rolled
+- If body visible + face hidden = likely actual occlusion
+- Added body_mean > 0.1 guard for daytime mode
+
