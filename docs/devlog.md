@@ -666,3 +666,8 @@
 - Occlusion: face conf drops but shoulders/hips remain visible
 - body_mean > 0.10 guard added to daytime algorithm
 
+
+## 2025-07-09 - that helps but not perfect. adding min coverage pct threshold
+- 40% of face keypoints must be low-confidence for daytime occlusion
+- Not just one keypoint dropping out (e.g. nose clipped at edge)
+
