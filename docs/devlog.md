@@ -681,3 +681,8 @@
 - 3s sustained occlusion before alert (VIS-02 requirement)
 - Prevents false alert from baby momentarily covering face with hand
 
+
+## 2025-07-09 - occlusion detection with temporal filter: way fewer false positives
+- Testing with hand-over-face (quick): no alert
+- Testing with blanket (sustained): alert fires at exactly 3.1s
+
