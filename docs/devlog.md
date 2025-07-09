@@ -686,3 +686,9 @@
 - Testing with hand-over-face (quick): no alert
 - Testing with blanket (sustained): alert fires at exactly 3.1s
 
+
+## 2025-07-09 - motion classification: still/low/restless from frame diffs
+- still: <2% pixels changed per frame (30s avg)
+- low: 2-8% pixels changed
+- restless: >8% pixels changed
+
