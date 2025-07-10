@@ -352,3 +352,8 @@
 - Extract pose.py, occlusion.py, motion.py, night_mode.py
 - vision_service.py becomes thin orchestrator
 
+
+## 2025-07-10 - import hell after refactor
+- Circular import: vision_service imports OcclusionDetector which imported Camera
+- Fixed by removing Camera from occlusion.py (passes frame directly)
+
