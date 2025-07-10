@@ -357,3 +357,9 @@
 - Circular import: vision_service imports OcclusionDetector which imported Camera
 - Fixed by removing Camera from occlusion.py (passes frame directly)
 
+
+## 2025-07-10 - FPS measurement
+- Average 5.2fps with all vision features enabled
+- Barely above 5fps target (NFR-P2)
+- Need to keep careful eye on this
+
