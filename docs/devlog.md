@@ -346,3 +346,9 @@
 - 8/10 detected with various blanket placements
 - 2 misses: very thin/translucent blanket (keypoints visible through it)
 
+
+## 2025-07-10 - vision_service refactor
+- File growing to 400+ lines
+- Extract pose.py, occlusion.py, motion.py, night_mode.py
+- vision_service.py becomes thin orchestrator
+
