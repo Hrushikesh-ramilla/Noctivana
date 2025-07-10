@@ -709,3 +709,8 @@
 - vision_service.py: 180 lines (down from 400+)
 - Each submodule independently testable
 
+
+## 2025-07-10 - imports fixed, all vision tests pass
+- Circular import resolved: Camera not imported in submodules
+- Frame passed directly as numpy array to OcclusionDetector, MotionTracker
+
