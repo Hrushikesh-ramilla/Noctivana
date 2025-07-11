@@ -732,3 +732,9 @@
 - Severity: CRITICAL
 - Alert engine will fuse with motion data before dispatching
 
+
+## 2025-07-11 - problem: gross body movement triggers false resp absence
+- Baby rolls over = large optical flow spike
+- Flow magnitude drops when settling = looks like 'no breathing'
+- Need to suppress resp absence alarm during/after gross movement
+
