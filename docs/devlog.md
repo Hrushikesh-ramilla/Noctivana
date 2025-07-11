@@ -743,3 +743,8 @@
 - Use vision/motion to detect gross body movement
 - If motion=restless within last 10s: do not trigger resp absence
 
+
+## 2025-07-11 - body movement filter: suppress resp alarm if motion level > threshold
+- VIT-05 implemented: suppress_resp_alarm if motion=='restless'
+- Cooldown 10s after motion stops before monitoring resumes
+
