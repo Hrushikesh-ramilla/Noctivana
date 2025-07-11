@@ -738,3 +738,8 @@
 - Flow magnitude drops when settling = looks like 'no breathing'
 - Need to suppress resp absence alarm during/after gross movement
 
+
+## 2025-07-11 - distinguish breathing motion from body movement
+- Use vision/motion to detect gross body movement
+- If motion=restless within last 10s: do not trigger resp absence
+
