@@ -726,3 +726,9 @@
 - Note: occlusion still runs every frame since it's safety-critical (VIS-02)
 - Motion tracking alternated instead
 
+
+## 2025-07-11 - resp absence alert trigger in vitals_service
+- If no resp bpm detected for > 15s AND baby still: publish vitals/resp_absence
+- Severity: CRITICAL
+- Alert engine will fuse with motion data before dispatching
+
