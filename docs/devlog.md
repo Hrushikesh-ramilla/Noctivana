@@ -791,3 +791,9 @@
 - Need to require 2+ corroborating signals for CRITICAL
 - Single prone detection is not enough without context
 
+
+## 2025-07-12 - alert engine v3: require 2+ signals for CRITICAL
+- Fusion buffer: collect events from all sensors over 10s window
+- CRITICAL only if 2 or more sensor types agree
+- Prone alone: needs motion=still to confirm it's not a roll
+
