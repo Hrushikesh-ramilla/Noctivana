@@ -764,3 +764,8 @@
 - src/alert/severity.py - Severity enum
 - src/alert/event.py - AlertEvent dataclass
 
+
+## 2025-07-12 - alert event data class: type, severity, sensors, confidence, ts
+- AlertEvent.to_payload() generates ALT-05 compliant JSON
+- Max 512 bytes confirmed
+
