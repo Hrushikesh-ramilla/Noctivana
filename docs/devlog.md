@@ -786,3 +786,8 @@
 - prone -> CRITICAL, temp_high -> WARN, loud_event -> WARN, resp_absence -> CRITICAL
 - Still too many alerts but at least severity is meaningful
 
+
+## 2025-07-12 - still too many alerts, need multi-signal agreement
+- Need to require 2+ corroborating signals for CRITICAL
+- Single prone detection is not enough without context
+
