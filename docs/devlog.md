@@ -759,3 +759,8 @@
 - alert_engine subscribes to: audio/cry, audio/dblevel, audio/breath,
   vision/pose, vision/occlusion, vision/motion, vitals/resp, vitals/resp_absence, env/climate
 
+
+## 2025-07-12 - alert severity enum: INFO / WARN / CRITICAL
+- src/alert/severity.py - Severity enum
+- src/alert/event.py - AlertEvent dataclass
+
