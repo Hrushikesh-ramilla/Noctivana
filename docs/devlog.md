@@ -775,3 +775,9 @@
 - Result: 100+ alerts per minute, completely useless
 - Need fusion logic
 
+
+## 2025-07-12 - obviously that's useless, need fusion logic
+- v1 was just a forward relay
+- Need to aggregate signals before alerting
+- Starting v2: severity mapping per event type
+
