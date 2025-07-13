@@ -819,3 +819,9 @@
 - body_size = distance between shoulder and hip keypoints
 - Infant baseline: ~50-80px, Adult: >120px at 1.5m distance
 
+
+## 2025-07-13 - caregiver detection: if any pose skeleton > threshold size = suppress
+- Added caregiver_present() check in alert_engine
+- If skeleton_size > 120px -> suppress all pose-based CRITICAL alerts
+- Hacky but works. Will improve later.
+
