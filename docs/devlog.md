@@ -797,3 +797,9 @@
 - CRITICAL only if 2 or more sensor types agree
 - Prone alone: needs motion=still to confirm it's not a roll
 
+
+## 2025-07-13 - multi-signal fusion: event buffer with 10-sec sliding window
+- Each sensor type has its own deque buffer
+- Fusion evaluator checks all buffers against rule set
+- Evaluation called every 0.5s from alert_engine loop
+
