@@ -813,3 +813,9 @@
 - occ.sustained_s >= 3s (VIS-02 requirement)
 - Caregiver suppression: large skeleton in frame
 
+
+## 2025-07-13 - how to detect caregiver? large skeleton in frame = adult
+- If MoveNet detects skeleton much larger than infant baseline = adult in room
+- body_size = distance between shoulder and hip keypoints
+- Infant baseline: ~50-80px, Adult: >120px at 1.5m distance
+
