@@ -831,3 +831,8 @@
 - But this is correct behaviour! rolling into prone IS dangerous
 - Need to differentiate: settling in prone vs transitional prone
 
+
+## 2025-07-13 - log all fusion decisions for debugging
+- Added fusion decision logging to alert_engine.log
+- Each evaluation cycle logged: events received, rules checked, alerts fired
+
