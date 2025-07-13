@@ -808,3 +808,8 @@
 - Rule 1: prone_sustained >= 5s AND motion != restless -> CRITICAL
 - Prevents alert during normal baby rolling (arousal from sleep)
 
+
+## 2025-07-13 - face occlusion CRITICAL only if sustained >5s AND no caregiver
+- occ.sustained_s >= 3s (VIS-02 requirement)
+- Caregiver suppression: large skeleton in frame
+
