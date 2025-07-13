@@ -803,3 +803,8 @@
 - Fusion evaluator checks all buffers against rule set
 - Evaluation called every 0.5s from alert_engine loop
 
+
+## 2025-07-13 - fusion logic: prone alert only if pose=prone AND motion=still
+- Rule 1: prone_sustained >= 5s AND motion != restless -> CRITICAL
+- Prevents alert during normal baby rolling (arousal from sleep)
+
