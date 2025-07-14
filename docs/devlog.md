@@ -869,3 +869,8 @@
 - config/alert_rules.yaml: threshold values, suppression conditions
 - alert_engine loads rules on start + hot-reload on config change
 
+
+## 2025-07-14 - alert rules yaml schema: conditions, suppressions, thresholds
+- alert_rules.yaml: each rule has threshold, suppress conditions, rate_limit
+- FusionEngine reads from config.get('rules')
+
