@@ -890,3 +890,8 @@
 - AlertEvent.to_payload(): ts, type, severity, sensors[], confidence, value, message
 - Max payload size: 347 bytes (tested with longest possible values)
 
+
+## 2025-07-14 - payload size check: max 347 bytes, well under 512 limit
+- json.dumps(event.to_payload()) -> 347 bytes worst case
+- Well within ALT-05: 512 bytes max
+
