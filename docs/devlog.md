@@ -874,3 +874,8 @@
 - alert_rules.yaml: each rule has threshold, suppress conditions, rate_limit
 - FusionEngine reads from config.get('rules')
 
+
+## 2025-07-14 - alert engine reads rules from yaml on startup
+- FusionEngine.__init__ reads cfg['rules'] for all tunable parameters
+- No hardcoded values except defaults
+
