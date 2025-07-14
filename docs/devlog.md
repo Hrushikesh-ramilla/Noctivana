@@ -853,3 +853,8 @@
 - Rule added to FusionEngine: if motion=restless AND cry_detected in buffer -> suppress prone CRITICAL
 - Baby actively crying = definitely not dangerously prone-and-still
 
+
+## 2025-07-14 - context rule: tv noise = suppress db alert, check frequency spectrum
+- First thought: spectral analysis to detect TV vs real noise
+- Actually too complex. Just increase sustained duration.
+
