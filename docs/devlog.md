@@ -879,3 +879,9 @@
 - FusionEngine.__init__ reads cfg['rules'] for all tunable parameters
 - No hardcoded values except defaults
 
+
+## 2025-07-14 - forgot to add yaml parsing for nested rules, fixing
+- config_loader.get('rules','prone','min_sustained_s') was returning None
+- Dict nested properly in YAML but get() only 2 levels deep
+- Fixed: use cfg['rules']['prone']['min_sustained_s'] with .get()
+
