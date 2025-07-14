@@ -842,3 +842,9 @@
 - CRITICAL rules require corroborating evidence
 - Implemented fusion.py with 5 fusion rules
 
+
+## 2025-07-14 - false alarm scenario: baby crying + moving = CRITICAL prone??? no
+- Bug: cry event + prone event in same 10s window triggered CRITICAL
+- Baby crying while rolling is not in danger
+- Added: suppress prone if restless AND cry simultaneously
+
