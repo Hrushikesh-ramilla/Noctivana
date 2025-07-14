@@ -858,3 +858,9 @@
 - First thought: spectral analysis to detect TV vs real noise
 - Actually too complex. Just increase sustained duration.
 
+
+## 2025-07-14 - actually spectral analysis is overkill, just increase sustained duration
+- TV tends to vary in volume (ads, quiet scenes)
+- Real sustained noise (vacuum cleaner, alarm) stays constant >5s
+- Increased db alert requirement from 3s to 5s sustained
+
