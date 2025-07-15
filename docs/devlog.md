@@ -936,3 +936,8 @@
 - paho client keepalive: default 60s
 - Mismatch: broker expects ping within 15s, client sends at 60s
 
+
+## 2025-07-15 - increase keepalive to 120s in mosquitto config
+- keepalive_interval = 120 seconds in mosquitto.conf
+- paho client: mqtt.Client(keepalive=120)
+
