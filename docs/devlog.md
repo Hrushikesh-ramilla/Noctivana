@@ -910,3 +910,8 @@
 - config/mosquitto.conf: TLS on port 8883
 - sudo mosquitto -c config/mosquitto.conf
 
+
+## 2025-07-15 - mqtt publish from python: paho-mqtt client
+- pip install paho-mqtt==2.0.0
+- Test script: connect, publish 'hello', subscribe on another terminal
+
