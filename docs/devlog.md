@@ -946,3 +946,8 @@
 - Default max_connections=10 in older mosquitto versions
 - Set to 100 to allow app + multiple test clients simultaneously
 
+
+## 2025-07-15 - mqtt stable now, tested for 15 min no disconnects
+- 15 minute continuous MQTT session: 0 disconnections
+- 900 alert messages published, all received by subscriber
+
