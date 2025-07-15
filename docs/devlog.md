@@ -930,3 +930,9 @@
 - mosquitto logs: 'Client disconnected: keepalive timeout'
 - Default keepalive is 15s, Python client not sending PINGREQ fast enough
 
+
+## 2025-07-15 - mosquitto log: client exceeded keepalive timeout
+- mosquitto.conf keepalive_interval too short
+- paho client keepalive: default 60s
+- Mismatch: broker expects ping within 15s, client sends at 60s
+
