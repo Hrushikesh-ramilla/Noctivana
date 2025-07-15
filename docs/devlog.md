@@ -900,3 +900,8 @@
 - sudo apt install mosquitto mosquitto-clients
 - Default config: port 1883 no TLS
 
+
+## 2025-07-15 - generate self-signed tls certs for mqtt
+- scripts/generate_certs.sh: openssl req to generate CA + server cert
+- Stored in config/certs/ (gitignored)
+
