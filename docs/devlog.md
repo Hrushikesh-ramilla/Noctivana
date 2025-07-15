@@ -925,3 +925,8 @@
 - First end-to-end test! sensor -> zmq -> alert_engine -> mqtt -> subscriber
 - Alert received in 5.8 seconds from event trigger
 
+
+## 2025-07-15 - mqtt disconnecting after ~30 seconds randomly
+- mosquitto logs: 'Client disconnected: keepalive timeout'
+- Default keepalive is 15s, Python client not sending PINGREQ fast enough
+
