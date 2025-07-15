@@ -915,3 +915,8 @@
 - pip install paho-mqtt==2.0.0
 - Test script: connect, publish 'hello', subscribe on another terminal
 
+
+## 2025-07-15 - alert engine publishes to mqtt topic edgewatch/alert/#
+- Topics: edgewatch/alert/critical, edgewatch/alert/warn, edgewatch/alert/info
+- Retain=True so late subscribers get last alert
+
