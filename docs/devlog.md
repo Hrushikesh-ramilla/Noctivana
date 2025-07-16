@@ -971,3 +971,9 @@
 - Three states: IDLE (waiting), MONITORING (active session), ENDED (export on stop)
 - State transitions logged to devlog
 
+
+## 2025-07-16 - sqlite schema for session logs
+- Tables: sessions, alerts, env_readings
+- sessions: id, start_ts, end_ts, alert_count
+- alerts: session_id, ts, type, severity, value, message
+
