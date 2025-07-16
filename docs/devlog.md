@@ -983,3 +983,9 @@
 - Missing: libssl-dev libsqlite3-dev on Pi
 - pysqlcipher3 needs to compile native extension
 
+
+## 2025-07-16 - sqlcipher python bindings wont compile on arm64
+- aarch64 platform not tested well by pysqlcipher3
+- CFLAGS needed: -DSQLITE_HAS_CODEC -DSQLITE_TEMP_STORE=2
+- Going to try building from source
+
