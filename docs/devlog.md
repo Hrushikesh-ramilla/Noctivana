@@ -966,3 +966,8 @@
 - End condition: restless motion for >1min OR cry detected during session
 - For now: manual session end from parent app as fallback
 
+
+## 2025-07-16 - session state machine: IDLE -> MONITORING -> ENDED
+- Three states: IDLE (waiting), MONITORING (active session), ENDED (export on stop)
+- State transitions logged to devlog
+
