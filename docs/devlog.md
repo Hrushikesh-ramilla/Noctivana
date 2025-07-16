@@ -951,3 +951,8 @@
 - 15 minute continuous MQTT session: 0 disconnections
 - 900 alert messages published, all received by subscriber
 
+
+## 2025-07-16 - session_manager.py: auto-detect sleep start and end
+- session_manager.py implements SES-01
+- Subscribes to vision/motion, audio/cry, env/climate
+
