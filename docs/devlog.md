@@ -977,3 +977,9 @@
 - sessions: id, start_ts, end_ts, alert_count
 - alerts: session_id, ts, type, severity, value, message
 
+
+## 2025-07-16 - add sqlcipher encryption... and it breaks everything
+- pip install pysqlcipher3 -> compilation error
+- Missing: libssl-dev libsqlite3-dev on Pi
+- pysqlcipher3 needs to compile native extension
+
