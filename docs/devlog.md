@@ -956,3 +956,8 @@
 - session_manager.py implements SES-01
 - Subscribes to vision/motion, audio/cry, env/climate
 
+
+## 2025-07-16 - sleep start: motion=still + no cry for >5min
+- STILL_THRESHOLD_S = 300 seconds (5 minutes)
+- Both motion=still AND no cry detected in that window
+
