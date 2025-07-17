@@ -989,3 +989,9 @@
 - CFLAGS needed: -DSQLITE_HAS_CODEC -DSQLITE_TEMP_STORE=2
 - Going to try building from source
 
+
+## 2025-07-17 - use pysqlcipher3 instead, finally compiles
+- sudo apt install libssl-dev libsqlite3-dev
+- CFLAGS='-DSQLITE_HAS_CODEC' pip install pysqlcipher3
+- Took 3 hours total
+
