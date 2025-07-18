@@ -1013,3 +1013,9 @@
 - bluezero is better but also sparse
 - Looking at example peripheral code
 
+
+## 2025-07-18 - gatt service definition: edgewatch alert characteristic
+- Service UUID: 12345678-1234-1234-1234-1234567890AB (random 128-bit)
+- Alert characteristic: ...AC
+- Flags: notify + read
+
