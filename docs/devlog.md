@@ -1019,3 +1019,9 @@
 - Alert characteristic: ...AC
 - Flags: notify + read
 
+
+## 2025-07-18 - ble advertisement registered but phone cant find it
+- bluezero peripheral.publish() called
+- nRF Connect on Android: no EdgeWatch device visible
+- Missing something in advertisement data
+
