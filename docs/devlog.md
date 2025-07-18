@@ -1036,3 +1036,9 @@
 - Added service UUID to manufacturer data
 - Phone can now see EdgeWatch in scan
 
+
+## 2025-07-18 - phone discovers EdgeWatch!! connecting...
+- nRF Connect: discovered EdgeWatch BLE device
+- Connected successfully
+- Service and characteristic visible
+
