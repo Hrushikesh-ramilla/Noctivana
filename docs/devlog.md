@@ -1030,3 +1030,9 @@
 - Advertisement packet must include service_uuids to be discoverable
 - Added service_uuid to advertising data explicitly
 
+
+## 2025-07-18 - fix advertisement: add UUID and local name EdgeWatch
+- Added local_name='EdgeWatch' to Peripheral constructor
+- Added service UUID to manufacturer data
+- Phone can now see EdgeWatch in scan
+
