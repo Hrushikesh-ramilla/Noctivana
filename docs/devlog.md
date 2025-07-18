@@ -1025,3 +1025,8 @@
 - nRF Connect on Android: no EdgeWatch device visible
 - Missing something in advertisement data
 
+
+## 2025-07-18 - missing service UUID in advertisement data
+- Advertisement packet must include service_uuids to be discoverable
+- Added service_uuid to advertising data explicitly
+
