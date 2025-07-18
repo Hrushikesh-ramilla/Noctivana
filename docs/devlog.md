@@ -1001,3 +1001,9 @@
 - With correct key: SELECT * FROM sessions -> rows visible
 - NFR-S2 confirmed
 
+
+## 2025-07-18 - ble_service.py skeleton using bluez/dbus
+- src/services/ble_service.py created
+- Using bluezero library (wraps BlueZ D-Bus API)
+- pip install bluezero
+
