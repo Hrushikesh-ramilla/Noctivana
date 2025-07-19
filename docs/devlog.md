@@ -1103,3 +1103,9 @@
 - Python GC doesn't immediately collect large numpy arrays
 - Need explicit del + gc.collect()
 
+
+## 2025-07-19 - fix: explicitly del frame + gc.collect() every 100 frames
+- Added: del frame, crop, upscaled at end of loop
+- gc.collect() every 100 frames
+- Memory stable at 620MB after fix
+
