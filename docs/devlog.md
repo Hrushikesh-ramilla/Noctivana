@@ -1064,3 +1064,9 @@
 - Multiple services binding PUB socket on same port = EADDRINUSE
 - Need a single XPUB/XSUB proxy that all services connect to
 
+
+## 2025-07-19 - multiple publishers binding same port = conflict
+- ZMQ bind() can only be called once per address
+- Each service must connect() not bind()
+- Need a proxy process that does bind()
+
