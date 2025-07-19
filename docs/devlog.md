@@ -1059,3 +1059,8 @@
 - Starting: zmq_proxy, env, audio, vision, vitals, alert_engine, session, ble
 - All services launched via supervisor.py
 
+
+## 2025-07-19 - immediate crash: zmq address already in use on port 5555
+- Multiple services binding PUB socket on same port = EADDRINUSE
+- Need a single XPUB/XSUB proxy that all services connect to
+
