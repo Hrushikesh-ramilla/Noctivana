@@ -1097,3 +1097,9 @@
 - psutil shows vision_service RAM at 1.5GB (!)
 - Memory leak: OpenCV frames accumulating
 
+
+## 2025-07-19 - opencv frames accumulating, numpy arrays not freed
+- frame variable reassigned each loop but old numpy arrays held in scope
+- Python GC doesn't immediately collect large numpy arrays
+- Need explicit del + gc.collect()
+
