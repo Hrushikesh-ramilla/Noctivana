@@ -1,0 +1,17 @@
+[Unit]
+Description=EdgeWatch Session Service
+After=network.targetedgewatch-zmq-proxy.service
+Requires=edgewatch-zmq-proxy.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/edgewatch
+ExecStart=/usr/bin/python3 src/services/session_service.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

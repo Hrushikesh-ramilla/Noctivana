@@ -1,0 +1,17 @@
+[Unit]
+Description=EdgeWatch Zmq-Proxy Service
+After=network.target
+
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/edgewatch
+ExecStart=/usr/bin/python3 src/services/zmq_proxy_service.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
