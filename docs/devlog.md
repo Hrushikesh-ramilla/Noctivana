@@ -1115,3 +1115,9 @@
 - No crash, just hung - buffer growing unbounded
 - collections.deque maxlen not set
 
+
+## 2025-07-20 - fix audio: replace growing list with collections.deque(maxlen=50)
+- Audio inference buffer was plain list(), grew to 50k items
+- Changed to deque(maxlen=50) = keep last 50 windows
+- Memory stays bounded
+
