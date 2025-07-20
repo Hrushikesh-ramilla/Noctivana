@@ -1149,3 +1149,8 @@
 - systemd/edgewatch-*.service for each service
 - Restart=always + RestartSec=5 for auto-recovery (NFR-R2)
 
+
+## 2025-07-20 - systemd ordering: zmq_proxy first, then sensors, then alert
+- After=edgewatch-zmq-proxy.service for all dependent services
+- Requires= directive ensures proper startup order
+
