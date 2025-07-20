@@ -1139,3 +1139,8 @@
 - Polling every 10s
 - Restarts crashed services with 3s delay
 
+
+## 2025-07-20 - supervisor uses subprocess + signal handling
+- SIGTERM -> terminate all child processes cleanly
+- Each service has startup delay to avoid boot race conditions
+
