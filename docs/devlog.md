@@ -1193,3 +1193,8 @@
 - Occlusion remains every frame (safety critical)
 - FPS: 5.1fps achieved
 
+
+## 2025-07-21 - prone detection with upscaled roi: 9/10 mannequin tests!!
+- Retest with 256x256 upscaled ROI inference: 9/10 prone detections
+- VIS-01 acceptance criteria MET!
+
