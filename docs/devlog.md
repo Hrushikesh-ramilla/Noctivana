@@ -1198,3 +1198,9 @@
 - Retest with 256x256 upscaled ROI inference: 9/10 prone detections
 - VIS-01 acceptance criteria MET!
 
+
+## 2025-07-21 - lower prone confidence threshold from 0.5 to 0.3 for safety margin
+- Conservative threshold per SRS: trigger at 25% prone confidence
+- Using 0.25 in config (prone_confidence: 0.25)
+- Higher sensitivity = some false positives but safer
+
