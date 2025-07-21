@@ -1154,3 +1154,9 @@
 - After=edgewatch-zmq-proxy.service for all dependent services
 - Requires= directive ensures proper startup order
 
+
+## 2025-07-21 - prone detection mannequin test: 7/10 detections
+- Test setup: mannequin doll, ceiling mount at 1.5m
+- 10 prone placements, 7 triggered alert
+- Target: 9/10
+
