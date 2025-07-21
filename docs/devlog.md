@@ -1187,3 +1187,9 @@
 - Switched from INTER_CUBIC to INTER_LINEAR for ROI upscale
 - Quality difference minimal at this small scale
 
+
+## 2025-07-21 - skip motion analysis every other frame, focus cpu on pose
+- Motion tracking runs every other frame (frame_n % 2)
+- Occlusion remains every frame (safety critical)
+- FPS: 5.1fps achieved
+
