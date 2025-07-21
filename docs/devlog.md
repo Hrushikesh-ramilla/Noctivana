@@ -1171,3 +1171,8 @@
 - Extract crib_roi (say 200x150px), upscale to 256x256 with INTER_LINEAR
 - Feed this to MoveNet instead of downscaled full frame
 
+
+## 2025-07-21 - upscaled roi: movenet keypoint confidence up ~20%
+- Average keypoint confidence: 0.45 -> 0.67
+- Nose confidence in prone: 0.08 -> 0.12 (still low but better)
+
