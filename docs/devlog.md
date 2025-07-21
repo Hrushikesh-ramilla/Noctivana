@@ -1176,3 +1176,9 @@
 - Average keypoint confidence: 0.45 -> 0.67
 - Nose confidence in prone: 0.08 -> 0.12 (still low but better)
 
+
+## 2025-07-21 - but upscale resize adds 50ms per frame, fps drops to 4.2
+- INTER_CUBIC resize: +70ms, fps=3.8
+- INTER_LINEAR resize: +50ms, fps=4.2
+- Below 5fps target (NFR-P2)
+
