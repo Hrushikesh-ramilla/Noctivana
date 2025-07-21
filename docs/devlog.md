@@ -1166,3 +1166,8 @@
 - MoveNet input is 192x192 - doll is tiny fraction of it
 - Need to upscale crib crop before inference
 
+
+## 2025-07-21 - experiment: crop crib roi then upscale to 256x256 before movenet
+- Extract crib_roi (say 200x150px), upscale to 256x256 with INTER_LINEAR
+- Feed this to MoveNet instead of downscaled full frame
+
