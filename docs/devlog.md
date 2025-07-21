@@ -1210,3 +1210,8 @@
 - Average: 5.8s, 95th percentile: 7.2s
 - Under 8s target (NFR-P1)
 
+
+## 2025-07-21 - document latency breakdown in docs/latency.md
+- Breakdown: capture 200ms, inference 150ms, zmq 20ms, fusion 100ms, mqtt 80ms, network 200ms
+- Total ~750ms for Pi, network/app adds the rest
+
