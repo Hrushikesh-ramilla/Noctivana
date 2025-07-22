@@ -1225,3 +1225,8 @@
 - In low power: vitals_service skips rPPG (~20% CPU saving)
 - vision_service at 2fps: ~15% CPU saving
 
+
+## 2025-07-22 - wake from low power on any motion or cry event
+- vision/motion level != still -> _exit_low_power()
+- audio/cry detected -> alert engine wakes sensors
+
