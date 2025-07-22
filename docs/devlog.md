@@ -1230,3 +1230,9 @@
 - vision/motion level != still -> _exit_low_power()
 - audio/cry detected -> alert engine wakes sensors
 
+
+## 2025-07-22 - low power saves ~25% cpu, temp drops 8C
+- Normal: 65% CPU, 58C
+- Low power (2fps): 40% CPU, 50C
+- Significant thermal and performance improvement
+
