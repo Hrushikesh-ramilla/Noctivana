@@ -1258,3 +1258,9 @@
 - Published to startup/selftest ZMQ topic
 - Alert engine reads it, issues WARN if any critical sensor missing
 
+
+## 2025-07-22 - self-test warns if any critical sensor missing
+- If camera=fail: WARN alert + LED amber on startup
+- If mic=fail: WARN alert (non-critical)
+- If all=ok: LED green, ready
+
