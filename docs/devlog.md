@@ -1247,3 +1247,8 @@
 - Only motion tracking and rPPG are reduced
 - Safety-critical features always at full rate
 
+
+## 2025-07-22 - startup self-test: check camera, mic, i2c sensors, report status
+- NFR-R3: self-test on startup
+- Each service publishes self-test result to zmq startup/selftest
+
