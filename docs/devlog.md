@@ -1282,3 +1282,9 @@
 - Even after upscale: only interpolated pixels
 - Signal-to-noise ratio is terrible
 
+
+## 2025-07-23 - upscale face roi for rppg? interpolation adds noise
+- Tried: upscale face ROI to 64x64 before green extraction
+- Interpolation adds structured noise that mimics pulse signal
+- Makes results worse not better
+
