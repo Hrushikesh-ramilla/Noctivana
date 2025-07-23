@@ -1270,3 +1270,9 @@
 - Extract face region using upper-center of frame
 - Compute mean green value per frame
 
+
+## 2025-07-23 - rppg theory: subtle green channel variation = pulse
+- Blood absorption peak around 550nm (green light)
+- As heart pumps: skin blood volume changes slightly
+- Camera detects this as tiny green channel oscillation
+
