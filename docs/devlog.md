@@ -1294,3 +1294,8 @@
 - Physiologically impossible variation
 - This is random noise in the FFT output
 
+
+## 2025-07-23 - try temporal bandpass filter on green channel signal
+- Butterworth bandpass 0.8-3.0Hz (48-180 bpm)
+- Applied to 10-second green channel history
+
