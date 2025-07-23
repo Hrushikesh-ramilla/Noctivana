@@ -1299,3 +1299,9 @@
 - Butterworth bandpass 0.8-3.0Hz (48-180 bpm)
 - Applied to 10-second green channel history
 
+
+## 2025-07-23 - rppg with filter: values hover 60-150 range, very unstable
+- After filtering: 60->145->78->102->95 bpm
+- Better range but still physiologically implausible variation
+- Fundamental problem: signal too weak at ceiling distance
+
