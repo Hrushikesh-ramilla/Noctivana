@@ -1276,3 +1276,9 @@
 - As heart pumps: skin blood volume changes slightly
 - Camera detects this as tiny green channel oscillation
 
+
+## 2025-07-23 - rppg from ceiling camera: face is literally 20x30 pixels
+- At 1.5m ceiling: infant face region ~20x20px in 640x480 frame
+- Even after upscale: only interpolated pixels
+- Signal-to-noise ratio is terrible
+
