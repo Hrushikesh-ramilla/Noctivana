@@ -1356,3 +1356,9 @@
 - Better but still not at ±4 in 80% target
 - Need to tune window_size parameter next
 
+
+## 2025-07-24 - increase averaging window from 30s to 45s
+- deque maxlen: 150->225 (45s at 5fps)
+- Longer FFT window = better frequency resolution
+- Trade-off: slower response to rate changes
+
