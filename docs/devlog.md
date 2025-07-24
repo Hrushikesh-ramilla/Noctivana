@@ -1334,3 +1334,9 @@
 - Alert engine ignores rPPG for fusion rules
 - App shows as 'indicative only'
 
+
+## 2025-07-24 - revisit resp rate: test with metronome-controlled breathing sim
+- Built mechanical breathing sim: small motor + balloon on metronome
+- Set to 30 bpm, measure optical flow output
+- More controlled than previous ad-hoc tests
+
