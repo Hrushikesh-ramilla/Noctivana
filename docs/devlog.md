@@ -1340,3 +1340,8 @@
 - Set to 30 bpm, measure optical flow output
 - More controlled than previous ad-hoc tests
 
+
+## 2025-07-24 - resp rate vs reference: +-6 bpm in 70% of windows
+- Regression from 78%! Optical flow params changed during refactor
+- Farneback poly_n was changed from 7 to 5 (less accurate)
+
