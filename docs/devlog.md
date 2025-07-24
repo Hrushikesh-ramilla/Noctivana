@@ -1362,3 +1362,9 @@
 - Longer FFT window = better frequency resolution
 - Trade-off: slower response to rate changes
 
+
+## 2025-07-24 - resp rate with 45s window: +-4.5 bpm in 79%
+- So close!! 79% vs 80% target
+- Need to tune one more parameter
+- Trying window_size in Farneback (spatial smoothing)
+
