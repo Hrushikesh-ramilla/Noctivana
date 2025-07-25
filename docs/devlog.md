@@ -1399,3 +1399,9 @@
 - Added db_spl column from audio_service logging
 - ENV-04: ambient sound level at 1-second resolution
 
+
+## 2025-07-25 - sgp30 returns 0 randomly after long running, not just boot
+- After 2+ hours: sgp30.read() occasionally returns (0, 400)
+- Not just boot-time issue
+- Suspected: sensor baseline drift or I2C timing issue
+
