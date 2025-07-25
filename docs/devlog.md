@@ -1383,3 +1383,8 @@
 - Camera auto-exposure needs 2s to settle after switching to manual
 - During this time: frames are over/under-exposed
 
+
+## 2025-07-25 - buffer 1.5s of last-known state during ir transition
+- NightModeController.in_transition(): True for 1.5s after mode switch
+- Alert engine: suppress position/occlusion alerts during transition
+
