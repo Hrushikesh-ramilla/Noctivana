@@ -1378,3 +1378,8 @@
 - PWM duty cycle: 100% for full darkness, 50% for dim conditions
 - Smoother transition at light/dark boundary
 
+
+## 2025-07-25 - ir mode transition takes 2 seconds, camera needs to readjust
+- Camera auto-exposure needs 2s to settle after switching to manual
+- During this time: frames are over/under-exposed
+
