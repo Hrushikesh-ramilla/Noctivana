@@ -1394,3 +1394,8 @@
 - CSV: timestamp, temp_c, humidity, co2_ppm, tvoc_ppb, lux
 - One CSV per session
 
+
+## 2025-07-25 - csv format: timestamp, temp, humidity, co2, voc, lux, db_spl
+- Added db_spl column from audio_service logging
+- ENV-04: ambient sound level at 1-second resolution
+
