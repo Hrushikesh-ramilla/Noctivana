@@ -1368,3 +1368,8 @@
 - Need to tune one more parameter
 - Trying window_size in Farneback (spatial smoothing)
 
+
+## 2025-07-25 - auto ir mode complete: bh1750 < 5 lux triggers everything
+- VIS-03 complete: BH1750 -> NightModeController -> IR LED + camera exposure
+- Transition buffer (1.5s) prevents false alerts during switch
+
