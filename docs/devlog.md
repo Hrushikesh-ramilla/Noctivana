@@ -1405,3 +1405,9 @@
 - Not just boot-time issue
 - Suspected: sensor baseline drift or I2C timing issue
 
+
+## 2025-07-25 - workaround: if sgp30 reads 0, use last known value, log warning
+- SGP30.read() now maintains _tvoc, _eco2 last-known-good
+- Zero reads: return last-known + log WARNING
+- Prevents false 'clean air' readings after sensor glitch
+
