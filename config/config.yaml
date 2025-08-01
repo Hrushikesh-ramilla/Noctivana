@@ -1,0 +1,59 @@
+hardware:
+  ir_led_pin: 17
+  status_led_r: 27
+  status_led_g: 22
+  status_led_b: 10
+  camera_resolution: [640, 480]
+  camera_fps: 5
+  camera_device: 0
+  mic_device_index: 2
+  mic_sample_rate: 16000
+  mic_channels: 1
+  i2c_bus: 1
+
+zmq:
+  proxy_pub_port: 5555
+  proxy_sub_port: 5556
+  proxy_host: "localhost"
+
+mqtt:
+  host: "localhost"
+  port: 8883
+  use_tls: true
+  keepalive: 120
+  max_connections: 100
+  topic_prefix: "edgewatch"
+
+ble:
+  service_uuid: "12345678-1234-1234-1234-1234567890AB"
+  alert_char_uuid: "12345678-1234-1234-1234-1234567890AC"
+  device_name: "EdgeWatch"
+  pairing_timeout_s: 60
+
+thresholds:
+  temp_high_c: 28.0
+  temp_low_c: 16.0
+  humidity_high_pct: 65.0
+  humidity_low_pct: 30.0
+  co2_warn_ppm: 1000
+  co2_critical_ppm: 2000
+  db_alert_threshold: 70.0
+  db_alert_duration_s: 5
+  lux_ir_threshold: 5.0
+  prone_confidence: 0.25
+  occlusion_coverage_pct: 0.40
+  occlusion_duration_s: 3.0
+  resp_absence_s: 15.0
+  session_start_still_s: 300
+  cry_confidence_threshold: 0.40
+
+paths:
+  db_path: "/var/edgewatch/sessions.db"
+  log_dir: "/var/log/edgewatch"
+  session_csv_dir: "/var/edgewatch/sessions"
+  models_dir: "/home/pi/edgewatch/models"
+
+logging:
+  level: "INFO"
+  max_bytes: 10485760
+  backup_count: 5

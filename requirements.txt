@@ -1,0 +1,22 @@
+# Core
+opencv-python==4.9.0.80
+numpy==1.26.4
+scipy==1.13.0
+# Audio
+sounddevice==0.4.6
+librosa==0.10.1
+# I2C / Hardware
+smbus2==0.4.3
+RPi.GPIO==0.7.1
+picamera2==0.3.19
+# ML Inference
+tflite-runtime==2.14.0
+# Messaging
+pyzmq==26.0.3
+paho-mqtt==2.0.0
+# Storage
+# pysqlcipher3 - install from source, see docs/rpi_setup.md
+# Utilities
+pyyaml==6.0.1
+psutil==5.9.8
+watchdog==4.0.0
