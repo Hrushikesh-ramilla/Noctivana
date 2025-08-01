@@ -1450,3 +1450,8 @@
 - t=10min: all stable, RAM=1.7GB, temp=55C
 - Letting it run overnight...
 
+
+## 2025-08-01 - fix: forgot to increase mosquitto logging before overnight test
+- mosquitto.conf: log_type all
+- Need verbose logs to diagnose any overnight issues
+
