@@ -1411,3 +1411,8 @@
 - Zero reads: return last-known + log WARNING
 - Prevents false 'clean air' readings after sensor glitch
 
+
+## 2025-08-01 - overnight test prep: checklist of what to verify
+- Test checklist: all services start, mqtt connects, ble advertises
+- Monitor: RAM < 2.5GB, temp < 80C, no crashes
+
