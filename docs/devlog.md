@@ -1503,3 +1503,8 @@
 - Bare workflow, TypeScript config
 - Bottom tab navigation
 
+
+## 2025-08-02 - expo template, typescript config
+- Using JS not TS for simplicity
+- Expo SDK 51
+
