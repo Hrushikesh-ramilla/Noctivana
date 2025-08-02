@@ -1473,3 +1473,9 @@
 - Was using deque(maxlen=20) of FULL FRAMES not just keypoints
 - 20 * 640*480*3 bytes = 18MB per deque * some multiplier = huge
 
+
+## 2025-08-02 - fix: occlusion history stores only keypoint data, not full frames
+- Changed: _conf_hist stores only (face_conf, body_conf) floats
+- Not the full numpy frame array
+- Memory drops immediately: 1.2GB -> 640MB
+
