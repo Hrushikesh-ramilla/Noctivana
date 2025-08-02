@@ -1518,3 +1518,9 @@
 - react-native-mqtt for MQTT client in RN
 - paho-mqtt as fallback
 
+
+## 2025-08-02 - mqtt connection to pi broker from react native
+- app/src/services/mqtt.js: MqttProvider context
+- Connects to mqtt://edgewatch.local:8883
+- Subscribes to edgewatch/alert/#
+
