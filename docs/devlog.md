@@ -1485,3 +1485,8 @@
 - Changed: store only the changed_pct float
 - Another ~200MB freed
 
+
+## 2025-08-02 - vision service memory: stable at ~620MB over 2hr test
+- 2hr soak test: vision_service stable at 620MB +-10MB
+- No growth trend - leak fixed!
+
