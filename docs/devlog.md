@@ -1479,3 +1479,9 @@
 - Not the full numpy frame array
 - Memory drops immediately: 1.2GB -> 640MB
 
+
+## 2025-08-02 - also: numpy array copies in motion tracker were not freed
+- MotionTracker._history: deque of np.ndarray copies of frames
+- Changed: store only the changed_pct float
+- Another ~200MB freed
+
