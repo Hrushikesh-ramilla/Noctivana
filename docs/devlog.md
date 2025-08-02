@@ -1467,3 +1467,9 @@
 - vision_service RSS was 1.8GB before crash
 - Need to find the leak - new one since last fix
 
+
+## 2025-08-02 - vision memory leak investigation: frame references held by occlusion history
+- Found it: OcclusionDetector._conf_hist stores deque of numpy arrays
+- Was using deque(maxlen=20) of FULL FRAMES not just keypoints
+- 20 * 640*480*3 bytes = 18MB per deque * some multiplier = huge
+
