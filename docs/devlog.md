@@ -1508,3 +1508,8 @@
 - Using JS not TS for simplicity
 - Expo SDK 51
 
+
+## 2025-08-02 - add .gitignore for node_modules inside app/
+- app/.gitignore: node_modules/, .expo/, android/build/
+- Not committing 200MB of npm packages
+
