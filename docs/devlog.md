@@ -1497,3 +1497,9 @@
 - But also keeping raw audio windows: 15360 * 4 bytes each
 - Fixed: keep only classification results, not raw windows
 
+
+## 2025-08-02 - init react native expo app
+- npx create-expo-app edgewatch-app (inside app/)
+- Bare workflow, TypeScript config
+- Bottom tab navigation
+
