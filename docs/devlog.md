@@ -1565,3 +1565,8 @@
 - TODO: implement full-screen CRITICAL alert overlay
 - For now: loud sound + vibration via Vibration.vibrate([0,500,200,500])
 
+
+## 2025-08-03 - session history screen: list of past sessions
+- SessionScreen: shows current session summary
+- Alert counts, duration, env summary
+
