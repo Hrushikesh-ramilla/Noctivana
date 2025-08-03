@@ -1570,3 +1570,9 @@
 - SessionScreen: shows current session summary
 - Alert counts, duration, env summary
 
+
+## 2025-08-03 - session data from mqtt retained messages
+- MQTT retain=True on edgewatch/alert/* topics
+- App gets last state immediately on connect
+- Not ideal but works without direct DB access
+
