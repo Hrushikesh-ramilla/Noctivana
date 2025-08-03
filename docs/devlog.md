@@ -1549,3 +1549,9 @@
 - setAlerts(prev => [payload, ...prev].slice(0, 100))
 - Keep max 100 alerts in memory
 
+
+## 2025-08-03 - app styling: dark theme, deep navy background
+- backgroundColor: #0d1117 (GitHub dark)
+- Card: #161b22
+- Accent: #7c3aed (purple)
+
