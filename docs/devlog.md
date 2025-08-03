@@ -18,3 +18,7 @@
 ## 2025-06-23 - bh1750 reading 340 lux under desk lamp, 0 with hand over it
 - BH1750 auto-range: 340 lux lit, ~0 covered. Working great.
 
+
+## 2025-06-23 - sgp30 needs 15s baseline warmup, readings stabilize after ~1min
+- SGP30 warmup: first 15s gives 0,400. After 1min: 12ppb TVOC, 410 ppm eCO2
+
