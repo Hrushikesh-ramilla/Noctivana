@@ -1629,3 +1629,8 @@
 - On change: Config.reload()
 - All services use Config.get() -> auto-picks up new values
 
+
+## 2025-08-04 - config reload uses file watcher (watchdog library)
+- watchdog.observers.Observer() monitors config/ directory
+- FileModifiedEvent -> Config.reload()
+
