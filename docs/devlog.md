@@ -1623,3 +1623,9 @@
 - Receives config updates, patches config.yaml
 - watchdog triggers hot-reload in all services
 
+
+## 2025-08-04 - hot config reload: services watch config file for changes
+- watchdog library: FileSystemEventHandler on config.yaml
+- On change: Config.reload()
+- All services use Config.get() -> auto-picks up new values
+
