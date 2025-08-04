@@ -1606,3 +1606,9 @@
 - Default 70dB as per SRS AUD-03
 - NFR-U3: user-adjustable thresholds
 
+
+## 2025-08-04 - settings values stored in asyncstorage locally
+- @react-native-async-storage/async-storage
+- Persists across app restarts
+- Syncs to device on each change
+
