@@ -72,3 +72,13 @@
 - 2N2222: Base via 1kR from GPIO17, Collector drives LED ring
 - Can see IR on phone camera, covers full crib area
 
+
+## 2025-06-25 - ir led gpio control module
+- src/hardware/ir_led.py created
+- PWM brightness control via RPi.GPIO
+
+
+## 2025-06-25 - night mode test: turn off lights + enable ir
+- BH1750 drops below 5 lux -> enable IR LED -> camera sees crib
+- Full darkness test passed, doll visible via phone camera trick
+
