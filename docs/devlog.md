@@ -1601,3 +1601,8 @@
 - Temp slider: 20-35C range, step 0.5
 - dB slider: 50-90 dB range, step 1
 
+
+## 2025-08-04 - db threshold slider, default 70db
+- Default 70dB as per SRS AUD-03
+- NFR-U3: user-adjustable thresholds
+
