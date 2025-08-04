@@ -43,3 +43,12 @@
 - modprobe snd-soc-simple-card
 - card 1: sndrpisimplecar [snd_rpi_simple_card]
 
+
+## 2025-06-24 - audio capture working! 16khz 16bit mono
+- sounddevice device=2 captures cleanly at 16kHz 16bit mono
+- RMS ~800 with ambient room noise
+
+
+## 2025-06-24 - recording 5 sec test audio, sounds correct on playback
+- Recorded 5s clip, played back via aplay. Clear mic signal, no distortion.
+
