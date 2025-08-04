@@ -52,3 +52,13 @@
 ## 2025-06-24 - recording 5 sec test audio, sounds correct on playback
 - Recorded 5s clip, played back via aplay. Clear mic signal, no distortion.
 
+
+## 2025-06-24 - add audio config to /boot/config.txt docs
+- Documented exact dtoverlay line in rpi_setup.md
+- Added modprobe step to avoid forgetting next time
+
+
+## 2025-06-24 - fixed mic test script, was hardcoded to wrong device index
+- device=0 was built-in audio, device=2 is I2S mic
+- Added device listing at top of test script
+
