@@ -1645,3 +1645,8 @@
 - Sends SIGSTOP to vision_service + audio_service PIDs
 - SIGCONT to re-enable
 
+
+## 2025-08-04 - status banner component: shows connection state
+- StatusBanner: green when MQTT connected, red when disconnected
+- Fixed at top of AlertsScreen
+
