@@ -1591,3 +1591,8 @@
 - Active: #7c3aed, Inactive: #6b7280
 - No icons yet (using text labels for now)
 
+
+## 2025-08-04 - settings screen: threshold configuration sliders
+- SettingsScreen: sliders for temp_high, db_threshold
+- Privacy mode toggle switch
+
