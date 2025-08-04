@@ -1639,3 +1639,9 @@
 - Switch component in SettingsScreen
 - Publishes {privacy: true/false} to edgewatch/config
 
+
+## 2025-08-04 - privacy mode sends mqtt command, pi disables camera+mic
+- alert_engine receives privacy command
+- Sends SIGSTOP to vision_service + audio_service PIDs
+- SIGCONT to re-enable
+
