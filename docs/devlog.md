@@ -1617,3 +1617,9 @@
 - client.publish('edgewatch/config', JSON.stringify({tempHigh: 28.5}))
 - Pi alert_engine subscribes and updates thresholds live
 
+
+## 2025-08-04 - config subscriber on pi: reads mqtt config, updates config.yaml
+- Added config subscriber thread in alert_engine
+- Receives config updates, patches config.yaml
+- watchdog triggers hot-reload in all services
+
