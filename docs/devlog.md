@@ -92,3 +92,13 @@
 - AeEnable=False, ExposureTime=33333us (1/30s), AnalogueGain=4.0
 - IR image now properly exposed, no blowout
 
+
+## 2025-06-25 - ir mode image quality: decent, can see doll in crib clearly
+- Slightly grainy but doll keypoints should be detectable
+- Will test MoveNet accuracy in IR mode later
+
+
+## 2025-06-26 - project restructure: test scripts -> scripts/, modules -> src/
+- Moved scattered test scripts to scripts/
+- Moved hardware modules to src/hardware/
+
