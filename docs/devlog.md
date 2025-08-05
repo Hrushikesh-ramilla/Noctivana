@@ -102,3 +102,7 @@
 - Moved scattered test scripts to scripts/
 - Moved hardware modules to src/hardware/
 
+
+## 2025-06-26 - forgot to update imports after restructure
+- Fixed relative imports in hardware modules after directory move
+
