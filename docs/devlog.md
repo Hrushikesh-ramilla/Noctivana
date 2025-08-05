@@ -115,3 +115,8 @@
 - All hardware modules now use logging.getLogger(__name__)
 - No more bare print statements in library code
 
+
+## 2025-06-26 - centralized config.yaml with hardware pin mappings
+- All GPIO pin numbers, I2C addresses, thresholds in one file
+- No more hardcoded values in modules
+
