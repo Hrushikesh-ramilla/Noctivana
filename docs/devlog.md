@@ -1662,3 +1662,8 @@
 - react-native-ble-plx@2.0.3 installed
 - Requires Android permissions: BLUETOOTH_SCAN, BLUETOOTH_CONNECT
 
+
+## 2025-08-05 - ble scan for edgewatch device, show in list
+- BleManager.startDeviceScan(null, null, callback)
+- Filter: deviceName == 'EdgeWatch'
+
