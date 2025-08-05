@@ -1677,3 +1677,8 @@
 ## 2025-08-05 - ble pairing works on pixel 7, connected!
 - Pixel 7 Android 14: scan works, connect works, notification received
 
+
+## 2025-08-05 - ble crash on samsung a52: BluetoothAdapter is null
+- Samsung A52 Android 12: crash on BleManager init
+- 'BluetoothAdapter is null' -> react-native-ble-plx version issue
+
