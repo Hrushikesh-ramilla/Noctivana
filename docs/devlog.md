@@ -120,3 +120,8 @@
 - All GPIO pin numbers, I2C addresses, thresholds in one file
 - No more hardcoded values in modules
 
+
+## 2025-06-26 - update requirements.txt: opencv, sounddevice, smbus2, pyyaml
+- Pinned working versions of all current deps
+- Will add tflite-runtime + pyzmq + paho-mqtt in next phase
+
