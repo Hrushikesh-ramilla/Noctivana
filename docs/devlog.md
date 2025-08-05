@@ -1673,3 +1673,7 @@
 - Step 1 -> 2: connect + discover services
 - Step 2: verified, monitoring active
 
+
+## 2025-08-05 - ble pairing works on pixel 7, connected!
+- Pixel 7 Android 14: scan works, connect works, notification received
+
