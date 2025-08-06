@@ -1765,3 +1765,8 @@
 - Starting test at 20:00
 - Will check at midnight and 6am
 
+
+## 2025-08-06 - 4.5 hours in, stable, temp 64C, ram 1.8GB
+- t=4.5hrs: 0 crashes, temp 64C (vs 72C without heatsink), RAM stable
+- Heatsink is making a real difference
+
