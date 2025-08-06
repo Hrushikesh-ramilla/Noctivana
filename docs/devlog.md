@@ -1709,3 +1709,9 @@
 - Started all services at 23:00
 - Monitoring remotely...
 
+
+## 2025-08-06 - result: ran 7 hours then vision service segfault
+- t=7hr: vision_service terminated with SIGSEGV
+- supervisor restarted it but session log shows gap
+- Core dump: crash in cv2.cvtColor
+
