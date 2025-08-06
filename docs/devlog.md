@@ -1759,3 +1759,9 @@
 - At 75C: call camera.set_fps(3), skip rPPG
 - Prevents SIGSEGV from frame corruption
 
+
+## 2025-08-06 - overnight test #3 starting now with heatsink attached
+- Attached aluminum heatsink + thermal paste to Pi CPU
+- Starting test at 20:00
+- Will check at midnight and 6am
+
