@@ -149,3 +149,8 @@
 - Installed pyzmq 26.0.3
 - Basic pub/sub test: publisher -> subscriber over localhost:5555
 
+
+## 2025-06-28 - zmq topic-based filtering test
+- Topics as byte prefixes work correctly
+- Subscriber only gets messages matching its topic prefix
+
