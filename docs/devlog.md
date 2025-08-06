@@ -1721,3 +1721,8 @@
 - When throttling: picamera2 drops frames -> returns None or corrupt
 - cv2.cvtColor(None) = SIGSEGV (no null check in C extension)
 
+
+## 2025-08-06 - add try/except around ALL opencv calls in vision pipeline
+- Wrapped every cv2.* call in try/except Exception
+- On exception: log warning, skip frame, continue loop
+
