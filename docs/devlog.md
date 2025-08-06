@@ -1736,3 +1736,8 @@
 - Added: if frame is None: logger.warning('Null frame skipped'); continue
 - Also check: if frame.size == 0: skip
 
+
+## 2025-08-06 - add frame validity check: shape, dtype, not-all-zeros
+- Full check: frame is not None AND frame.size > 0 AND frame.shape[2]==3
+- Belt-and-suspenders approach for all OpenCV inputs
+
