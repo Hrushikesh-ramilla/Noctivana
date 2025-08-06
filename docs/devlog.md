@@ -135,3 +135,7 @@
 - Added 3-retry loop with 1s/2s/4s delays in SGP30.start()
 - Also added fallback to last-known value if read returns zero
 
+
+## 2025-06-27 - add wiring diagram notes
+- docs/wiring.md created with ASCII wiring for I2C, I2S, IR LED, RGB LED
+
