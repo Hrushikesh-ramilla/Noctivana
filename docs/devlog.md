@@ -1731,3 +1731,8 @@
 - picamera2 can return None when camera drops frame under thermal stress
 - Must check `if frame is None` before any processing
 
+
+## 2025-08-06 - fix: skip None frames with warning log, continue loop
+- Added: if frame is None: logger.warning('Null frame skipped'); continue
+- Also check: if frame.size == 0: skip
+
