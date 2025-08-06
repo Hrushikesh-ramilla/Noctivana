@@ -1753,3 +1753,9 @@
 - WARN alert if temp > 70C
 - CRITICAL shutdown-sequence if temp > 80C (safety)
 
+
+## 2025-08-06 - if temp > 75C: reduce to 3fps, pause rppg
+- Proactive thermal throttling before kernel throttles
+- At 75C: call camera.set_fps(3), skip rPPG
+- Prevents SIGSEGV from frame corruption
+
