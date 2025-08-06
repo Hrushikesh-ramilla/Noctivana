@@ -139,3 +139,13 @@
 ## 2025-06-27 - add wiring diagram notes
 - docs/wiring.md created with ASCII wiring for I2C, I2S, IR LED, RGB LED
 
+
+## 2025-06-27 - phase 1 complete: hardware bringup done
+- All hardware validated and working
+- Moving to Phase 2: core sensing modules
+
+
+## 2025-06-28 - pip install pyzmq, zeromq test scripts
+- Installed pyzmq 26.0.3
+- Basic pub/sub test: publisher -> subscriber over localhost:5555
+
