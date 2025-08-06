@@ -1726,3 +1726,8 @@
 - Wrapped every cv2.* call in try/except Exception
 - On exception: log warning, skip frame, continue loop
 
+
+## 2025-08-06 - camera sometimes returns None frame after thermal throttle
+- picamera2 can return None when camera drops frame under thermal stress
+- Must check `if frame is None` before any processing
+
