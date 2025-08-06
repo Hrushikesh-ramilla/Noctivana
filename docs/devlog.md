@@ -1770,3 +1770,10 @@
 - t=4.5hrs: 0 crashes, temp 64C (vs 72C without heatsink), RAM stable
 - Heatsink is making a real difference
 
+
+## 2025-08-07 - overnight test #3 PASSED: 10 hours!! no crash, max temp 72C
+- 10 hours continuous: 0 crashes!
+- Max temp: 72C (at hour 8, heatsink saturated)
+- RAM: 1.8GB stable throughout
+- 4 WARN alerts, 0 false CRITICAL
+
