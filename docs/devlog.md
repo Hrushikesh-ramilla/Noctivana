@@ -1777,3 +1777,9 @@
 - RAM: 1.8GB stable throughout
 - 4 WARN alerts, 0 false CRITICAL
 
+
+## 2025-08-07 - overnight test log: 4 WARN alerts (temp fluctuation), 0 false CRITICAL
+- WARN alerts: temp_high at 3am (room heated up slightly)
+- 0 false CRITICAL: fusion rules working correctly
+- NFR-R1: 10hr uptime confirmed
+
