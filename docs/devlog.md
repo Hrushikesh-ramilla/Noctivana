@@ -1747,3 +1747,9 @@
 - 72000 = 72°C
 - Added src/utils/thermal.py
 
+
+## 2025-08-06 - log cpu temp every 60s, warn at 70C, alert at 80C
+- alert_engine logs cpu temp every 60s via thermal.check_thermal()
+- WARN alert if temp > 70C
+- CRITICAL shutdown-sequence if temp > 80C (safety)
+
