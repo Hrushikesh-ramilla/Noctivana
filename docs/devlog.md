@@ -1842,3 +1842,8 @@
 - Improvement from 6/10 to 8/10
 - Just meets acceptance criteria (marginal)
 
+
+## 2025-08-07 - daytime occlusion still 9/10 with new algorithm
+- Confirmed: daytime algorithm unchanged, still 9/10
+- No regression from IR algorithm change
+
