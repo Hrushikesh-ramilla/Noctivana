@@ -1807,3 +1807,9 @@
 - More sensitive = may increase false positives slightly
 - Safety requirement: better to over-alert than miss
 
+
+## 2025-08-07 - prone result after adjustment: 9/10
+- 9/10 with prone_confidence=0.25!
+- VIS-01 acceptance criteria MET
+- Miss was scenario #10: extreme angle (body almost horizontal)
+
