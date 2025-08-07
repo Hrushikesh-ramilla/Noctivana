@@ -1789,3 +1789,9 @@
 - Ceiling mount at 1.5m above
 - 10 test scenarios: prone from different angles
 
+
+## 2025-08-07 - prone test: 10 scenarios - position baby, check alert
+- Scenario 1-5: straight prone (face-down)
+- Scenario 6-8: angled prone (45 degrees)
+- Scenario 9-10: prone near edge of crib
+
