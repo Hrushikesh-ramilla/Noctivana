@@ -1783,3 +1783,9 @@
 - 0 false CRITICAL: fusion rules working correctly
 - NFR-R1: 10hr uptime confirmed
 
+
+## 2025-08-07 - mannequin prone detection retest: preparing test rig
+- Standard infant mannequin doll
+- Ceiling mount at 1.5m above
+- 10 test scenarios: prone from different angles
+
