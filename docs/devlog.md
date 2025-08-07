@@ -1813,3 +1813,9 @@
 - VIS-01 acceptance criteria MET
 - Miss was scenario #10: extreme angle (body almost horizontal)
 
+
+## 2025-08-07 - face occlusion test: blanket over doll face, 10 trials
+- Using thin muslin blanket (realistic infant blanket)
+- Placing over face in 10 different ways
+- Measuring time to alert detection
+
