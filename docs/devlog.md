@@ -1801,3 +1801,9 @@
 - Miss #10: angled prone at 60 degrees (side-prone boundary)
 - Lowering confidence threshold from 0.30 to 0.25
 
+
+## 2025-08-07 - lower confidence threshold from 0.30 to 0.25
+- config/config.yaml: prone_confidence: 0.25
+- More sensitive = may increase false positives slightly
+- Safety requirement: better to over-alert than miss
+
