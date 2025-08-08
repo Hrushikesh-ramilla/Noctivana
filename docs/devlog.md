@@ -1870,3 +1870,8 @@
 - Target: 80%
 - Need to tune Farneback window_size parameter
 
+
+## 2025-08-08 - try: increase pyr_scale in farneback from 0.5 to 0.3
+- pyr_scale: controls pyramid scaling (0.5 = half-size each level)
+- Smaller pyr_scale = finer detail at expense of large motion
+
