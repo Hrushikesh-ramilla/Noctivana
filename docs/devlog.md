@@ -1864,3 +1864,9 @@
 - 10 consecutive 30s windows measured
 - Optical flow output vs reference
 
+
+## 2025-08-08 - result: +-4 bpm in 75% of 30s windows
+- At 30 bpm: 75% of windows within ±4 bpm
+- Target: 80%
+- Need to tune Farneback window_size parameter
+
