@@ -1913,3 +1913,8 @@
 - Pi SCD40 vs reference over 2 hours
 - 10 readings compared
 
+
+## 2025-08-08 - temp: +-0.8C, humidity: +-4.2pct RH
+- Temp: max error ±0.8°C (target ±1°C) PASS
+- Humidity: max error ±4.2% RH (target ±5%) PASS
+
