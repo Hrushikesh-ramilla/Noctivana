@@ -1900,3 +1900,10 @@
 - window_size=21: exactly 80% within ±4 bpm at 30 bpm reference
 - Confirmed with 20 and 40 bpm tests: avg 82%
 
+
+## 2025-08-08 - confirm at different rates: 20, 30, 40 bpm -> avg 82% within +-4
+- 20 bpm: 85% within ±4
+- 30 bpm: 80% within ±4
+- 40 bpm: 81% within ±4
+- Average: 82%! VIT acceptance criteria MET
+
