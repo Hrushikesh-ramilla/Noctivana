@@ -193,3 +193,9 @@
 - Fix: divide by 32768.0 before inference
 - Now getting Speech:0.4, Baby cry:0.3, Music:0.1 on test clip
 
+
+## 2025-06-30 - YAMNet on Pi latency
+- Inference: ~120ms per 0.96s window on Pi4
+- That's well within the 3s classification latency budget (AUD-01)
+- Running at 2 inferences/sec with 0.48s hop
+
