@@ -1907,3 +1907,9 @@
 - 40 bpm: 81% within ±4
 - Average: 82%! VIT acceptance criteria MET
 
+
+## 2025-08-08 - env sensor accuracy test vs calibrated reference thermometer
+- Reference: Barnant calibrated thermometer
+- Pi SCD40 vs reference over 2 hours
+- 10 readings compared
+
