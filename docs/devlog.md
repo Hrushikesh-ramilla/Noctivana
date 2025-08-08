@@ -1885,3 +1885,8 @@
 - poly_n=7: larger neighborhood for polynomial fit
 - More accurate flow but slower
 
+
+## 2025-08-08 - marginal improvement: 77%
+- poly_n=7: 77% within ±4 bpm. Better but not 80%.
+- Try window_size next.
+
