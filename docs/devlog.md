@@ -1918,3 +1918,9 @@
 - Temp: max error ±0.8°C (target ±1°C) PASS
 - Humidity: max error ±4.2% RH (target ±5%) PASS
 
+
+## 2025-08-08 - false positive test: simulate 8hr session with mixed events
+- Simulation: play TV, move hand over camera, make noise
+- Count how many CRITICAL alerts are false positives
+- Run 3x 8-hour simulations
+
