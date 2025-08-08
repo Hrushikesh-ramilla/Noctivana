@@ -199,3 +199,9 @@
 - That's well within the 3s classification latency budget (AUD-01)
 - Running at 2 inferences/sec with 0.48s hop
 
+
+## 2025-06-30 - YAMNet top-5 output
+- Output tensor shape: (521,) - 521 audio classes
+- Need to map Baby cry (index ~22), Screaming (index ~80) etc
+- Label CSV needed for proper mapping
+
