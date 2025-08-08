@@ -1880,3 +1880,8 @@
 - pyr_scale=0.3 gave worse results: 70% within ±4
 - Reverted to 0.5. Moving to poly_n.
 
+
+## 2025-08-08 - try: increase polynomial expansion (poly_n from 5 to 7)
+- poly_n=7: larger neighborhood for polynomial fit
+- More accurate flow but slower
+
