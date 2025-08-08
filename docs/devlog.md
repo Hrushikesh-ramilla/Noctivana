@@ -1852,3 +1852,9 @@
 - docs/test_results.md: all acceptance criteria test outcomes
 - VIS-01: 9/10 PASS, VIS-02 day: 9/10 PASS, VIS-02 IR: 8/10 MARGINAL
 
+
+## 2025-08-08 - respiratory rate test: mechanical breathing sim with metronome
+- Mechanical rig: small DC motor + balloon on metronome beat
+- Simulates chest rise at controlled rates
+- Test rates: 20, 30, 40 bpm
+
