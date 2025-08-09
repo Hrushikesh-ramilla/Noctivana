@@ -1931,3 +1931,8 @@
 - Session 3: 1 false CRITICAL
 - Average: 2.1 < 3 threshold. ALT-01 PASS!
 
+
+## 2025-08-09 - privacy audit: wireshark packet capture on pi network interface
+- Wireshark on Pi eth0/wlan0 during full session
+- Filter: ip.len > 1000 (looking for video/audio packets)
+
