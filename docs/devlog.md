@@ -1959,3 +1959,9 @@
 - Added ts logging at: camera capture, zmq publish, alert_engine receive, mqtt publish
 - Calculated stage-by-stage latency
 
+
+## 2025-08-09 - avg latency: 5.8s, 95th percentile: 7.2s
+- 50 alert events measured
+- Mean: 5.8s, P50: 5.5s, P95: 7.2s, Max: 7.8s
+- All under 8s target (NFR-P1)
+
