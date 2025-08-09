@@ -1949,3 +1949,8 @@
   - MDNS/mDNS broadcasts (normal)
 - NFR-S1 CONFIRMED
 
+
+## 2025-08-09 - packet sizes: all mqtt payloads under 400 bytes
+- Largest alert payload: 347 bytes (CO2 CRITICAL with sensors[] array)
+- Well under 512 byte limit (ALT-05)
+
