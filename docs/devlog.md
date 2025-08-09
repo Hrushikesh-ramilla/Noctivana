@@ -1971,3 +1971,8 @@
 - Fusion adds 5s (sustained detection requirement)
 - Pure delivery latency: ~750ms
 
+
+## 2025-08-09 - no connection banner in app when mqtt disconnects
+- StatusBanner shows red 'Disconnected' when MQTT drops
+- UX improvement: parents know immediately if connection lost
+
