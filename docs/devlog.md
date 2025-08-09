@@ -239,3 +239,8 @@
 - 10fps possible in theory, 5fps our target
 - BUT: detecting my desk chair as a person?? Keypoints all over furniture
 
+
+## 2025-07-02 - ROI cropping helps
+- After cropping to crib area MoveNet stops detecting furniture
+- Much cleaner keypoints, only seeing doll/infant object
+
