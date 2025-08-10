@@ -251,3 +251,8 @@
 - Helps identify which keypoints are reliable from ceiling angle
 - Back keypoints (shoulders, hips) visible when supine; face when prone
 
+
+## 2025-07-02 - debug/ gitignore
+- Accidentally committed some test jpg frames
+- Added *.jpg to .gitignore and git rm --cached
+
