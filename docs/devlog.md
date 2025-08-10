@@ -2052,3 +2052,8 @@
 - Starting final soak test: cleaned code, tuned params
 - Goal: 10+ hours, <3 false CRITICAL, no crashes
 
+
+## 2025-08-10 - 6 hours in: stable, 0 crashes, temp 68C, ram 1.7GB
+- t=6hrs: all green. Temp lower than expected (heatsink + thermal throttle working)
+- RAM stable at 1.7GB +-50MB
+
