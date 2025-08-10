@@ -2079,3 +2079,8 @@
 - README: architecture description, features, demo instructions
 - Acceptance test results summary
 
+
+## 2025-08-11 - add quickstart section to README
+- 5-step quickstart: clone, setup.sh, configure, calibrate, start
+- Points to full installation guide
+
