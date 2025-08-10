@@ -1997,3 +1997,8 @@
 - FusionEngine.evaluate() -> list[AlertEvent]
 - AlertEngine._publish_alert() -> None
 
+
+## 2025-08-10 - consolidate config: single config.yaml for all services
+- Merged config/alert_rules.yaml into config/config.yaml under 'rules' key
+- Fewer files to manage
+
