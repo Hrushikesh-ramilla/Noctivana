@@ -2012,3 +2012,8 @@
 - config/alert_rules.yaml deleted, content merged to config.yaml under 'rules:'
 - alert_engine.py updated to read cfg.get('rules', ...)
 
+
+## 2025-08-10 - update all services to use consolidated config
+- All config.get() calls verified against new unified schema
+- 4 services updated, 0 runtime errors
+
