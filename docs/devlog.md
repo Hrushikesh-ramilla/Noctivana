@@ -2057,3 +2057,9 @@
 - t=6hrs: all green. Temp lower than expected (heatsink + thermal throttle working)
 - RAM stable at 1.7GB +-50MB
 
+
+## 2025-08-10 - checking at 11pm: 11 hours running, 0 crashes, 1 false critical
+- t=11hrs: STILL RUNNING! 0 service crashes.
+- 1 false CRITICAL: caregiver detection failed (my arm entered frame briefly)
+- This is the best run we've had
+
