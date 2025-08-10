@@ -2069,3 +2069,8 @@
 - Best result of all 4 overnight tests
 - Ready for demo!
 
+
+## 2025-08-11 - final test summary logged to docs/test_results.md
+- Updated test_results.md with overnight test #4 results
+- All acceptance criteria met or exceeded
+
