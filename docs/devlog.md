@@ -2036,3 +2036,9 @@
 - docs/installation.md: complete installation from Pi flash to first session
 - Troubleshooting section for common issues (I2S mic, I2C, BLE)
 
+
+## 2025-08-10 - systemd service ordering finalized with proper dependencies
+- zmq-proxy: no After= (starts first)
+- env/audio/vision/vitals: After=edgewatch-zmq-proxy.service
+- alert/session/ble: After=edgewatch-zmq-proxy.service
+
