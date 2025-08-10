@@ -244,3 +244,10 @@
 - After cropping to crib area MoveNet stops detecting furniture
 - Much cleaner keypoints, only seeing doll/infant object
 
+
+## 2025-07-02 - keypoint visualization
+- Overlaid keypoints on frame with cv2.circle
+- Saved to debug/ folder
+- Helps identify which keypoints are reliable from ceiling angle
+- Back keypoints (shoulders, hips) visible when supine; face when prone
+
