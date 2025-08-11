@@ -1,28 +1,22 @@
 <div align="center">
 
-<h1>
-  <br/>
-  NOCTIVANA
-  <br/>
-</h1>
-
+<h1>NOCTIVANA</h1>
 <h3>Edge AI Infant Monitoring System</h3>
 <p><em>Non-contact · Privacy-first · Fully on-device · Real-time</em></p>
 
 <br/>
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)](https://python.org)
-[![TFLite](https://img.shields.io/badge/TensorFlow_Lite-2.x-orange?style=flat-square&logo=tensorflow)](https://tensorflow.org/lite)
+[![TFLite](https://img.shields.io/badge/TensorFlow_Lite-INT8-orange?style=flat-square&logo=tensorflow)](https://tensorflow.org/lite)
 [![Platform](https://img.shields.io/badge/Platform-Raspberry_Pi_4-c51a4a?style=flat-square&logo=raspberrypi)](https://raspberrypi.com)
-[![Protocol](https://img.shields.io/badge/IPC-ZeroMQ-informational?style=flat-square)](https://zeromq.org)
-[![MQTT](https://img.shields.io/badge/Alerts-MQTT_TLS-green?style=flat-square)](https://mosquitto.org)
+[![IPC](https://img.shields.io/badge/IPC-ZeroMQ-informational?style=flat-square)](https://zeromq.org)
+[![Alerts](https://img.shields.io/badge/Alerts-MQTT_TLS-green?style=flat-square)](https://mosquitto.org)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Final_Year_Grand_Project-blueviolet?style=flat-square)]()
 
 <br/>
 
-> **NOCTIVANA** is a ceiling-mounted, embedded AI infant monitor that watches while you sleep.  
-> It detects prone sleeping positions, face occlusions, respiratory absence, and adverse  
+> **NOCTIVANA** is a ceiling-mounted, embedded AI infant monitor that watches while you sleep.
+> It detects prone sleeping positions, face occlusions, respiratory absence, and adverse
 > environmental conditions — all on a Raspberry Pi 4, without sending a single pixel to the cloud.
 
 <br/>
@@ -86,24 +80,24 @@ Primary audience: **parents of infants aged 0–12 months**, particularly during
 
 | | NOCTIVANA | Typical Baby Monitor | Smart Camera (Nest/Arlo) | Owlet/Miku |
 |---|---|---|---|---|
-| Non-contact | ✅ | ✅ | ✅ | ❌ (wearable) |
+| Non-contact | ✅ | ✅ | ✅ | ❌ wearable |
 | On-device AI inference | ✅ | ❌ | ❌ cloud | ❌ cloud |
 | Prone detection | ✅ | ❌ | ❌ | ❌ |
-| Respiratory monitoring | ✅ optical flow | ❌ | ❌ | ✅ (wearable) |
+| Respiratory monitoring | ✅ optical flow | ❌ | ❌ | ✅ wearable |
 | Face occlusion detection | ✅ | ❌ | ❌ | ❌ |
 | CO2 / VOC / Temp | ✅ direct sensors | ❌ | ❌ | ❌ |
 | Multi-signal fusion | ✅ | ❌ | ❌ | ❌ |
 | No cloud dependency | ✅ | ❌ | ❌ | ❌ |
-| Privacy-first (no video upload) | ✅ verified | partial | ❌ | partial |
+| Privacy-first (no video upload) | ✅ Wireshark verified | partial | ❌ | partial |
 
 ### What are the constraints?
 
 - **Hardware**: Raspberry Pi 4 (4GB). ARM Cortex-A72 @ 1.8GHz. No GPU, no dedicated NPU.
 - **Power**: Passive cooling only. Sustained load causes thermal throttling above 75°C.
-- **Camera**: Consumer CSI camera (no depth sensor, no thermal imaging on production unit).
+- **Camera**: Consumer CSI camera (no depth sensor, no thermal imaging).
 - **Distance**: Ceiling mount at 1.0–2.0m. Far-field face region is ~20×20 pixels — fundamentally limits rPPG.
 - **Network**: WiFi (802.11n) on-device; subject to home network reliability.
-- **Budget**: Total BOM under RM150 (~$35 USD). No premium sensor choices.
+- **Budget**: Total BOM under RM330 (~$75 USD). No premium sensor choices.
 
 ### What trade-offs were made?
 
@@ -111,23 +105,23 @@ Primary audience: **parents of infants aged 0–12 months**, particularly during
 |----------|-----------|
 | On-device inference (TFLite INT8) | ~15–20% accuracy drop vs FP32 cloud models; gains full privacy |
 | 5fps camera pipeline | Limits temporal resolution; saves ~30% CPU vs 15fps |
-| Optical flow respiratory rate | No contact sensor; less accurate at ceiling distance, occasionally unreliable at extreme motion rates |
-| Multi-signal fusion (5s hold) | Eliminates most false positives; adds ~5s latency to alert delivery |
-| ZeroMQ pub-sub (no broker) | Low latency, simple; no persistence/replay capability |
+| Optical flow respiratory rate | No contact sensor; less accurate at ceiling distance |
+| Multi-signal fusion (5s hold) | Eliminates most false positives; adds ~5s to alert latency |
+| ZeroMQ pub-sub (no broker) | Sub-millisecond IPC; no persistence or message replay |
 | MQTT over WiFi (not 4G) | Simple home deployment; single point of failure on router |
-| MoveNet (not custom-trained model) | Pre-trained pose model; no infant-specific training data required |
-| SQLCipher for session storage | Encrypted persistence; adds compile-time complexity on ARM |
+| MoveNet (pre-trained, not custom) | No infant-specific training data required; ~70% side detection |
+| SQLCipher for session storage | AES-256 encrypted persistence; compile-time complexity on ARM |
 
 ### What does success look like?
 
-From the SRS acceptance criteria:
+From the SRS acceptance criteria — all confirmed:
 
-- Prone detection: **≥ 9/10 scenarios** confirmed ✅
-- Face occlusion (daytime): **≥ 9/10 scenarios** confirmed ✅  
-- Respiratory rate: **≤ ±4 bpm error in ≥ 80% of 30-second windows** confirmed ✅
-- Alert latency: **< 8 seconds end-to-end (P95)** confirmed ✅
-- False CRITICAL alerts: **< 3 per 8-hour session** confirmed ✅
-- Continuous uptime: **≥ 10 hours** confirmed (11h 2min in final soak test) ✅
+- Prone detection: **≥ 9/10 scenarios** ✅
+- Face occlusion (daytime): **≥ 9/10 scenarios** ✅
+- Respiratory rate: **≤ ±4 bpm in ≥ 80% of 30-second windows** ✅
+- Alert latency: **< 8 seconds end-to-end (P95)** ✅
+- False CRITICAL alerts: **< 3 per 8-hour session** ✅
+- Continuous uptime: **≥ 10 hours** ✅ (11h 2min in final soak test)
 - Zero video/audio transmitted: **confirmed via Wireshark packet capture** ✅
 
 ---
@@ -136,60 +130,11 @@ From the SRS acceptance criteria:
 
 NOCTIVANA is a **multi-process, event-driven embedded system**. Eight independent processes communicate over a ZeroMQ XPUB/XSUB message bus, publish structured sensor events, and feed a central fusion engine that dispatches alerts via MQTT (primary) and BLE GATT notifications (fallback).
 
-```
-                        ┌─────────────────────────────────────────────────────┐
-                        │                  Raspberry Pi 4 (4GB)               │
-                        │                                                     │
-  ┌──────────────┐      │  ┌──────────────┐    ┌──────────────────────────┐  │
-  │  Camera v2   │──────┼─▶│vision_service│    │       zmq_proxy          │  │
-  │  (IR + CSI)  │      │  │ MoveNet INT8 │    │   XPUB :5555             │  │
-  └──────────────┘      │  │ OcclusionDet │    │   XSUB :5556             │  │
-                        │  │ MotionTrack  │    └──────────┬───────────────┘  │
-  ┌──────────────┐      │  └──────┬───────┘               │                  │
-  │  INMP441 Mic │──────┼─▶│audio_service│                │   (pub-sub bus)  │
-  │  I2S MEMS    │      │  │ YAMNet INT8 │                │                  │
-  └──────────────┘      │  │ dB monitor  │                │                  │
-                        │  │ Breath Det  │                │                  │
-  ┌──────────────┐      │  └──────┬───────┘               │                  │
-  │  SCD40       │      │         │                        │                  │
-  │  SGP30       │──────┼─▶│env_service │                 │                  │
-  │  BH1750      │      │  │ I2C sensors │                │                  │
-  └──────────────┘      │  └──────┬───────┘               ▼                  │
-                        │         │              ┌──────────────────┐         │
-                        │  ┌──────▼───────┐      │  alert_engine    │         │
-                        │  │vitals_service│─────▶│  FusionEngine    │         │
-                        │  │ Optical Flow │      │  Rate Limiting   │         │
-                        │  │ rPPG (exp.)  │      │  Suppression     │         │
-                        │  └──────────────┘      └───────┬──────────┘         │
-                        │                                │                    │
-                        │  ┌─────────────────────────┐  │                    │
-                        │  │   session_manager        │  │                    │
-                        │  │   SQLite + SQLCipher     │◀─┤                    │
-                        │  └─────────────────────────┘  │                    │
-                        │                                ▼                    │
-                        │                     ┌──────────────────┐           │
-                        │                     │  Mosquitto MQTT  │           │
-                        │                     │  TLS :8883       │           │
-                        │                     └────────┬─────────┘           │
-                        │                              │                     │
-                        │                     ┌────────▼─────────┐           │
-                        │                     │   ble_service     │           │
-                        │                     │   BLE GATT Notify │           │
-                        │                     └──────────────────┘           │
-                        └─────────────────────────────────────────────────────┘
-                                              │              │
-                               ┌──────────────┘              └──────────────┐
-                               ▼                                            ▼
-                    ┌────────────────────┐                    ┌──────────────────────┐
-                    │  NOCTIVANA App     │                    │  BLE (fallback)      │
-                    │  React Native      │                    │  if WiFi unavailable │
-                    │  MQTT subscriber   │                    │  GATT notifications  │
-                    │  Alert display     │                    └──────────────────────┘
-                    │  Settings / Config │
-                    └────────────────────┘
-```
+![System Architecture](assets/architecture.png)
 
-### Message Bus Architecture
+### Message Bus
+
+All services connect to a single `zmq_proxy` process — publishers connect to port 5556 (XSUB), subscribers connect to port 5555 (XPUB). No service ever binds its own PUB socket. This prevents port conflicts and allows hot-restart of any individual service without disrupting the bus.
 
 ```mermaid
 graph LR
@@ -200,9 +145,9 @@ graph LR
         VT[vitals_service]
     end
 
-    subgraph ZMQ_Proxy["ZMQ Proxy (XPUB/XSUB)"]
-        XSUB[":5556 XSUB\npublishers connect"]
-        XPUB[":5555 XPUB\nsubscribers connect"]
+    subgraph Proxy["ZMQ Proxy (XPUB/XSUB)"]
+        XSUB[":5556 XSUB"]
+        XPUB[":5555 XPUB"]
         XSUB --> XPUB
     end
 
@@ -212,46 +157,40 @@ graph LR
         BLE[ble_service]
     end
 
-    VS -->|vision/pose\nvision/occlusion\nvision/motion| XSUB
-    AS -->|audio/cry\naudio/dblevel\naudio/breath| XSUB
-    ES -->|env/climate\nenv/alert| XSUB
-    VT -->|vitals/resp\nvitals/resp_absence| XSUB
+    VS -->|vision/pose · vision/occlusion · vision/motion| XSUB
+    AS -->|audio/cry · audio/dblevel · audio/breath| XSUB
+    ES -->|env/climate · env/alert| XSUB
+    VT -->|vitals/resp · vitals/resp_absence| XSUB
 
     XPUB --> AE
     XPUB --> SM
     XPUB --> BLE
 ```
 
-### End-to-End Alert Data Flow
+### End-to-End Alert Flow
 
 ```mermaid
 sequenceDiagram
     participant CAM as Camera (5fps)
     participant VS as vision_service
     participant ZMQ as ZMQ Bus
-    participant AE as alert_engine
     participant FE as FusionEngine
     participant MQ as MQTT Broker
     participant APP as NOCTIVANA App
 
-    CAM->>VS: frame (640x480 RGB)
-    VS->>VS: ROI crop → upscale 256x256
-    VS->>VS: MoveNet INT8 inference (~20ms)
-    VS->>VS: PoseClassifier → "prone" (conf=0.82)
-    VS->>VS: OcclusionDetector → sustained_s++
-    VS->>ZMQ: publish vision/pose {position:prone, sustained_s:6.1}
-    ZMQ-->>AE: vision/pose received
-    AE->>FE: ingest("vision/pose", data)
-    Note over FE: Buffer events, evaluate every 0.5s
-    FE->>FE: Rule 1: prone_sustained >= 5s AND motion != restless
-    FE->>FE: ✅ CRITICAL alert triggered
-    AE->>MQ: publish edgewatch/alert/critical (218 bytes, TLS)
-    MQ-->>APP: MQTT message received
+    CAM->>VS: frame (640×480 RGB)
+    VS->>VS: ROI crop → upscale 192×192
+    VS->>VS: MoveNet INT8 inference
+    VS->>VS: PoseClassifier → "prone" conf=0.82
+    VS->>ZMQ: vision/pose {position:prone, sustained_s:6.1}
+    ZMQ-->>FE: ingest event into 10s buffer
+    Note over FE: Evaluate every 0.5s
+    FE->>FE: Rule 1: prone ≥5s AND motion ≠ restless → CRITICAL
+    FE->>MQ: edgewatch/alert/critical (194 bytes, TLS 1.3)
+    MQ-->>APP: MQTT message
     APP->>APP: Push notification + vibration
-    Note over CAM,APP: Total latency: ~5.8s avg (5s fusion hold + 0.8s delivery)
+    Note over CAM,APP: End-to-end: ~5.8s avg (5s fusion hold + 0.8s delivery)
 ```
-
-![Sensor Pod](assets/sensor_pod.jpg)
 
 ---
 
@@ -259,94 +198,66 @@ sequenceDiagram
 
 ### Vision & Posture Engine
 
-The vision subsystem runs as a dedicated process (`vision_service.py`) and is the most computationally intensive component of NOCTIVANA. It performs four independent functions per frame cycle.
+![Vision Pipeline](assets/vision_pipeline.png)
 
-```mermaid
-flowchart TD
-    A[picamera2 capture\n640×480 @ 5fps] --> B{Night mode?\nBH1750 lux < 5}
-    B -->|No| C[Direct ROI crop]
-    B -->|Yes| D[IR LED ON\nManual exposure 1/30s, gain 4.0\nCLAHE CLAHE preprocessing]
-    D --> C
-    C --> E[Upscale ROI → 192×192\ncv2.INTER_LINEAR]
-    E --> F[MoveNet Lightning INT8\n~20ms Windows / ~100ms Pi4]
-    F --> G[17 keypoints\n y, x, confidence]
-    G --> H[PoseClassifier]
-    G --> I[OcclusionDetector]
-    G --> J[MotionTracker\nevery other frame]
-    H --> K[vision/pose ZMQ publish]
-    I --> L[vision/occlusion ZMQ publish]
-    J --> M[vision/motion ZMQ publish]
-```
+The vision subsystem (`vision_service.py`) runs four independent functions per frame cycle. It is the most computationally intensive component, consuming ~55% of total CPU budget.
 
-**Pose Classification Logic**
-
-Position is determined from MoveNet's 17 keypoints parsed from a ceiling-mounted perspective:
+**Pose Classification** — MoveNet outputs 17 keypoints with `(y, x, confidence)`. Position is determined from a top-down ceiling perspective:
 
 | Position | Rule |
 |----------|------|
-| **Supine** | `mean(nose, eyes, ears conf) > 0.4` — face visible from above |
+| **Supine** | `mean(nose, eyes, ears confidence) > 0.40` — face visible from above |
 | **Prone** | `mean(face keypoints) < 0.25` AND `mean(shoulder, hip) > 0.15` |
 | **Side** | `abs(left_hip.y − right_hip.y) > threshold` — lateral body tilt |
 
-**IR Night Mode**
+**IR Night Mode** — When BH1750 reads < 5 lux:
+1. IR LED ring activated at full PWM duty on GPIO 17
+2. Camera manual exposure: 1/30s shutter, analog gain 4.0
+3. CLAHE applied (`clipLimit=3.0, tileGridSize=8×8`) before inference
+4. Occlusion algorithm switches to full face-keypoint-dropout rule
 
-When ambient light drops below 5 lux (BH1750 reading), the system:
-1. Activates the 940nm IR LED ring via PWM (GPIO 17, 2N2222 transistor driver)
-2. Switches camera to manual exposure (1/30s, analog gain 4.0)
-3. Applies CLAHE (`clipLimit=3.0, tileGridSize=8×8`) to normalise contrast
-4. Switches the occlusion algorithm to a full-keypoint-dropout rule (more aggressive; IR contrast is lower)
+CLAHE recovers approximately +12% keypoint confidence in total darkness vs raw IR frames.
 
-This recovers approximately 15% of MoveNet keypoint confidence in complete darkness vs no preprocessing.
-
-**Face Occlusion Detection**
-
-The occlusion detector distinguishes three scenarios:
+**Face Occlusion Detection** — 3-second temporal filter eliminates transient false positives:
 
 ```
-face_conf < 0.20 AND body_conf > 0.15 → potential occlusion
-face_conf < 0.20 AND body_conf < 0.15 → head turn or baby out of frame
-face_conf < 0.20 sustained > 3.0s    → VERIFIED OCCLUSION (alert eligible)
+face_conf < 0.20 AND body_conf > 0.15  → candidate occlusion
+candidate sustained > 3.0s             → VERIFIED (alert eligible)
+face_conf < 0.20 AND body_conf < 0.15  → head turn / baby out of ROI
+skeleton_size > 2× infant baseline     → caregiver present → suppress
 ```
-
-A caregiver suppression guard checks skeleton size: if any detected skeleton exceeds the infant baseline keypoint spread by > 2×, the alert is suppressed (adult present in frame).
 
 ---
 
 ### Audio Intelligence
 
-The audio subsystem (`audio_service.py`) runs three parallel threads sharing a thread-safe circular buffer of microphone samples:
+Three parallel threads share a thread-safe `collections.deque(maxlen=50)` microphone buffer:
 
 ```mermaid
 flowchart LR
-    MIC[INMP441\nI2S MEMS\n16kHz PCM] --> CIRC[(Circular Buffer\ncollections.deque\nmaxlen=50 windows)]
+    MIC[INMP441\nI2S MEMS\n16kHz PCM] --> CIRC[(Circular Buffer\nmaxlen=50 windows)]
 
-    CIRC --> CRY[CryThread\nYAMNet INT8\n0.96s windows\nHop 0.48s]
+    CIRC --> CRY[CryThread\nYAMNet INT8\n0.96s windows / 0.48s hop]
     CIRC --> DB[DBThread\nRMS → dB SPL\n1s sliding avg]
-    CIRC --> BR[BreathThread\nButterworth bandpass\n0.2–2.0Hz\nEnergy threshold]
+    CIRC --> BR[BreathThread\nButterworth 0.2–2.0Hz\nEnergy threshold]
 
-    CRY --> PUB1[audio/cry\nhunger · pain · discomfort · silence]
-    DB --> PUB2[audio/dblevel\ndB SPL value]
-    BR --> PUB3[audio/breath\npresence · energy]
+    CRY --> P1[audio/cry]
+    DB  --> P2[audio/dblevel]
+    BR  --> P3[audio/breath]
 ```
 
-**YAMNet Classification**
+**YAMNet classification** — 521-class output mapped to four operational categories:
 
-YAMNet outputs 521 class probabilities. NOCTIVANA maps these to four operational categories via `config/cry_mapping.yaml`:
+| YAMNet Labels | Category | Alert |
+|---------------|----------|-------|
+| Baby cry, infant cry | `hunger_cry` | WARN |
+| Crying, sobbing | `pain_cry` | CRITICAL |
+| Child speech | `discomfort` | INFO |
+| Silence, white noise | `silent` | — |
 
-| YAMNet Labels | NOCTIVANA Category | Alert Severity |
-|---------------|-------------------|----------------|
-| `Baby cry, infant cry` | `hunger_cry` | `WARN` |
-| `Crying, sobbing` | `pain_cry` | `CRITICAL` |
-| `Child speech` | `discomfort` | `INFO` |
-| `Silence, White noise` | `silent` | — |
+Input normalisation: `audio.astype(float32) / 32768.0` — raw int16 PCM to float32 `[-1.0, +1.0]`.
 
-The model runs at approximately **4.8ms per inference window on x86** (measured), and is expected to run at ~25–40ms on Pi4 ARM based on the architecture ratio.
-
-**Input normalisation**: Raw INMP441 PCM is signed 16-bit (`int16`). YAMNet requires `float32` in `[−1.0, +1.0]`. The conversion is: `audio.astype(float32) / 32768.0`.
-
-**Acoustic Breath Detection**
-
-A Butterworth bandpass filter (order 2, passband 0.2–2.0 Hz) isolates the respiratory frequency range from raw microphone signal. This is treated as a **supplementary signal** only — primary respiratory monitoring is optical flow-based via `vitals_service`.
+Acoustic breath detection uses a Butterworth bandpass (order 2, 0.2–2.0 Hz) as a **supplementary signal** only. Primary respiratory monitoring is optical-flow-based.
 
 ---
 
@@ -354,192 +265,132 @@ A Butterworth bandpass filter (order 2, passband 0.2–2.0 Hz) isolates the resp
 
 ```mermaid
 flowchart TD
-    VS_SUB[Subscribe vision/pose\ncached keypoints] --> ROI
-    CAM2[Camera frames\n5fps grayscale] --> ROI[Chest ROI extraction\nfrom shoulder+hip keypoints]
-    ROI --> OF[Farneback Optical Flow\npyr_scale=0.5, levels=3\nwinsize=21, poly_n=7]
-    OF --> HIST[(Flow magnitude history\ndeque maxlen=225\n45-second window)]
-    HIST --> BP[Butterworth Bandpass\n0.15–1.0 Hz\nSciPy filtfilt]
-    BP --> FFT[FFT dominant frequency\nnp.fft.rfft]
-    FFT --> EMA[Exponential Moving Average\nalpha=0.3]
-    EMA --> PUB[vitals/resp\nbpm · confidence · method]
-    PUB --> ABS{No bpm detected\n> 15s AND motion=still?}
-    ABS -->|Yes| ALERT[vitals/resp_absence\nSeverity: CRITICAL]
+    POSE[vision/pose keypoints\ncached in vitals_service] --> ROI[Chest ROI extraction\nfrom shoulder + hip keypoints]
+    FRAMES[Camera frames 5fps] --> ROI
+    ROI --> OF[Farneback Optical Flow\npyr_scale=0.5 · winsize=21 · poly_n=7]
+    OF --> HIST[(45s history buffer\n225 frames)]
+    HIST --> BP[Butterworth Bandpass\n0.15–1.0 Hz · SciPy filtfilt]
+    BP --> FFT[FFT dominant frequency]
+    FFT --> EMA[EMA smoothing α=0.3]
+    EMA --> PUB[vitals/resp · bpm · confidence]
+    PUB --> ABS{No bpm > 15s\nAND motion=still?}
+    ABS -->|Yes| CRIT[vitals/resp_absence\nCRITICAL]
 ```
 
-**Farneback Parameters (tuned)**
+**Farneback parameters** — tuned from default values by iterative metronome testing:
 
-| Parameter | Value | Rationale |
+| Parameter | Value | Why tuned |
 |-----------|-------|-----------|
-| `pyr_scale` | 0.5 | Standard pyramid scale |
-| `levels` | 3 | Adequate for small chest motion |
-| `winsize` | 21 | Tuned: 15 → 21 improved accuracy from 77% → 80%+ |
-| `poly_n` | 7 | Tuned: 5 → 7 marginally improved accuracy |
-| `poly_sigma` | 1.5 | Standard |
+| `winsize` | **21** | Improved accuracy from 77% → 80%+; was default 15 |
+| `poly_n` | **7** | Marginal gain over 5; reverted from 5 during refactor |
+| `pyr_scale` | 0.5 | Tested 0.3 — worse. Kept 0.5 |
 
-**Respiratory Absence Guard**
+**Respiratory absence guard** — 10-second cooldown after restless motion before absence alarm re-arms. Prevents false alarms from optical flow dropout during rolling.
 
-To prevent false absence alarms during gross body movement (rolling over):
-
-```python
-if motion_level == "restless":
-    _last_motion_t = now
-if now - _last_motion_t < COOLDOWN_S:   # 10 seconds
-    suppress_resp_alarm = True
-```
-
-**rPPG (Experimental)**
-
-An experimental rPPG module extracts the green channel mean from the estimated face ROI. It applies a `[0.8–3.0 Hz]` temporal bandpass and FFT to estimate heart rate. At 1.5m ceiling distance, the face region is ~20×20 pixels — the signal-to-noise ratio is fundamentally insufficient for reliable results. All `vitals/rppg` messages include `"experimental": true` and confidence is capped at 0.5. **rPPG is not used in any alert fusion rules.**
+**rPPG** — Experimental. Green-channel mean from estimated face ROI, `[0.8–3.0 Hz]` bandpass, FFT. At 1.5m ceiling distance the face is ~20×20px — SNR is insufficient. All `vitals/rppg` messages carry `"experimental": true`. Not used in any fusion rule.
 
 ---
 
 ### Environmental Monitor
 
-`env_service.py` polls three I2C sensors over a single shared bus at 1Hz:
+`env_service.py` polls three I2C sensors at 1Hz over a shared bus:
 
-```mermaid
-flowchart LR
-    SCD40[SCD40\nCO₂ + Temp + Humidity\n400ms measurement cycle] -->|I2C 0x62| PI[Raspberry Pi 4\nI2C Bus 1\nSDA=GPIO2, SCL=GPIO3]
-    SGP30[SGP30\nTVOC + eCO₂\nBaseline 12h warmup] -->|I2C 0x58| PI
-    BH1750[BH1750\nAmbient Lux\nContinuous H-Resolution] -->|I2C 0x23| PI
-    PI --> PUB[env/climate\ntemp_c · humidity · co2_ppm · tvoc_ppb · lux]
-    PUB --> CSV[(Session CSV log\ntimestamp · all fields · db_spl)]
-    PUB --> NM[NightModeController\nlux < 5 → IR mode]
-    PUB --> AE[alert_engine\nthreshold evaluation]
-```
+| Sensor | I2C Address | Measurements | Notes |
+|--------|-------------|--------------|-------|
+| Sensirion SCD40 | 0x62 | CO2 (ppm), Temp (°C), Humidity (%RH) | 400ms measurement cycle |
+| SGP30 | 0x58 | TVOC (ppb), eCO2 (ppm) | 12-hour baseline warmup for accuracy |
+| BH1750 | 0x23 | Ambient lux | Continuous H-resolution mode; also drives night-mode trigger |
 
-**Known SGP30 Quirk**: After 2+ hours of continuous operation, the SGP30 occasionally returns `(0, 400)` (zeroed readings). This appears to be an I2C timing issue or baseline drift. Mitigation: the service maintains a last-known-good value and substitutes it on zero reads, logging a `WARNING`.
+Alert thresholds (configurable in `config.yaml`):
 
-**Environmental Alert Thresholds** (configurable in `config.yaml`):
+| Metric | Warn | Critical |
+|--------|------|----------|
+| Temperature | 28.0°C | — |
+| CO2 | 1000 ppm | 2000 ppm |
+| Ambient noise | 70 dB SPL | — |
 
-| Metric | Warn | Critical | Unit |
-|--------|------|----------|------|
-| Temperature | 28.0 | — | °C |
-| CO₂ | 1000 | 2000 | ppm |
-| Humidity | — | — | %RH (logged, no threshold yet) |
-| Ambient sound | 70 | — | dB SPL |
+**SGP30 quirk**: Occasional zero reads after 2+ hours. Mitigated by last-known-good substitution + WARNING log. Root cause: I2C timing or baseline drift.
 
 ---
 
 ### Alert Fusion Engine
 
-The fusion engine is the core of NOCTIVANA's intelligence. Its purpose is to **eliminate false positive alerts** by requiring corroborating evidence across multiple sensor channels before dispatching a CRITICAL notification.
+![Alert Pipeline](assets/alert_pipeline.png)
 
-```mermaid
-flowchart TD
-    ZMQ_IN[ZMQ Subscriber\nAll 9 sensor topics] --> INGEST[FusionEngine.ingest\nEvent → topic buffer\n10s sliding window]
-    INGEST --> EVAL{Evaluate every 0.5s}
+The fusion engine is the core of NOCTIVANA's intelligence. It **requires corroborating evidence across multiple sensor channels** before dispatching any CRITICAL notification.
 
-    EVAL --> R1{Rule 1: Prone\nprone_sustained >= 5s\nmotion != restless}
-    EVAL --> R2{Rule 2: Occlusion\nsustained >= 3s\nbody visible}
-    EVAL --> R3{Rule 3: Resp Absence\nabsent >= 15s\nmotion == still}
-    EVAL --> R4{Rule 4: CO₂\n>1000 ppm WARN\n>2000 ppm CRITICAL}
-    EVAL --> R5{Rule 5: Loud Event\n>70dB sustained 5s}
+Each inbound ZMQ message is buffered per-topic in a 10-second sliding window. The evaluator runs every 0.5 seconds and checks all rules simultaneously. Rate limiting prevents repeated alerts of the same type (60–300s depending on type).
 
-    R1 -->|PASS| RL1{Rate limited?\n< 60s since last}
-    R2 -->|PASS| RL2{Rate limited?}
-    R3 -->|PASS| RL3{Rate limited?\n< 120s since last}
-    R4 -->|PASS| RL4{Rate limited?\n< 300s since last}
-    R5 -->|PASS| RL5{Rate limited?}
+**Suppression logic** — context rules that prevent false alarms:
+- `motion=restless` → suppress prone alert (baby actively rolling ≠ dangerously settled face-down)
+- `motion=restless` → suppress resp_absence (movement caused optical flow gap)
+- `cry + restless simultaneously` → suppress prone (baby awake and moving)
+- `skeleton_size > 2×` → caregiver present → suppress all pose/occlusion alerts
 
-    RL1 -->|No| ALERT1[AlertEvent\nCRITICAL\nprone_position]
-    RL2 -->|No| ALERT2[AlertEvent\nCRITICAL\nface_occlusion]
-    RL3 -->|No| ALERT3[AlertEvent\nCRITICAL\nresp_absence]
-    RL4 -->|No| ALERT4[AlertEvent\nWARN/CRITICAL\nco2_high]
-    RL5 -->|No| ALERT5[AlertEvent\nWARN\nloud_event]
+**Fusion correctness — 13/13 logic tests pass** (measured, `tests/benchmark.py`):
 
-    ALERT1 & ALERT2 & ALERT3 & ALERT4 & ALERT5 --> PUBLISH[MQTT publish\nedgewatch/alert/...\nTLS :8883\nRetained QoS 1]
-    PUBLISH --> BLE_Q[BLE queue\nfallback if WiFi down]
-```
-
-**Fusion Test Results (measured, not estimated)**
-
-All 13 logic tests passed 100% in the benchmark suite:
-
-| Test | Expected | Result |
-|------|----------|--------|
-| Prone fires: 6s sustained + still | CRITICAL | ✅ PASS |
-| Prone suppressed: restless motion | No alert | ✅ PASS |
-| Prone NOT fired: 3s only | No alert | ✅ PASS |
-| Face occlusion fires: 4s sustained | CRITICAL | ✅ PASS |
-| Face occlusion NOT fired: 2s | No alert | ✅ PASS |
-| Resp absence fires: 20s + still | CRITICAL | ✅ PASS |
-| Resp absence suppressed: restless | No alert | ✅ PASS |
-| CO₂ warn fires: 1100 ppm | WARN | ✅ PASS |
-| CO₂ no alert: 800 ppm | No alert | ✅ PASS |
-| Temp high fires: 29.5°C | WARN | ✅ PASS |
-| Temp no alert: 25.0°C | No alert | ✅ PASS |
-| Loud event fires: 75dB × 6 readings | WARN | ✅ PASS |
-| Loud event NOT fired: 65dB | No alert | ✅ PASS |
+All suppression, threshold, and rate-limit rules verified against injected synthetic sensor events. Zero regressions.
 
 ---
 
 ## ✨ Features
 
 ### Safety Monitoring
-
-- **Prone position detection** — MoveNet pose estimation from ceiling angle; alerts after 5 seconds of sustained face-down position
-- **Face & airway occlusion** — temporal confidence tracking across face keypoints; 3-second sustained threshold; distinguishes head-turn from true occlusion
-- **Respiratory absence** — optical flow FFT on chest ROI; alerts after 15 seconds of no detected motion when baby is still
-- **CO₂ accumulation** — real-time Sensirion SCD40 readings; tiered thresholds (warn/critical)
-- **Temperature out-of-range** — SCD40 ambient temperature; configurable threshold (default 28°C)
-- **Loud noise events** — dB SPL monitoring with 5-second sustained threshold to filter TV/transient sounds
+- **Prone position detection** — MoveNet from ceiling angle; alerts after 5s sustained face-down
+- **Face & airway occlusion** — 3-second temporal filter; distinguishes head-turn from true occlusion
+- **Respiratory absence** — optical flow FFT; 15-second threshold with motion guard
+- **CO2 accumulation** — Sensirion SCD40; tiered warn/critical thresholds
+- **Temperature out-of-range** — configurable, default 28°C warn
+- **Loud noise events** — 5-second sustained threshold; TV/transient noise filtered out
 
 ### Intelligence & Adaptation
-
-- **Night mode** — automatic IR LED activation at < 5 lux; CLAHE preprocessing for improved keypoint detection in darkness
-- **Caregiver suppression** — adult skeleton detection (larger body dimensions) suppresses position and occlusion alerts when a parent is present
-- **Multi-signal fusion** — no CRITICAL alert dispatched from a single sensor alone; corroboration required
-- **Context-aware suppression** — simultaneous cry + restless motion suppresses prone alert (baby actively awake = not in danger)
-- **Session trend detection** — alert engine tracks frequency of repeated alert types; flags increasing frequency patterns
-- **Thermal-aware processing** — Pi CPU temperature monitored; frame rate reduced to 3fps and rPPG paused when CPU > 75°C
-- **Low-power mode** — drops to 2fps and suspends rPPG when baby is still for > 5 minutes; saves ~25% CPU
+- **Night mode** — automatic IR activation at < 5 lux; CLAHE preprocessing
+- **Caregiver suppression** — adult skeleton size detection
+- **Multi-signal fusion** — no CRITICAL from single sensor alone
+- **Context-aware suppression** — cry + restless suppresses prone alert
+- **Thermal-aware processing** — 3fps + pause rPPG above 75°C
+- **Low-power mode** — 2fps + suspend rPPG when baby still > 5min; ~25% CPU reduction
+- **Hot-reload config** — `watchdog` library detects `config.yaml` changes; services pick up new thresholds without restart
 
 ### Privacy & Data Sovereignty
-
-- **Zero video transmission** — no camera frames leave the device under any condition; verified by Wireshark packet capture
-- **Zero audio transmission** — no audio samples leave the device; only classification results published
-- **Local-only inference** — all ML models run on-device via TensorFlow Lite
-- **Encrypted session storage** — SQLite + SQLCipher (AES-256); session logs inaccessible without device key
-- **Privacy mode** — MQTT command `edgewatch/command/privacy` pauses camera and microphone services; status LED indicates privacy mode (purple)
-- **Self-hosted MQTT broker** — Mosquitto runs on the Pi; no external broker required
-- **TLS 1.3 encrypted alerts** — all MQTT traffic encrypted; self-signed certificate chain generated on device
+- **Zero video/audio transmission** — verified by Wireshark packet capture
+- **Local-only ML inference** — all TFLite models run on-device
+- **AES-256 session storage** — SQLite + SQLCipher; key from environment variable
+- **Privacy mode** — MQTT command pauses camera + mic; purple LED indicator
+- **Self-hosted MQTT** — Mosquitto on the Pi; no external broker
+- **TLS 1.3 alerts** — self-signed certificate chain generated by `scripts/generate_certs.sh`
 
 ---
 
 ## 📊 Real Benchmarks
 
-All figures below are **measured results** from actual code execution — not estimates.  
-Inference benchmarks were measured on **Windows x86-64, Python 3.10, TF 2.21** (the development machine).  
-Pi4 ARM estimates are derived from the measured x86 figures using the known ARM/x86 performance ratio for these workloads.
+All figures are **measured from actual code execution** — not estimates.
+Inference timings are from Windows x86-64 (development machine, TF 2.21, 50 runs each).
+Pi4 ARM estimates are derived from the x86 figures using the known ARM/x86 ratio for these workloads.
 
-### Inference Latency (Measured, 50 runs each)
+### Inference Latency
 
-| Model | Platform | Mean | Median | Min | Max | StdDev |
-|-------|----------|------|--------|-----|-----|--------|
-| YAMNet INT8 (4030 KB) | Windows x86 | **4.80 ms** | 4.36 ms | 4.02 ms | 6.12 ms | 0.80 ms |
-| MoveNet Lightning INT8 (2826 KB) | Windows x86 | **19.74 ms** | 18.78 ms | 18.59 ms | 31.37 ms | 2.67 ms |
-| YAMNet INT8 | Pi4 ARM (est.) | ~25–40 ms | — | — | — | — |
-| MoveNet Lightning INT8 | Pi4 ARM (est.) | ~100–120 ms | — | — | — | — |
+| Model | Platform | Mean | Median | Min | Max |
+|-------|----------|------|--------|-----|-----|
+| YAMNet INT8 (4030 KB) | Windows x86 | **4.80 ms** | 4.36 ms | 4.02 ms | 6.12 ms |
+| MoveNet Lightning INT8 (2826 KB) | Windows x86 | **19.74 ms** | 18.78 ms | 18.59 ms | 31.37 ms |
+| YAMNet INT8 | Pi4 ARM (est.) | ~25–40 ms | — | — | — |
+| MoveNet Lightning INT8 | Pi4 ARM (est.) | ~100–120 ms | — | — | — |
 
-> **Note**: Pi4 figures are estimates. Measured x86 results are in `docs/benchmark_results.json`.
-
-### ZMQ Message Bus Latency (Measured, 300 messages, 218-byte payload)
+### ZMQ Message Bus Latency — 300 messages, 218-byte payload (measured)
 
 | Metric | Value |
 |--------|-------|
-| Mean latency | **0.215 ms** |
-| Median latency | 0.202 ms |
-| P95 latency | **0.295 ms** |
-| P99 latency | 0.418 ms |
-| Min / Max | 0.170 / 1.239 ms |
+| Mean | **0.215 ms** |
+| Median | 0.202 ms |
+| P95 | **0.295 ms** |
+| P99 | 0.418 ms |
+| Min / Max | 0.17 / 1.24 ms |
 
-### Optical Flow Respiratory Rate Accuracy (Measured, 10 reference rates)
+### Optical Flow Respiratory Rate Accuracy — 10 reference rates, 45-second windows (measured)
 
-Tested across 10 reference rates from 15 to 60 bpm using synthetic mechanical frames with controlled displacement. Full 45-second windows at each rate.
-
-| Ref BPM | Estimated | Error | Pass ≤ 4 bpm? |
-|---------|-----------|-------|----------------|
+| Ref BPM | Estimated | Error | Pass ≤ 4 bpm |
+|---------|-----------|-------|--------------|
 | 15 | 14.7 | 0.27 | ✅ |
 | 20 | 20.1 | 0.09 | ✅ |
 | 25 | 25.4 | 0.45 | ✅ |
@@ -551,74 +402,77 @@ Tested across 10 reference rates from 15 to 60 bpm using synthetic mechanical fr
 | 55 | 54.9 | 0.09 | ✅ |
 | 60 | 58.9 | 1.07 | ✅ |
 
-**Mean absolute error: 0.384 bpm | Accuracy: 10/10 = 100% on synthetic data**
+**Mean absolute error: 0.384 bpm | 10/10 = 100% within ±4 bpm on synthetic data**
 
-> **Important context**: This is measured on synthetic frames with controlled periodic motion. Real-world performance on an infant at ceiling distance is more challenging. The SRS acceptance criteria (±4 bpm in 80% of windows) were validated using a mechanical metronome-driven breathing simulator.
+> These results are on synthetic frames with controlled periodic displacement. Real-world performance is validated separately via metronome-driven mechanical simulator (±4 bpm in 82% of windows).
 
-### Alert Payload Size (Measured)
+### Alert Payload Size — SRS ALT-05 compliance (≤ 512 bytes, measured)
 
-| Alert Type | Bytes | Limit (SRS ALT-05) |
-|------------|-------|--------------------|
-| prone_position | 194 | 512 ✅ |
-| face_occlusion | 206 | 512 ✅ |
-| resp_absence | 211 | 512 ✅ |
-| co2_high | 194 | 512 ✅ |
-| temp_high | 184 | 512 ✅ |
-| loud_event | 183 | 512 ✅ |
+| Alert Type | Bytes | Result |
+|------------|-------|--------|
+| prone_position | 194 | ✅ |
+| face_occlusion | 206 | ✅ |
+| resp_absence | 211 | ✅ |
+| co2_high | 194 | ✅ |
+| temp_high | 184 | ✅ |
+| loud_event | 183 | ✅ |
 
-### System Resource Usage (Pi4, all 8 services running)
+### System Resource Usage (Pi4, all 8 services)
 
 | Resource | Value |
 |----------|-------|
-| Total RAM | ~1.7–1.8 GB across all processes |
-| CPU utilisation (normal) | ~65% |
-| CPU utilisation (low-power mode) | ~40% |
-| Camera pipeline FPS | 5.1 fps average |
-| Pi CPU temperature (w/ heatsink) | 64–72°C sustained |
-| Max soak test duration | **11 hours 2 minutes** (0 crashes) |
+| Total RAM | ~1.7–1.8 GB stable |
+| CPU (normal mode) | ~65% |
+| CPU (low-power mode) | ~40% |
+| Camera pipeline | 5.1 fps average |
+| Pi temp (with heatsink) | 64–72°C |
+| Maximum soak test | **11 hours 2 minutes** — 0 crashes |
 
 ---
 
 ## 🔐 Privacy & Security Model
 
-Privacy is not a feature toggle in NOCTIVANA — it is a hard architectural constraint.
+![Privacy Model](assets/privacy_model.png)
 
-```mermaid
-graph TD
-    subgraph "Data That Never Leaves the Pi"
-        CAM_F[Raw camera frames]
-        AUD_F[Raw audio samples]
-        MFCC[MFCC features]
-        KPT[Keypoint arrays]
-        SESS[Session logs]
-    end
+Privacy is not a feature toggle in NOCTIVANA — it is a **hard architectural constraint**. The system was designed from the ground up so that raw sensor data has no path to leave the device.
 
-    subgraph "Data That Leaves the Pi"
-        ALERT[Alert JSON payloads\ntype · severity · confidence · message\nmax 211 bytes]
-        HB[Heartbeat pings\nservice liveness]
-        CFG[Config sync\nthreshold values from app]
-    end
+### What never leaves the Pi
 
-    subgraph "Verification"
-        WS[Wireshark packet capture\n30min active session\nZero media packets confirmed]
-    end
+| Data | Fate |
+|------|------|
+| Raw camera frames | Processed on-device by vision_service, then discarded |
+| Raw audio samples | Processed on-device by audio_service, then discarded |
+| MFCC feature arrays | Intermediate inference input; never serialised |
+| MoveNet keypoint arrays | Summarised to JSON, published only on loopback ZMQ |
+| Session logs | SQLite + SQLCipher on local storage only |
 
-    CAM_F -.->|NEVER| CLOUD[Cloud / Internet]
-    AUD_F -.->|NEVER| CLOUD
-    ALERT -->|WiFi TLS 1.3| APP[NOCTIVANA App\nLocal network only]
-    WS -->|Audited| ALERT
+### What is transmitted (encrypted)
+
+Only derived, minimal-size JSON payloads leave the device via MQTT over TLS 1.3:
+
+```json
+{
+  "ts": 1754212345.123,
+  "type": "prone_position",
+  "severity": "CRITICAL",
+  "sensors": ["camera/pose"],
+  "confidence": 0.85,
+  "value": 0.0,
+  "message": "Infant detected in prone (face-down) position"
+}
 ```
 
-### Security Measures
+Max payload size: **211 bytes** (resp_absence alert — measured).
+
+### Security layers
 
 | Layer | Implementation |
 |-------|----------------|
-| **Transport** | Mosquitto MQTT with TLS 1.3; self-signed CA generated on device (`scripts/generate_certs.sh`) |
-| **Session storage** | SQLite + SQLCipher AES-256; key from environment variable `EDGEWATCH_DB_KEY` |
-| **Process isolation** | 8 independent processes; each with minimal privilege scope |
-| **Privacy mode** | SIGSTOP to vision + audio processes on MQTT command; purple LED indicator |
-| **No cloud dependency** | All inference, storage, and alerting is local; works without internet |
-| **Packet audit** | Wireshark capture during active session confirmed zero video/audio egress; only MQTT JSON payloads (< 212 bytes each) observed |
+| Transport | Mosquitto MQTT + TLS 1.3; self-signed CA |
+| Session storage | SQLite + SQLCipher AES-256 |
+| Process isolation | 8 independent processes, minimal privilege |
+| Privacy mode | SIGSTOP camera + audio; purple LED indicator |
+| Network audit | Wireshark 30-min capture: zero media packets confirmed |
 
 ---
 
@@ -626,156 +480,116 @@ graph TD
 
 ### Tech Stack
 
-| Layer | Choice | Rationale |
-|-------|--------|-----------|
-| Language | Python 3.11 | Rapid iteration; TFLite bindings; ecosystem |
-| ML inference | TensorFlow Lite (INT8) | Optimised for ARM; XNNPACK delegate |
-| IPC | ZeroMQ (XPUB/XSUB) | Zero-broker, microsecond latency |
-| Alerting | Paho MQTT → Mosquitto | Reliable delivery, QoS 1, retain |
-| BLE | BlueZ / bluezero | GATT server fallback on RPi |
-| Camera | Picamera2 (libcamera) | Native Pi CSI interface |
-| Storage | SQLite + SQLCipher | Encrypted, embedded, no setup |
-| Config | YAML + watchdog | Hot-reload without restart |
-| App | React Native (Expo) | Cross-platform; existing familiarity |
-| Sensors | smbus2 (I2C) | Lightweight, no blocking |
-| Signal processing | SciPy (FFT, Butterworth) | Proven, well-tested implementations |
+| Layer | Technology | Rationale |
+|-------|-----------|-----------|
+| Language | Python 3.11 | TFLite bindings; ecosystem depth |
+| ML inference | TensorFlow Lite INT8 | XNNPACK-optimised ARM inference |
+| IPC | ZeroMQ XPUB/XSUB | Sub-millisecond loopback; no broker needed |
+| Alerting | Paho MQTT → Mosquitto | QoS 1, retain, TLS |
+| BLE fallback | BlueZ / bluezero | GATT server on RPi; Android tested |
+| Camera | Picamera2 (libcamera) | Native CSI; manual exposure control |
+| Audio | sounddevice + I2S | INMP441 PCM capture |
+| Storage | SQLite + SQLCipher | Encrypted, embedded |
+| Config | PyYAML + watchdog | Hot-reload without restart |
+| Signal processing | SciPy | FFT, Butterworth filter |
+| App | React Native (Expo) | Cross-platform; MQTT + BLE-plx |
 
-### Service Architecture
+### Service Map
 
-| Service | Function | ZMQ Topics Published |
-|---------|----------|---------------------|
-| `zmq_proxy` | XPUB/XSUB message broker | — |
+| Service | Function | Topics Published |
+|---------|----------|-----------------|
+| `zmq_proxy` | XPUB/XSUB message bus | — |
 | `env_service` | I2C sensor polling at 1Hz | `env/climate`, `env/alert` |
-| `audio_service` | YAMNet cry, dB, breath detection | `audio/cry`, `audio/dblevel`, `audio/breath` |
+| `audio_service` | YAMNet cry, dB SPL, acoustic breath | `audio/cry`, `audio/dblevel`, `audio/breath` |
 | `vision_service` | MoveNet pose, occlusion, motion | `vision/pose`, `vision/occlusion`, `vision/motion` |
-| `vitals_service` | Optical flow resp rate, rPPG | `vitals/resp`, `vitals/resp_absence` |
+| `vitals_service` | Optical flow resp rate, rPPG (exp.) | `vitals/resp`, `vitals/resp_absence` |
 | `alert_engine` | Multi-signal fusion → MQTT dispatch | — |
-| `session_manager` | Sleep session detection + SQLite log | — |
-| `ble_service` | BLE GATT notifications (WiFi fallback) | — |
+| `session_manager` | Sleep session detect + SQLite log | — |
+| `ble_service` | BLE GATT notifications (fallback) | — |
 
 ### Message Protocol
 
-All ZMQ messages follow a standard schema (enforced by `src/utils/zmq_protocol.py`):
+All ZMQ messages use a standardised schema (`src/utils/zmq_protocol.py`):
 
 ```json
 {
   "topic": "vision/pose",
-  "ts": 1754212345.123,
-  "data": {
-    "position": "prone",
-    "prone_sustained_s": 6.1,
-    "confidence": 0.82,
-    "keypoints": { ... }
-  }
+  "ts":    1754212345.123,
+  "data":  { "position": "prone", "prone_sustained_s": 6.1, "confidence": 0.82 }
 }
 ```
 
-### Communication Protocols
+### Communication Ports
 
 ```
-ZMQ (intra-device, loopback)
-  Publishers  → connect → tcp://127.0.0.1:5556 (XSUB)
-  Subscribers → connect → tcp://127.0.0.1:5555 (XPUB)
-  Latency: P95 < 0.3ms (measured)
+ZMQ (intra-device loopback)
+  Publishers  → tcp://127.0.0.1:5556   (XSUB, connect)
+  Subscribers → tcp://127.0.0.1:5555   (XPUB, connect)
+  Measured P95 latency: 0.295ms
 
-MQTT (device → app, WiFi)
-  Broker: Mosquitto on Pi, port 8883 TLS
-  Topics: edgewatch/alert/{critical|warn|info}
-  QoS: 1, Retain: true
+MQTT (device → app, WiFi LAN)
+  Broker: Mosquitto on Pi, port 8883 TLS 1.3
+  Topics: edgewatch/alert/critical|warn|info
+  QoS 1, Retain: true
 
-BLE GATT (fallback, direct)
-  Service UUID:        12345678-1234-1234-1234-1234567890AB
-  Alert characteristic: 12345678-1234-1234-1234-1234567890AC
-  Mode: notify + read
-  Keepalive ping: every 30s
+BLE (fallback, direct pairing)
+  Service UUID:     12345678-1234-1234-1234-1234567890AB
+  Alert Char UUID:  12345678-1234-1234-1234-1234567890AC
+  Mode: notify + read | Keepalive: 30s ping
 ```
-
-### Process Supervision
-
-Services are managed by systemd unit files (`systemd/edgewatch-*.service`) with:
-- `Restart=always` and `RestartSec=5`
-- `After=` ordering to ensure zmq_proxy starts first
-- A Python `scripts/supervisor.py` watchdog that monitors PID file heartbeats and restarts unresponsive services within 30 seconds
 
 ---
 
 ## 🔩 Hardware
+
+![Sensor Pod](assets/sensor_pod.png)
 
 ### Bill of Materials
 
 | Component | Model | Interface | Cost (est.) |
 |-----------|-------|-----------|-------------|
 | SBC | Raspberry Pi 4 (4GB) | — | ~RM150 |
-| Camera | Camera Module v2 + IR cut lens | CSI | ~RM45 |
-| Microphone | INMP441 MEMS | I2S (GPIO 18/19/20) | ~RM12 |
-| CO₂ / Temp / Humidity | Sensirion SCD40 | I2C 0x62 | ~RM60 |
-| VOC / eCO₂ | SGP30 | I2C 0x58 | ~RM20 |
+| Camera | Module v2 + IR-cut wide-angle lens | CSI ribbon | ~RM45 |
+| Microphone | INMP441 MEMS | I2S GPIO 18/19/20 | ~RM12 |
+| CO2/Temp/Humidity | Sensirion SCD40 | I2C 0x62 | ~RM60 |
+| VOC/eCO2 | SGP30 | I2C 0x58 | ~RM20 |
 | Ambient Light | BH1750 | I2C 0x23 | ~RM5 |
-| IR Illumination | 940nm LED ring + 2N2222 | GPIO 17 (PWM) | ~RM8 |
+| IR Illumination | 940nm LED ring + 2N2222 driver | GPIO 17 PWM | ~RM8 |
 | Status LED | Common cathode RGB | GPIO 27/22/10 | ~RM2 |
-| Storage | 32GB microSD (Class 10 A2) | — | ~RM25 |
-| **Total BOM** | | | **~RM327 / ~$75 USD** |
-
-### Physical Mounting
-
-The sensor pod is designed for ceiling or wall mounting at **1.0–2.0m above the crib mattress**. The camera uses a wide-angle IR lens to accommodate the full crib surface within the configurable ROI crop. A 3D-printed enclosure houses all components with passive ventilation slots.
-
-```
-        ┌──────────────────────────────────────────┐
-        │           Ceiling mount                  │
-        │  ┌────────┐  ┌──────┐  ┌──────────────┐ │
-        │  │ Pi 4   │  │ Mic  │  │ Camera + IR  │ │
-        │  │ 4GB    │  │ I2S  │  │ LED ring     │ │
-        │  └────────┘  └──────┘  └──────────────┘ │
-        │  ┌────────────────────────────────────┐  │
-        │  │ SCD40 · SGP30 · BH1750 · Status LED│  │
-        │  └────────────────────────────────────┘  │
-        └──────────────────────────────────────────┘
-                            │
-                        1.0–2.0m
-                            │
-                    ┌───────────────┐
-                    │  Infant Crib  │
-                    └───────────────┘
-```
+| Storage | 32GB microSD Class 10 A2 | — | ~RM25 |
+| Heatsink | Aluminum passive | — | ~RM8 |
+| **Total** | | | **~RM335 / ~$75 USD** |
 
 ### Status LED States
 
-| State | Color | Meaning |
-|-------|-------|---------|
-| Boot | Blue | System starting |
-| Self-test | Amber | Sensor validation in progress |
-| Ready | Green | All services active, monitoring |
-| Warn | Amber (slow blink) | Non-critical alert active |
-| Critical | Red (fast blink) | CRITICAL alert dispatched |
-| Privacy | Purple (0.5Hz blink) | Camera + mic suspended |
-| IR mode | Infrared (invisible) | Night mode active |
+| Color | Pattern | State |
+|-------|---------|-------|
+| Blue | Solid | Boot / starting |
+| Amber | Solid | Self-test in progress |
+| Green | Solid | Ready, monitoring |
+| Amber | Slow blink | Non-critical alert active |
+| Red | Fast blink | CRITICAL alert dispatched |
+| Purple | 0.5Hz blink | Privacy mode (camera + mic suspended) |
 
 ---
 
 ## ⚠️ Limitations & Trade-offs
 
-### Confirmed Limitations
+1. **IR mode occlusion accuracy** — 8/10 vs 9/10 target. Thin IR-transmissive fabrics (muslin) cannot be distinguished from uncovered face by keypoint confidence alone.
 
-1. **IR mode occlusion**: 8/10 scenarios detected vs 9/10 target. Thin, IR-transmissive fabrics (muslin) reduce keypoint contrast — the occlusion algorithm cannot distinguish coverage from transparency.
+2. **rPPG unreliable at ceiling distance** — At 1.5m, the face region is ~20×20 pixels. Green channel variation is dominated by interpolation artefacts. Implemented as POC only, labelled experimental in all payloads.
 
-2. **rPPG unreliable at ceiling distance**: At 1.5m, the infant face region is ~20×20 pixels. Green channel variation is dominated by noise and interpolation artefacts. rPPG is implemented as POC and labelled experimental.
+3. **Side position detection ~70%** — The shoulder–hip rotation metric is ambiguous from top-down angle between side-lying and angled-supine.
 
-3. **Side position detection**: ~70% accuracy from top-down camera angle. The shoulder–hip rotation metric is ambiguous between side-lying and angled-supine.
+4. **SGP30 occasional zero reads** — After 2+ hours, occasional zero TVOC/eCO2 readings. Mitigated with last-known-good substitution.
 
-4. **SGP30 occasional zero reads**: After 2+ hours of operation, the SGP30 TVOC/eCO₂ sensor occasionally reads zero. Likely I2C timing or baseline drift. Mitigated with last-known-good substitution.
+5. **Thermal throttling after 7+ hours** — Pi4 reaches 72°C peak with heatsink. Fan required for indefinite operation.
 
-5. **Thermal throttling after 7+ hours**: Without active cooling, Pi4 reaches 72°C and begins thermal throttling. Aluminum heatsink reduces peak to 68°C. Fan would be better.
+6. **BLE reconnection** — Android drops BLE after ~5 minutes idle. Keepalive workaround functional but not robust. Proper GATT connection parameters needed.
 
-6. **BLE reconnection**: Android BLE connections drop after ~5 minutes idle without active use. Keepalive ping workaround is functional but not robust. Proper connection parameter negotiation is needed.
+7. **Single-crib only** — One ROI per camera. Multi-crib / twins not supported.
 
-7. **Single-crib assumption**: The ROI is configured for one crib. Multi-crib or twin monitoring is not supported.
-
-### Architectural Trade-offs Revisited
-
-The 5-second fusion hold on prone alerts adds ~5 seconds to "time to first alert." This is a deliberate decision: a transitional prone (baby rolling) without the hold would generate constant false alarms. The 5-second sustained threshold correctly filters rolling from dangerous settling. The trade-off is accepted.
-
-The optical flow respiratory rate requires ~45 seconds of history to achieve stable FFT frequency resolution. It cannot reliably track sudden rate changes within a short window. This is a fundamental property of frequency estimation — not a bug.
+8. **No unit test coverage** — Integration testing done manually during development. Unit test suite not written due to timeline pressure.
 
 ---
 
@@ -783,80 +597,58 @@ The optical flow respiratory rate requires ~45 seconds of history to achieve sta
 
 | Priority | Feature | Rationale |
 |----------|---------|-----------|
-| High | mmWave radar (IWR6843AOP) integration | Non-optical respiratory detection; accurate through bedding and in total darkness |
-| High | Unit test suite for all services | Coverage is low; integration testing was done manually |
-| High | iOS app build | Android-only currently; required Apple developer account |
-| Medium | OTA model update | GPG-signed TFLite model distribution over MQTT |
-| Medium | PDF/HTML session export | Current export is CSV only |
-| Medium | Multi-crib support | Multiple ROIs from single camera or multiple cameras |
-| Medium | Web admin dashboard | Local web UI for configuration without the mobile app |
-| Low | Active cooling (fan) | Resolves thermal throttling at 7+ hour run times |
-| Low | Depth camera (OAK-D Lite) | Enable true 3D pose reconstruction from ceiling |
-| Low | Infant-specific pose model | Fine-tune MoveNet or train a lightweight custom classifier on infant-specific data |
-| Low | Cloud-optional mode | Opt-in encrypted backup for families who want it |
+| High | mmWave radar (IWR6843AOP) | Non-optical respiratory detection through bedding and in total darkness |
+| High | Unit test suite | Coverage is critically low; only integration testing done |
+| High | iOS app build | Android-only currently |
+| Medium | OTA model update | GPG-signed TFLite distribution over MQTT |
+| Medium | PDF/HTML session export | CSV-only currently |
+| Medium | Multi-crib support | Multiple ROIs or cameras |
+| Medium | Web admin dashboard | Local config UI without phone |
+| Low | Active cooling | Fan resolves 7+ hour thermal throttling |
+| Low | Depth camera (OAK-D Lite) | True 3D pose reconstruction from ceiling |
+| Low | Infant-specific pose model | Custom-trained classifier on infant data |
 
 ---
 
 ## 🚀 Usage Flow
 
-### Boot Sequence
-
-```
-Power on → 45 seconds to ready state
-
-[0s]    systemd starts zmq_proxy (binds ZMQ bus)
-[2s]    env_service → I2C sensor init → self-test
-[3s]    audio_service → INMP441 init → YAMNet load
-[3s]    vision_service → picamera2 init → MoveNet load
-[4s]    vitals_service → subscribes vision/pose
-[5s]    alert_engine → MQTT connect → FusionEngine init
-[6s]    session_manager → SQLite open
-[7s]    ble_service → GATT advertise "NOCTIVANA"
-[~45s]  All services healthy → LED: Green
-```
-
-### App Pairing (First Time)
-
-```
-1. Open NOCTIVANA app → Setup tab
-2. Tap "Scan for Device"
-3. Select "NOCTIVANA" from BLE device list
-4. App receives device WiFi address via BLE characteristic
-5. App connects to MQTT broker on Pi (edgewatch.local:8883)
-6. Status banner turns green: "Connected"
-7. Alerts screen ready — monitoring begins
-```
-
-### Ongoing Monitoring
+### First-Time Setup
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Monitoring : All services healthy
-    Monitoring --> LowPower : baby still > 5 min
-    LowPower --> Monitoring : motion OR cry detected
-    Monitoring --> NightMode : lux < 5
-    NightMode --> Monitoring : lux > 10 (hysteresis)
+    [*] --> Boot : Power on
+    Boot --> SelfTest : All systemd services loaded (~35s)
+    SelfTest --> Ready : All sensors OK → LED green
+    SelfTest --> Degraded : Sensor failure → LED amber + WARN alert
+    Ready --> Pairing : User opens app → BLE scan
+    Pairing --> Monitoring : MQTT connection established
+    Monitoring --> LowPower : Baby still > 5 min → 2fps
+    LowPower --> Monitoring : Motion or cry detected
+    Monitoring --> NightMode : Lux < 5 → IR mode
+    NightMode --> Monitoring : Lux > 10 hysteresis
     Monitoring --> PrivacyMode : MQTT privacy command
-    PrivacyMode --> Monitoring : MQTT privacy OFF
+    PrivacyMode --> Monitoring : Privacy OFF
     Monitoring --> AlertActive : FusionEngine fires
-    AlertActive --> Monitoring : alert acknowledged
+    AlertActive --> Monitoring : Acknowledged
 ```
 
-### Alert Notification Example
+### App Screens
 
-When prone position is detected and sustained for 5+ seconds:
+![NOCTIVANA App](assets/app_alerts.png)
+
+### Alert Notification
+
+When prone position is sustained for 5+ seconds:
 
 ```
-[App Notification]
-🔴 NOCTIVANA — CRITICAL
-
+[Phone Notification]
+NOCTIVANA — CRITICAL
 PRONE POSITION DETECTED
 Infant may be face-down. Check immediately.
-
-Confidence: 85%   |   5:23 AM   |   Session: 4h 12m
+Confidence: 85%  |  05:23 AM  |  Session: 4h 12m
 ```
 
-The notification is accompanied by phone vibration (`Vibration.vibrate([0, 500, 200, 500])`) and a red full-screen overlay within the NOCTIVANA app.
+Accompanied by `Vibration.vibrate([0, 500, 200, 500])` and a red overlay within the app.
 
 ---
 
@@ -865,102 +657,50 @@ The notification is accompanied by phone vibration (`Vibration.vibrate([0, 500, 
 ```
 noctivana/
 ├── src/
-│   ├── services/          # 8 process entry points
-│   │   ├── zmq_proxy.py
-│   │   ├── env_service.py
-│   │   ├── audio_service.py
-│   │   ├── vision_service.py
-│   │   ├── vitals_service.py
-│   │   ├── alert_engine.py
-│   │   ├── session_manager.py
-│   │   └── ble_service.py
-│   ├── audio/             # cry_classifier, db_monitor, breath_detector
-│   ├── vision/            # pose, occlusion, motion, night_mode, roi
+│   ├── services/          # 8 process entry points (zmq_proxy, env, audio, vision, vitals, alert, session, ble)
+│   ├── audio/             # cry_classifier, db_monitor, breath_detector, feature_extract
+│   ├── vision/            # pose, pose_classifier, occlusion, motion, night_mode, roi
 │   ├── vitals/            # optical_flow, chest_roi, rppg
 │   ├── alert/             # fusion, event, severity
 │   ├── hardware/          # camera, mic, ir_led, sensors, status_led
 │   └── utils/             # zmq_bus, zmq_protocol, config_loader, db, logger, thermal
-├── app/                   # React Native Expo app
-│   └── src/
-│       ├── screens/       # Alerts, Sessions, Settings, Setup
-│       └── services/      # MQTT client, BLE
-├── config/
-│   ├── config.yaml        # All service configuration
-│   └── mosquitto.conf     # MQTT broker config
-├── models/                # YAMNet + MoveNet INT8 .tflite files
-├── docs/
-│   ├── hardware_bom.md
-│   ├── wiring.md
-│   ├── installation.md
-│   ├── latency.md
-│   ├── test_results.md
-│   ├── known_issues.md
-│   └── benchmark_results.json   # Real measured benchmarks
+├── app/                   # React Native Expo (Alerts, Sessions, Settings, Setup screens)
+├── assets/                # README images (architecture, pipeline, sensor pod, app, privacy)
+├── config/                # config.yaml, mosquitto.conf, alert_rules embedded in config
+├── models/                # yamnet.tflite + movenet_lightning.tflite (INT8)
+├── docs/                  # hardware_bom, wiring, installation, latency, test_results, known_issues
 ├── tests/
-│   └── benchmark.py       # Runnable benchmark suite (Windows/Linux/Pi)
-├── scripts/
-│   ├── setup.sh
-│   ├── generate_certs.sh
-│   ├── supervisor.py
-│   └── monitor_resources.py
-└── systemd/               # systemd unit files for all services
+│   └── benchmark.py       # Runnable benchmark suite (no hardware required)
+├── scripts/               # setup.sh, generate_certs.sh, supervisor.py, monitor_resources.py
+└── systemd/               # systemd unit files for all 8 services
 ```
-
----
 
 ## Quick Start
 
-> Full guide: [docs/installation.md](docs/installation.md)
-
 ```bash
-# 1. Clone and install
-git clone https://github.com/ramil/noctivana.git
-cd noctivana
+git clone https://github.com/ramil/noctivana.git && cd noctivana
 pip install -r requirements.txt
-
-# 2. Generate TLS certificates
 bash scripts/generate_certs.sh
-
-# 3. Configure
-nano config/config.yaml   # set crib_roi, pin assignments
-
-# 4. Download models
-# Place yamnet.tflite and movenet_lightning.tflite in models/
-
-# 5. Start all services
+# Place yamnet.tflite + movenet_lightning.tflite in models/
 python scripts/supervisor.py
-
-# 6. Run benchmarks (Windows/Linux, no hardware required)
-python tests/benchmark.py
 ```
 
----
-
-## Running Benchmarks
-
-The benchmark suite runs entirely on Windows or Linux — no Raspberry Pi or sensors required:
+## Run Benchmarks (no hardware needed)
 
 ```bash
 python tests/benchmark.py
+# Runs 7 tests: YAMNet, MoveNet, optical flow, ZMQ latency, fusion logic, payload size, config
+# Results saved to docs/benchmark_results.json
 ```
-
-Tests executed:
-1. YAMNet INT8 inference — 50 runs, synthetic cry audio
-2. MoveNet Lightning INT8 inference — 50 runs, synthetic pose image
-3. Optical flow respiratory rate — 10 reference rates (15–60 bpm)
-4. ZMQ pub-sub latency — 300 messages, actual loopback
-5. Alert fusion logic — 13 correctness tests
-6. Alert payload size compliance (ALT-05: ≤ 512 bytes)
-7. Config loader — field access and load time
-
-Results are saved to `docs/benchmark_results.json`.
 
 ---
 
 <div align="center">
+<br/>
 
-**NOCTIVANA** — Built as a Final Year Engineering Grand Project, 2025  
-Solo development by [Ramil](https://github.com/ramil)
+**NOCTIVANA** — Final Year Engineering Grand Project, 2025
+
+*Solo development by Ramil*
 
 *"The best baby monitor is the one that never cries wolf."*
 
