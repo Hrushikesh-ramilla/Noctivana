@@ -2149,3 +2149,10 @@
 - Confirmed alert fires at 28.5C test
 - HOW DID WE MISS THIS FOR 7 WEEKS
 
+
+## 2025-08-11 - ok actually final build now for real
+- Fixed the Celsius/Fahrenheit bug
+- Re-tested temp alerting: works
+- All other tests still passing
+- v1.0-demo retag
+
