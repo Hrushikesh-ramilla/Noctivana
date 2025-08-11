@@ -1,0 +1,303 @@
+{
+  "yamnet": {
+    "mean_ms": 4.8,
+    "median_ms": 4.36,
+    "min_ms": 4.02,
+    "max_ms": 6.12,
+    "stdev_ms": 0.8,
+    "runs": 50,
+    "top5_indices": [
+      395,
+      208,
+      382,
+      133,
+      147
+    ],
+    "top5_scores": [
+      0.5,
+      0.2617,
+      0.2617,
+      0.1484,
+      0.1094
+    ],
+    "model_kb": 4030
+  },
+  "movenet": {
+    "mean_ms": 19.74,
+    "median_ms": 18.78,
+    "min_ms": 18.59,
+    "max_ms": 31.37,
+    "stdev_ms": 2.67,
+    "runs": 50,
+    "output_shape": [
+      1,
+      1,
+      17,
+      3
+    ],
+    "keypoints": {
+      "nose": 0.2458,
+      "left_eye": 0.2458,
+      "right_eye": 0.1966,
+      "left_ear": 0.2458,
+      "right_ear": 0.3646,
+      "left_shoulder": 0.2991,
+      "right_shoulder": 0.2458,
+      "left_elbow": 0.1966,
+      "right_elbow": 0.1966,
+      "left_wrist": 0.1966,
+      "right_wrist": 0.1966,
+      "left_hip": 0.3646,
+      "right_hip": 0.2991,
+      "left_knee": 0.3646,
+      "right_knee": 0.3646,
+      "left_ankle": 0.1966,
+      "right_ankle": 0.1966
+    },
+    "mean_kp_conf": 0.2598,
+    "max_kp_conf": 0.3646,
+    "model_kb": 2826
+  },
+  "optical_flow_resp": {
+    "rates_tested": [
+      15,
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50,
+      55,
+      60
+    ],
+    "within_4bpm": 10,
+    "total": 10,
+    "accuracy_pct": 100.0,
+    "mean_abs_error": 0.384,
+    "per_rate": {
+      "15": {
+        "estimated": 14.73,
+        "error": 0.27,
+        "pass": true,
+        "time_ms": 1283.4
+      },
+      "20": {
+        "estimated": 20.09,
+        "error": 0.09,
+        "pass": true,
+        "time_ms": 1282.0
+      },
+      "25": {
+        "estimated": 25.45,
+        "error": 0.45,
+        "pass": true,
+        "time_ms": 1272.4
+      },
+      "30": {
+        "estimated": 29.46,
+        "error": 0.54,
+        "pass": true,
+        "time_ms": 1287.7
+      },
+      "35": {
+        "estimated": 34.82,
+        "error": 0.18,
+        "pass": true,
+        "time_ms": 1287.0
+      },
+      "40": {
+        "estimated": 40.18,
+        "error": 0.18,
+        "pass": true,
+        "time_ms": 1293.7
+      },
+      "45": {
+        "estimated": 45.54,
+        "error": 0.54,
+        "pass": true,
+        "time_ms": 1290.4
+      },
+      "50": {
+        "estimated": 49.55,
+        "error": 0.45,
+        "pass": true,
+        "time_ms": 1330.5
+      },
+      "55": {
+        "estimated": 54.91,
+        "error": 0.09,
+        "pass": true,
+        "time_ms": 1286.0
+      },
+      "60": {
+        "estimated": 58.93,
+        "error": 1.07,
+        "pass": true,
+        "time_ms": 1281.1
+      }
+    }
+  },
+  "zmq_latency": {
+    "runs": 300,
+    "payload_bytes": 218,
+    "mean_ms": 0.215,
+    "median_ms": 0.202,
+    "p95_ms": 0.295,
+    "p99_ms": 0.418,
+    "min_ms": 0.17,
+    "max_ms": 1.239,
+    "stdev_ms": 0.075
+  },
+  "fusion": {
+    "total": 13,
+    "passed": 13,
+    "failed": 0,
+    "pass_rate": 100.0,
+    "tests": [
+      {
+        "test": "Prone fires: sustained 6s + still",
+        "pass": true,
+        "expected": "prone_position",
+        "expect_alert": true,
+        "got_types": [
+          "prone_position"
+        ]
+      },
+      {
+        "test": "Prone suppressed: restless motion",
+        "pass": true,
+        "expected": "prone_position",
+        "expect_alert": false,
+        "got_types": []
+      },
+      {
+        "test": "Prone NOT fired: only 3s sustained",
+        "pass": true,
+        "expected": "prone_position",
+        "expect_alert": false,
+        "got_types": []
+      },
+      {
+        "test": "Face occlusion fires: sustained 4s",
+        "pass": true,
+        "expected": "face_occlusion",
+        "expect_alert": true,
+        "got_types": [
+          "face_occlusion"
+        ]
+      },
+      {
+        "test": "Face occlusion NOT fired: only 2s",
+        "pass": true,
+        "expected": "face_occlusion",
+        "expect_alert": false,
+        "got_types": []
+      },
+      {
+        "test": "Resp absence fires: 20s absent + still",
+        "pass": true,
+        "expected": "resp_absence",
+        "expect_alert": true,
+        "got_types": [
+          "resp_absence"
+        ]
+      },
+      {
+        "test": "Resp absence suppressed: baby restless",
+        "pass": true,
+        "expected": "resp_absence",
+        "expect_alert": false,
+        "got_types": []
+      },
+      {
+        "test": "CO2 warn fires at 1100 ppm",
+        "pass": true,
+        "expected": "co2_high",
+        "expect_alert": true,
+        "got_types": [
+          "co2_high"
+        ]
+      },
+      {
+        "test": "CO2 no alert at 800 ppm",
+        "pass": true,
+        "expected": "co2_high",
+        "expect_alert": false,
+        "got_types": []
+      },
+      {
+        "test": "Temp high fires at 29.5 C",
+        "pass": true,
+        "expected": "temp_high",
+        "expect_alert": true,
+        "got_types": [
+          "temp_high"
+        ]
+      },
+      {
+        "test": "Temp no alert at 25.0 C",
+        "pass": true,
+        "expected": "temp_high",
+        "expect_alert": false,
+        "got_types": []
+      },
+      {
+        "test": "Loud event fires: 75dB sustained 5+ readings",
+        "pass": true,
+        "expected": "loud_event",
+        "expect_alert": true,
+        "got_types": [
+          "loud_event"
+        ]
+      },
+      {
+        "test": "Loud event NOT fired: below threshold 65dB",
+        "pass": true,
+        "expected": "loud_event",
+        "expect_alert": false,
+        "got_types": []
+      }
+    ]
+  },
+  "payload_size": {
+    "payloads": [
+      {
+        "type": "prone_position",
+        "bytes": 194,
+        "pass": true
+      },
+      {
+        "type": "face_occlusion",
+        "bytes": 206,
+        "pass": true
+      },
+      {
+        "type": "resp_absence",
+        "bytes": 211,
+        "pass": true
+      },
+      {
+        "type": "co2_high",
+        "bytes": 194,
+        "pass": true
+      },
+      {
+        "type": "temp_high",
+        "bytes": 184,
+        "pass": true
+      },
+      {
+        "type": "loud_event",
+        "bytes": 183,
+        "pass": true
+      }
+    ],
+    "all_pass": true
+  },
+  "config": {
+    "load_ms": 13.761,
+    "pass": 5,
+    "total": 5
+  }
+}
