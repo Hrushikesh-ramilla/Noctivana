@@ -2103,3 +2103,8 @@
 - rPPG: distance limitation documented
 - Recommendation: if rPPG needed, dedicated camera at 30cm distance
 
+
+## 2025-08-11 - cleanup: remove tmp files, test audio clips, debug images
+- rm scripts/test_*.wav debug/*.jpg  
+- Repo size reduced from 47MB to 12MB
+
