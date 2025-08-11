@@ -2128,3 +2128,10 @@
 - test_results.md fully updated with all criteria
 - All PASS green, marginals noted
 
+
+## 2025-08-11 - final demo stable build
+- Frozen requirements, clean code, all tests passing
+- Services tested on Pi
+- App installed on demo phone
+- Ready! (hopefully)
+
