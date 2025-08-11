@@ -2135,3 +2135,10 @@
 - App installed on demo phone
 - Ready! (hopefully)
 
+
+## 2025-08-11 - WAIT env alert threshold was in celsius but config had fahrenheit??
+- Found during demo rehearsal: temp alerts never fired in 7 weeks of testing
+- config.yaml had temp_high_c: 82.4 (which is 28C in Fahrenheit notation)
+- 82.4C would NEVER be reached in a nursery!
+- This is why overnight never got temp WARN alert
+
