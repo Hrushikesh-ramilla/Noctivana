@@ -2108,3 +2108,8 @@
 - rm scripts/test_*.wav debug/*.jpg  
 - Repo size reduced from 47MB to 12MB
 
+
+## 2025-08-11 - cleanup: remove dead code paths and commented-out experiments
+- Removed commented-out spectral TV detection, old peak-counting breath detector
+- Removed unused imports in multiple files
+
