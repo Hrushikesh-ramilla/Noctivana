@@ -2123,3 +2123,8 @@
 - pip freeze > requirements.txt
 - All packages pinned to exact working versions
 
+
+## 2025-08-11 - add acceptance test results table to docs/
+- test_results.md fully updated with all criteria
+- All PASS green, marginals noted
+
