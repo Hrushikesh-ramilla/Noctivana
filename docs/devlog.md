@@ -275,3 +275,9 @@
 - Within budget (600MB allocated)
 - psutil.Process().memory_info().rss
 
+
+## 2025-07-05 - optical flow resp rate garbage
+- Running on full frame: motion vectors from everything (fan, person moving)
+- Getting 5-60 bpm randomly - useless
+- Need to isolate chest ROI using MoveNet pose keypoints
+
