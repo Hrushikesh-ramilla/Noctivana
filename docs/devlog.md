@@ -287,3 +287,9 @@
 - Still very noisy - values jumping ±10 bpm
 - 30-second averaging window helps
 
+
+## 2025-07-06 - filtered resp signal
+- Bandpass filter output is much cleaner
+- Dominant frequency in 0.15-1Hz range now detected reliably
+- Estimated 18-35 bpm range (physiological for infant)
+
