@@ -281,3 +281,9 @@
 - Getting 5-60 bpm randomly - useless
 - Need to isolate chest ROI using MoveNet pose keypoints
 
+
+## 2025-07-05 - optical flow on chest roi
+- Getting some periodic signal now!
+- Still very noisy - values jumping ±10 bpm
+- 30-second averaging window helps
+
