@@ -315,3 +315,16 @@
 - BH1750 drops below 5 lux -> IR LED on -> camera switches to manual exposure
 - Can see doll in complete darkness
 
+
+## 2025-07-08 - MoveNet accuracy drops in IR mode
+- Normal mode: ~95% keypoint confidence
+- IR mode: ~55% keypoint confidence
+- Grainy IR image loses fine detail
+- Need to improve contrast before inference
+
+
+## 2025-07-08 - CLAHE in IR mode
+- CLAHE clipLimit=3.0 gives better local contrast
+- MoveNet accuracy in IR: ~75% vs ~95% day
+- Acceptable for monitoring, especially for prone/occlusion
+
