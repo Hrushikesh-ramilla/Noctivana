@@ -363,3 +363,8 @@
 - Barely above 5fps target (NFR-P2)
 - Need to keep careful eye on this
 
+
+## 2025-07-11 - false resp absence
+- Baby rolling over = optical flow spike then quiescence = 'no breathing'
+- Suppression: if vision/motion shows restless within last 10s, skip absence alarm
+
