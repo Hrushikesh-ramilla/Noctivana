@@ -373,3 +373,8 @@
 - PUB socket on tcp://localhost:5555 sending hello every 1s
 - SUB socket receives correctly. ZMQ working.
 
+
+## 2025-06-28 - zmq topic-based filtering test
+- Topics work as byte-prefix filters
+- SUB('env') only gets env/climate, not audio/cry
+
