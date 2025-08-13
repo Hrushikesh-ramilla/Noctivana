@@ -378,3 +378,13 @@
 - Topics work as byte-prefix filters
 - SUB('env') only gets env/climate, not audio/cry
 
+
+## 2025-06-28 - env service config: threshold values from config.yaml
+- All thresholds read from config.yaml
+- No hardcoded values in service code
+
+
+## 2025-06-28 - env service publishes to zmq, tested with subscriber script
+- Test subscriber receives env/climate messages at 1Hz
+- JSON payload: temp_c, humidity, co2_ppm, tvoc_ppb, lux
+
