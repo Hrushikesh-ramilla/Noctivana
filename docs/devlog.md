@@ -388,3 +388,8 @@
 - Test subscriber receives env/climate messages at 1Hz
 - JSON payload: temp_c, humidity, co2_ppm, tvoc_ppb, lux
 
+
+## 2025-06-28 - add timestamp to all zmq messages, iso8601 format
+- Added ts: time.time() field to all messages
+- Alert engine can calculate latency from ts field
+
