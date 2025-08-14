@@ -416,3 +416,9 @@
 - Fix: audio.astype(float32) / 32768.0
 - Now: Baby cry: 0.41, Speech: 0.28, Silence: 0.12 on test clip
 
+
+## 2025-06-29 - cry detection test - picks up baby cry but also triggers on cat/alarm sounds
+- Playing YouTube baby cry: correctly detected hunger_cry
+- Playing alarm clock: also triggers (alarm class similar freq)
+- Need confidence threshold filtering
+
