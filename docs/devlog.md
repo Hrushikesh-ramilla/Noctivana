@@ -422,3 +422,9 @@
 - Playing alarm clock: also triggers (alarm class similar freq)
 - Need confidence threshold filtering
 
+
+## 2025-06-30 - yamnet on pi: inference takes ~120ms per 0.96s window, good
+- Pi4 inference: 115-125ms average
+- 0.96s audio window = run ~8/sec theoretical max
+- At 2/sec (HOP=0.48s) we use 25% of latency budget
+
