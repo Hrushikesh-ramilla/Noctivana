@@ -393,3 +393,8 @@
 - Added ts: time.time() field to all messages
 - Alert engine can calculate latency from ts field
 
+
+## 2025-06-29 - add models/ to gitignore, too large for git
+- Actually yamnet.tflite is only 917KB - commit it
+- Updated .gitignore: only exclude .bin, keep .tflite < 5MB
+
