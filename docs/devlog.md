@@ -459,3 +459,8 @@
 - Acoustic breath = supplementary AUD-02 feature
 - Primary respiratory monitoring = optical flow (vitals_service)
 
+
+## 2025-07-01 - refactor audio_service: separate threads for cry, db, breath
+- Split into 3 threads: CryThread, DBThread, BreathThread
+- Shared mic buffer accessed from multiple threads
+
