@@ -428,3 +428,8 @@
 - 0.96s audio window = run ~8/sec theoretical max
 - At 2/sec (HOP=0.48s) we use 25% of latency budget
 
+
+## 2025-06-30 - yamnet top-5 classes output, need to map to our cry categories
+- Top 5 output is enough, need label->category mapping
+- Added cry_mapping.yaml for audio classifier
+
