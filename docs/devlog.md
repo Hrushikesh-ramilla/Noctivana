@@ -498,3 +498,8 @@
 - After ROI crop: no more furniture detections
 - Keypoints center on infant/doll only
 
+
+## 2025-07-02 - visualize keypoints overlaid on frame, save to debug/ folder
+- Using cv2.circle to draw keypoints by confidence (green=high, red=low)
+- Very helpful to see which keypoints survive from ceiling angle
+
