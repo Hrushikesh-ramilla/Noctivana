@@ -537,3 +537,9 @@
 - Vision service loop: capture -> ROI crop -> upscale -> MoveNet -> classify -> ZMQ
 - First full pipeline working end to end
 
+
+## 2025-07-03 - forgot to close camera on service shutdown, resource leak
+- On SIGTERM, camera.stop() not called
+- picamera2 holds fd open, next run fails with 'camera already in use'
+- Fixed: atexit.register(camera.stop) + try/finally in run()
+
