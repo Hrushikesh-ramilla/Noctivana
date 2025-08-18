@@ -549,3 +549,8 @@
 - Budget: 600MB. Acceptable but close.
 - Will monitor during soak tests
 
+
+## 2025-07-03 - add psutil to requirements.txt
+- Added psutil==5.9.8 to requirements.txt
+- Used for memory monitoring in resource_monitor.py
+
