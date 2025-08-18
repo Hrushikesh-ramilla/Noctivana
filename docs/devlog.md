@@ -566,3 +566,9 @@
 - Dominant frequency in 0.15-1Hz range = respiration rate
 - Should be more robust than peak counting
 
+
+## 2025-07-06 - 30-second sliding window for respiratory averaging
+- deque(maxlen=150) for 30s at 5fps
+- FFT on full window -> dominant freq -> bpm
+- Reduces variance compared to 10-second windows
+
