@@ -543,3 +543,9 @@
 - picamera2 holds fd open, next run fails with 'camera already in use'
 - Fixed: atexit.register(camera.stop) + try/finally in run()
 
+
+## 2025-07-03 - vision_service memory usage: ~580MB, within budget
+- psutil.Process().memory_info().rss = 580MB
+- Budget: 600MB. Acceptable but close.
+- Will monitor during soak tests
+
