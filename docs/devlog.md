@@ -589,3 +589,14 @@
 - Reduces variance but adds responsiveness lag
 - Acceptable tradeoff for trend monitoring
 
+
+## 2025-07-06 - vitals service publishes resp rate to zmq topic vitals/resp
+- ZMQ topic: vitals/resp {bpm, confidence, method}
+- method='optical_flow', confidence=FFT peak ratio
+
+
+## 2025-07-06 - vitals service needs pose data from vision service for chest roi
+- vitals_service needs keypoints to extract chest ROI
+- Cannot import vision_service directly (separate processes)
+- Solution: subscribe to vision/pose ZMQ topic
+
