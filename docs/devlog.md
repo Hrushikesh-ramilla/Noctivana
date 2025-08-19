@@ -611,3 +611,13 @@
 - env_service now uses zmq_protocol.encode() for all publishes
 - Subscriber test confirms format compatibility
 
+
+## 2025-07-07 - update audio_service to use new zmq protocol
+- audio_service updated to standard message format
+- Existing subscribers still receive messages correctly
+
+
+## 2025-07-07 - update vision_service to use new zmq protocol
+- vision_service: all pub.send() calls use standard format
+- Pose, occlusion, motion messages all standardized
+
