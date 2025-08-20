@@ -649,3 +649,8 @@
 - Adaptive per-tile normalization preserves local features better
 - MoveNet keypoint confidence improves +12% vs no equalization
 
+
+## 2025-07-08 - add clahe preprocessing to vision service ir mode path
+- vision_service: if night_mode -> CLAHE before MoveNet inference
+- Only applied in IR mode (adds 5ms overhead)
+
