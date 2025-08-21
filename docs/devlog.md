@@ -692,3 +692,15 @@
 - low: 2-8% pixels changed
 - restless: >8% pixels changed
 
+
+## 2025-07-09 - add motion tracking to vision_service, publishes vision/motion
+- vision/motion message: {level, changed_pct, window_avg}
+- Published every other frame to save CPU
+
+
+## 2025-07-10 - refactor: split vision into pose.py, occlusion.py, motion.py, night_mode.py
+- pose.py: PoseEstimator class (MoveNet inference)
+- occlusion.py: OcclusionDetector class
+- motion.py: MotionTracker class
+- night_mode.py: NightModeController class
+
