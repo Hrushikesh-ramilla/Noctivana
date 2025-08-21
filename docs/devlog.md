@@ -671,3 +671,8 @@
 - 40% of face keypoints must be low-confidence for daytime occlusion
 - Not just one keypoint dropping out (e.g. nose clipped at edge)
 
+
+## 2025-07-09 - face bbox estimation from ear/eye keypoints when partially visible
+- If only ears visible, estimate full facial bbox from ear positions
+- Helps measure coverage percentage more accurately
+
