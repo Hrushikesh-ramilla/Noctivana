@@ -714,3 +714,8 @@
 - Circular import resolved: Camera not imported in submodules
 - Frame passed directly as numpy array to OcclusionDetector, MotionTracker
 
+
+## 2025-07-10 - add frame counter and fps logging to vision service
+- Log FPS every 100 frames
+- Frame counter used for alternating occlusion/motion checks
+
