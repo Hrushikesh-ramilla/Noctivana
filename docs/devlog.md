@@ -719,3 +719,10 @@
 - Log FPS every 100 frames
 - Frame counter used for alternating occlusion/motion checks
 
+
+## 2025-07-10 - experiment: skip occlusion check every other frame to save cpu
+- Running occlusion every frame: 4.8fps
+- Running every other frame: 5.1fps
+- Note: occlusion still runs every frame since it's safety-critical (VIS-02)
+- Motion tracking alternated instead
+
