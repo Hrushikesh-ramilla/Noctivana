@@ -748,3 +748,9 @@
 - VIT-05 implemented: suppress_resp_alarm if motion=='restless'
 - Cooldown 10s after motion stops before monitoring resumes
 
+
+## 2025-07-11 - add cooldown period after gross movement: wait 10s before monitoring resp
+- motion_cooldown_s = 10 seconds after restless motion
+- _last_motion_t tracks last restless event
+- Only alarm if now - _last_motion_t > 10s AND no bpm for 15s
+
