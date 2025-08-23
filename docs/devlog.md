@@ -754,3 +754,8 @@
 - _last_motion_t tracks last restless event
 - Only alarm if now - _last_motion_t > 10s AND no bpm for 15s
 
+
+## 2025-07-12 - alert_engine.py first version: subscribe all zmq topics
+- alert_engine subscribes to: audio/cry, audio/dblevel, audio/breath,
+  vision/pose, vision/occlusion, vision/motion, vitals/resp, vitals/resp_absence, env/climate
+
