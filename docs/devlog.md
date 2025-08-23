@@ -769,3 +769,9 @@
 - AlertEvent.to_payload() generates ALT-05 compliant JSON
 - Max 512 bytes confirmed
 
+
+## 2025-07-12 - alert engine v1: just forwards every sensor event as alert
+- First version: every ZMQ message -> MQTT alert
+- Result: 100+ alerts per minute, completely useless
+- Need fusion logic
+
