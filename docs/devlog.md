@@ -781,3 +781,8 @@
 - Need to aggregate signals before alerting
 - Starting v2: severity mapping per event type
 
+
+## 2025-07-12 - alert engine v2: severity mapping per event type
+- prone -> CRITICAL, temp_high -> WARN, loud_event -> WARN, resp_absence -> CRITICAL
+- Still too many alerts but at least severity is meaningful
+
