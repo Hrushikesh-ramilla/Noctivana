@@ -825,3 +825,9 @@
 - If skeleton_size > 120px -> suppress all pose-based CRITICAL alerts
 - Hacky but works. Will improve later.
 
+
+## 2025-07-13 - fusion testing: fewer false criticals but still some edge cases
+- Scenario: baby rolling over slowly -> brief prone -> alert
+- But this is correct behaviour! rolling into prone IS dangerous
+- Need to differentiate: settling in prone vs transitional prone
+
