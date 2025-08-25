@@ -836,3 +836,9 @@
 - Added fusion decision logging to alert_engine.log
 - Each evaluation cycle logged: events received, rules checked, alerts fired
 
+
+## 2025-07-12 - alert engine v3: require 2+ signals for CRITICAL
+- FusionEngine.evaluate() checks all buffers
+- CRITICAL rules require corroborating evidence
+- Implemented fusion.py with 5 fusion rules
+
