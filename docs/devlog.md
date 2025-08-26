@@ -864,3 +864,13 @@
 - Real sustained noise (vacuum cleaner, alarm) stays constant >5s
 - Increased db alert requirement from 3s to 5s sustained
 
+
+## 2025-07-14 - false alarm filter config in yaml: rules as config not code
+- config/alert_rules.yaml: threshold values, suppression conditions
+- alert_engine loads rules on start + hot-reload on config change
+
+
+## 2025-07-14 - alert rules yaml schema: conditions, suppressions, thresholds
+- alert_rules.yaml: each rule has threshold, suppress conditions, rate_limit
+- FusionEngine reads from config.get('rules')
+

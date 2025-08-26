@@ -1,0 +1,31 @@
+# Alert fusion rules and suppression conditions
+rules:
+  prone:
+    min_sustained_s: 5.0
+    suppress_if_restless: true
+    suppress_if_caregiver: true
+    rate_limit_s: 60
+
+  face_occlusion:
+    min_sustained_s: 3.0
+    suppress_if_caregiver: true
+    rate_limit_s: 60
+
+  resp_absence:
+    min_absent_s: 15.0
+    require_motion_still: true
+    rate_limit_s: 120
+
+  temp_high:
+    threshold_c: 28.0
+    rate_limit_s: 300
+
+  co2_high:
+    warn_ppm: 1000
+    critical_ppm: 2000
+    rate_limit_s: 300
+
+  loud_event:
+    threshold_db: 70.0
+    min_sustained_s: 5.0
+    rate_limit_s: 120
