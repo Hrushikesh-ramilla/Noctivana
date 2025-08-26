@@ -885,3 +885,8 @@
 - Dict nested properly in YAML but get() only 2 levels deep
 - Fixed: use cfg['rules']['prone']['min_sustained_s'] with .get()
 
+
+## 2025-07-14 - alert payload format: json with all required fields per ALT-05
+- AlertEvent.to_payload(): ts, type, severity, sensors[], confidence, value, message
+- Max payload size: 347 bytes (tested with longest possible values)
+
