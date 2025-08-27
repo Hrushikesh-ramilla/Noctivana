@@ -905,3 +905,8 @@
 - scripts/generate_certs.sh: openssl req to generate CA + server cert
 - Stored in config/certs/ (gitignored)
 
+
+## 2025-07-15 - mosquitto config with tls, port 8883
+- config/mosquitto.conf: TLS on port 8883
+- sudo mosquitto -c config/mosquitto.conf
+
