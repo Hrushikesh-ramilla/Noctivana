@@ -915,3 +915,13 @@
 - pip install paho-mqtt==2.0.0
 - Test script: connect, publish 'hello', subscribe on another terminal
 
+
+## 2025-07-15 - alert engine publishes to mqtt topic edgewatch/alert/#
+- Topics: edgewatch/alert/critical, edgewatch/alert/warn, edgewatch/alert/info
+- Retain=True so late subscribers get last alert
+
+
+## 2025-07-15 - mqtt test subscriber receives alerts from alert engine!
+- First end-to-end test! sensor -> zmq -> alert_engine -> mqtt -> subscriber
+- Alert received in 5.8 seconds from event trigger
+
