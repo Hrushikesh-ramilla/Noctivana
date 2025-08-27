@@ -895,3 +895,8 @@
 - json.dumps(event.to_payload()) -> 347 bytes worst case
 - Well within ALT-05: 512 bytes max
 
+
+## 2025-07-15 - install mosquitto mqtt broker
+- sudo apt install mosquitto mosquitto-clients
+- Default config: port 1883 no TLS
+
