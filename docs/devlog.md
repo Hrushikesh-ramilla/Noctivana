@@ -961,3 +961,8 @@
 - STILL_THRESHOLD_S = 300 seconds (5 minutes)
 - Both motion=still AND no cry detected in that window
 
+
+## 2025-07-16 - sleep end: sustained motion + cry detected
+- End condition: restless motion for >1min OR cry detected during session
+- For now: manual session end from parent app as fallback
+
