@@ -995,3 +995,9 @@
 - CFLAGS='-DSQLITE_HAS_CODEC' pip install pysqlcipher3
 - Took 3 hours total
 
+
+## 2025-07-17 - session logging works, encrypted db confirmed with hex dump
+- hexdump sessions.db | head -> SQLite header NOT visible (encrypted!)
+- With correct key: SELECT * FROM sessions -> rows visible
+- NFR-S2 confirmed
+
