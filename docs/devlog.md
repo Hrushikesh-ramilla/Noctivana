@@ -1007,3 +1007,9 @@
 - Using bluezero library (wraps BlueZ D-Bus API)
 - pip install bluezero
 
+
+## 2025-07-18 - reading bluez documentation... this is painful
+- BlueZ D-Bus API has minimal Python docs
+- bluezero is better but also sparse
+- Looking at example peripheral code
+
