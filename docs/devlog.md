@@ -1064,3 +1064,14 @@
 - Multiple services binding PUB socket on same port = EADDRINUSE
 - Need a single XPUB/XSUB proxy that all services connect to
 
+
+## 2025-07-19 - multiple publishers binding same port = conflict
+- ZMQ bind() can only be called once per address
+- Each service must connect() not bind()
+- Need a proxy process that does bind()
+
+
+## 2025-07-19 - zmq architecture fix: one XPUB/XSUB proxy, services connect not bind
+- zmq_proxy.py: binds XPUB (5555) and XSUB (5556)
+- All services: Publisher connects to port 5556, Subscriber to 5555
+
