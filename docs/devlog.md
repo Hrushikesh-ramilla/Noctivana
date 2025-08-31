@@ -1048,3 +1048,14 @@
 - Enable notification: Pi sends 'test' payload
 - Android nRF Connect receives notification
 
+
+## 2025-07-18 - ble service subscribes to alert engine, forwards CRITICAL via notify
+- BLE service subscribes to alert/trigger ZMQ topic
+- On CRITICAL/WARN severity: notify connected BLE client
+- If not connected: queue for delivery on reconnect (ALT-04)
+
+
+## 2025-07-19 - first full integration test: start ALL services simultaneously
+- Starting: zmq_proxy, env, audio, vision, vitals, alert_engine, session, ble
+- All services launched via supervisor.py
+
