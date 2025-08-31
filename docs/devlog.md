@@ -1042,3 +1042,9 @@
 - Connected successfully
 - Service and characteristic visible
 
+
+## 2025-07-18 - gatt read works, notification works, android confirmed
+- Read characteristic: returns current timestamp
+- Enable notification: Pi sends 'test' payload
+- Android nRF Connect receives notification
+
