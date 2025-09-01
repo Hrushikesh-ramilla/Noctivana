@@ -1091,3 +1091,9 @@
 - ZMQ messages flowing through proxy
 - Progress!
 
+
+## 2025-07-19 - but vision service crashes after 3 min with OOM
+- Crash: MemoryError in numpy during optical flow
+- psutil shows vision_service RAM at 1.5GB (!)
+- Memory leak: OpenCV frames accumulating
+
