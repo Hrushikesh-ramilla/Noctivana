@@ -1109,3 +1109,15 @@
 - gc.collect() every 100 frames
 - Memory stable at 620MB after fix
 
+
+## 2025-07-20 - integration test #3: runs 12 min then audio service hangs
+- Audio service stopped responding after 12 min
+- No crash, just hung - buffer growing unbounded
+- collections.deque maxlen not set
+
+
+## 2025-07-20 - fix audio: replace growing list with collections.deque(maxlen=50)
+- Audio inference buffer was plain list(), grew to 50k items
+- Changed to deque(maxlen=50) = keep last 50 windows
+- Memory stays bounded
+
