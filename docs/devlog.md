@@ -1075,3 +1075,13 @@
 - zmq_proxy.py: binds XPUB (5555) and XSUB (5556)
 - All services: Publisher connects to port 5556, Subscriber to 5555
 
+
+## 2025-07-19 - add zmq proxy process: src/services/zmq_proxy.py
+- zmq_proxy.py runs as separate process
+- Must start before all other services
+
+
+## 2025-07-19 - update all services to connect to proxy instead of binding
+- Updated zmq_bus.py Publisher to connect to SUB_ADDR (5556)
+- Updated zmq_bus.py Subscriber to connect to PUB_ADDR (5555)
+
