@@ -1085,3 +1085,9 @@
 - Updated zmq_bus.py Publisher to connect to SUB_ADDR (5556)
 - Updated zmq_bus.py Subscriber to connect to PUB_ADDR (5555)
 
+
+## 2025-07-19 - integration test #2: services start without port conflict
+- All 8 services start cleanly
+- ZMQ messages flowing through proxy
+- Progress!
+
