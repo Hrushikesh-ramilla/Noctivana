@@ -1121,3 +1121,10 @@
 - Changed to deque(maxlen=50) = keep last 50 windows
 - Memory stays bounded
 
+
+## 2025-07-20 - integration test #4: 30 min stable!! all services running
+- 30 minute continuous run: 0 crashes
+- RAM: 1.7GB total across all services
+- CPU: 65%
+- Temp: 58C
+
