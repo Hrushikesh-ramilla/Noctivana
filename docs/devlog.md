@@ -1128,3 +1128,14 @@
 - CPU: 65%
 - Temp: 58C
 
+
+## 2025-07-20 - add resource monitor script: logs cpu, ram, temp per service
+- scripts/monitor_resources.py: psutil per-process stats
+- Logs every 60s: cpu%, mem_rss, pi_temp
+
+
+## 2025-07-20 - add process supervisor script, restarts crashed services
+- scripts/supervisor.py: subprocess.Popen for each service
+- Polling every 10s
+- Restarts crashed services with 3s delay
+
