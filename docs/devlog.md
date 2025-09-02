@@ -1144,3 +1144,8 @@
 - SIGTERM -> terminate all child processes cleanly
 - Each service has startup delay to avoid boot race conditions
 
+
+## 2025-07-20 - systemd unit files for all services
+- systemd/edgewatch-*.service for each service
+- Restart=always + RestartSec=5 for auto-recovery (NFR-R2)
+
