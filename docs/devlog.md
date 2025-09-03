@@ -1160,3 +1160,9 @@
 - 10 prone placements, 7 triggered alert
 - Target: 9/10
 
+
+## 2025-07-21 - movenet confidence very low on small doll from 1.5m ceiling height
+- At 1.5m the doll is ~60x40px in 640x480 frame
+- MoveNet input is 192x192 - doll is tiny fraction of it
+- Need to upscale crib crop before inference
+
