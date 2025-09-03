@@ -1182,3 +1182,8 @@
 - INTER_LINEAR resize: +50ms, fps=4.2
 - Below 5fps target (NFR-P2)
 
+
+## 2025-07-21 - use cv2.INTER_LINEAR instead of INTER_CUBIC for resize, saves 15ms
+- Switched from INTER_CUBIC to INTER_LINEAR for ROI upscale
+- Quality difference minimal at this small scale
+
