@@ -1236,3 +1236,14 @@
 - Low power (2fps): 40% CPU, 50C
 - Significant thermal and performance improvement
 
+
+## 2025-07-22 - problem: low power -> full wake takes 1.5s, blanket in that window?
+- Camera set_fps(2) -> lag to first 5fps frame ~1.5s
+- Could miss face occlusion event starting during this window
+
+
+## 2025-07-22 - solution: always run occlusion check even in low power (at 2fps)
+- Occlusion check runs every frame regardless of low-power state
+- Only motion tracking and rPPG are reduced
+- Safety-critical features always at full rate
+
