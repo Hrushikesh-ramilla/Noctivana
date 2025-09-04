@@ -1204,3 +1204,14 @@
 - Using 0.25 in config (prone_confidence: 0.25)
 - Higher sensitivity = some false positives but safer
 
+
+## 2025-07-21 - latency measurement: event to alert in 5.8 seconds average
+- Measured: camera event -> ZMQ -> fusion -> MQTT publish
+- Average: 5.8s, 95th percentile: 7.2s
+- Under 8s target (NFR-P1)
+
+
+## 2025-07-21 - document latency breakdown in docs/latency.md
+- Breakdown: capture 200ms, inference 150ms, zmq 20ms, fusion 100ms, mqtt 80ms, network 200ms
+- Total ~750ms for Pi, network/app adds the rest
+
