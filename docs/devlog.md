@@ -1215,3 +1215,13 @@
 - Breakdown: capture 200ms, inference 150ms, zmq 20ms, fusion 100ms, mqtt 80ms, network 200ms
 - Total ~750ms for Pi, network/app adds the rest
 
+
+## 2025-07-22 - low power mode: reduce to 2fps when baby still for >5min
+- NFR-P4: low-power monitoring when baby still
+- _enter_low_power(): camera.set_fps(2), pause rPPG
+
+
+## 2025-07-22 - low power pauses rppg and reduces vision processing
+- In low power: vitals_service skips rPPG (~20% CPU saving)
+- vision_service at 2fps: ~15% CPU saving
+
