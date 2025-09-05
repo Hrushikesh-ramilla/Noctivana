@@ -1247,3 +1247,14 @@
 - Only motion tracking and rPPG are reduced
 - Safety-critical features always at full rate
 
+
+## 2025-07-22 - startup self-test: check camera, mic, i2c sensors, report status
+- NFR-R3: self-test on startup
+- Each service publishes self-test result to zmq startup/selftest
+
+
+## 2025-07-22 - self-test publishes results to zmq + logs to file
+- SelfTest results: {camera: ok/fail, mic: ok/fail, scd40: ok/fail, ...}
+- Published to startup/selftest ZMQ topic
+- Alert engine reads it, issues WARN if any critical sensor missing
+
