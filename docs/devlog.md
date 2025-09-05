@@ -1288,3 +1288,9 @@
 - Interpolation adds structured noise that mimics pulse signal
 - Makes results worse not better
 
+
+## 2025-07-23 - rppg readings: 45, 120, 89, 200, 33... this is noise
+- Consecutive readings: 45->120->89->200->33 bpm
+- Physiologically impossible variation
+- This is random noise in the FFT output
+
