@@ -1264,3 +1264,15 @@
 - If mic=fail: WARN alert (non-critical)
 - If all=ok: LED green, ready
 
+
+## 2025-07-23 - rppg attempt #1: extract green channel from face ROI
+- Green channel: best photoplethysmographic signal in skin
+- Extract face region using upper-center of frame
+- Compute mean green value per frame
+
+
+## 2025-07-23 - rppg theory: subtle green channel variation = pulse
+- Blood absorption peak around 550nm (green light)
+- As heart pumps: skin blood volume changes slightly
+- Camera detects this as tiny green channel oscillation
+
