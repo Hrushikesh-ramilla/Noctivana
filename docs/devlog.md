@@ -1317,3 +1317,9 @@
 - Clearly labeled 'experimental' in app and payload
 - Will not use for any safety-critical fusion rules
 
+
+## 2025-07-23 - mark rppg as experimental, add disclaimer in zmq payload
+- experimental: True field in all rPPG payloads
+- Confidence capped at 0.5 maximum
+- App shows disclaimer: 'Experimental - accuracy not guaranteed'
+
