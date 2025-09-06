@@ -1311,3 +1311,9 @@
 - Reduces noise from ROI misalignment
 - Marginal improvement only
 
+
+## 2025-07-23 - rppg marginally better but fundamentally unreliable at this distance
+- Decision: accept rPPG as experimental/POC
+- Clearly labeled 'experimental' in app and payload
+- Will not use for any safety-critical fusion rules
+
