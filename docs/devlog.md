@@ -1305,3 +1305,9 @@
 - Better range but still physiologically implausible variation
 - Fundamental problem: signal too weak at ceiling distance
 
+
+## 2025-07-23 - add face tracking ema for roi stabilization
+- EMA smoothing on face ROI position: prevents ROI jumping
+- Reduces noise from ROI misalignment
+- Marginal improvement only
+
