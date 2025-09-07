@@ -1323,3 +1323,8 @@
 - Confidence capped at 0.5 maximum
 - App shows disclaimer: 'Experimental - accuracy not guaranteed'
 
+
+## 2025-07-24 - rppg: only enable when baby face-up + still + good lighting
+- Conditional: run rPPG only when pose=supine AND motion=still AND lux>50
+- Reduces garbage readings from non-ideal conditions
+
