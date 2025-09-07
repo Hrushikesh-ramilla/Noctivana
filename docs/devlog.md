@@ -1345,3 +1345,8 @@
 - Regression from 78%! Optical flow params changed during refactor
 - Farneback poly_n was changed from 7 to 5 (less accurate)
 
+
+## 2025-07-24 - optical flow params were changed during refactor, oops
+- Found the culprit: FB_PARAMS poly_n=5 (changed from 7 to save CPU)
+- Restoring to poly_n=7
+
