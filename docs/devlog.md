@@ -1328,3 +1328,15 @@
 - Conditional: run rPPG only when pose=supine AND motion=still AND lux>50
 - Reduces garbage readings from non-ideal conditions
 
+
+## 2025-07-24 - rppg publishes to vitals/rppg with experimental flag
+- vitals/rppg: {bpm, confidence, experimental: True}
+- Alert engine ignores rPPG for fusion rules
+- App shows as 'indicative only'
+
+
+## 2025-07-24 - revisit resp rate: test with metronome-controlled breathing sim
+- Built mechanical breathing sim: small motor + balloon on metronome
+- Set to 30 bpm, measure optical flow output
+- More controlled than previous ad-hoc tests
+
