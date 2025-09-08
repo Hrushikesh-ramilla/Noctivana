@@ -1373,3 +1373,8 @@
 - VIS-03 complete: BH1750 -> NightModeController -> IR LED + camera exposure
 - Transition buffer (1.5s) prevents false alerts during switch
 
+
+## 2025-07-25 - ir led brightness control via pwm, not just on/off
+- PWM duty cycle: 100% for full darkness, 50% for dim conditions
+- Smoother transition at light/dark boundary
+
