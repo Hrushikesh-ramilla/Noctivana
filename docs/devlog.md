@@ -1388,3 +1388,9 @@
 - NightModeController.in_transition(): True for 1.5s after mode switch
 - Alert engine: suppress position/occlusion alerts during transition
 
+
+## 2025-07-25 - env_service: add logging to csv file per session
+- ENV-05: real-time data + local CSV logging
+- CSV: timestamp, temp_c, humidity, co2_ppm, tvoc_ppb, lux
+- One CSV per session
+
