@@ -1422,3 +1422,9 @@
 - Supervisor restarts service if heartbeat absent for 30s
 - NFR-R2 implementation complete
 
+
+## 2025-08-01 - all services report heartbeat to supervisor every 10s
+- Added heartbeat thread to each service
+- Heartbeat: touch a PID file every 10s
+- Supervisor checks file mtime to verify liveness
+
