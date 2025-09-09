@@ -1416,3 +1416,9 @@
 - Test checklist: all services start, mqtt connects, ble advertises
 - Monitor: RAM < 2.5GB, temp < 80C, no crashes
 
+
+## 2025-08-01 - add watchdog timer in supervisor: restart if service unresponsive 30s
+- Each service sends heartbeat to supervisor every 10s
+- Supervisor restarts service if heartbeat absent for 30s
+- NFR-R2 implementation complete
+
