@@ -1428,3 +1428,14 @@
 - Heartbeat: touch a PID file every 10s
 - Supervisor checks file mtime to verify liveness
 
+
+## 2025-08-01 - privacy mode: mqtt command disables camera + mic services
+- NFR-S5: MQTT topic edgewatch/command/privacy {enable: true/false}
+- alert_engine receives command, sends SIGSTOP to vision + audio services
+
+
+## 2025-08-01 - privacy mode leaves env + radar (if present) running
+- Only camera (vision_service) and mic (audio_service) paused
+- env_service + ble_service continue in privacy mode
+- Status LED blinks purple in privacy mode
+
