@@ -1439,3 +1439,14 @@
 - env_service + ble_service continue in privacy mode
 - Status LED blinks purple in privacy mode
 
+
+## 2025-08-01 - visual indicator: status led blinks purple in privacy mode
+- Added 'privacy' state to StatusLED: purple (128,0,128)
+- Blinks at 0.5Hz to indicate active privacy mode
+
+
+## 2025-08-01 - overnight test #1: everything starts, logging begins...
+- t=0: all services started via supervisor
+- t=10min: all stable, RAM=1.7GB, temp=55C
+- Letting it run overnight...
+
