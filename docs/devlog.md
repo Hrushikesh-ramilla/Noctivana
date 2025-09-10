@@ -1455,3 +1455,15 @@
 - mosquitto.conf: log_type all
 - Need verbose logs to diagnose any overnight issues
 
+
+## 2025-08-01 - checked at 10pm: 4 hours running, vision service using 1.2GB ram?!
+- psutil check: vision_service RSS = 1.2GB (was 620MB at start)
+- Memory growing ~150MB/hour
+- Leak must be in something we fixed earlier but re-introduced
+
+
+## 2025-08-01 - overnight test #1 FAILED: vision OOM at ~4.5 hours
+- Crash at t~4.5hrs: MemoryError in numpy
+- vision_service RSS was 1.8GB before crash
+- Need to find the leak - new one since last fix
+
