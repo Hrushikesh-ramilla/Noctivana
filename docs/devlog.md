@@ -1490,3 +1490,10 @@
 - 2hr soak test: vision_service stable at 620MB +-10MB
 - No growth trend - leak fixed!
 
+
+## 2025-08-02 - audio service: fixed similar issue with mfcc feature history
+- audio_service was keeping last 100 MFCC arrays in history
+- Each MFCC: (40, 40) float32 = 6.4KB * 100 = 640KB -- actually small
+- But also keeping raw audio windows: 15360 * 4 bytes each
+- Fixed: keep only classification results, not raw windows
+
