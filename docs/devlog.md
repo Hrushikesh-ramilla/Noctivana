@@ -1535,3 +1535,8 @@
 - AlertsScreen.js: FlatList of AlertCard components
 - Most recent alert at top
 
+
+## 2025-08-03 - alert card component: severity icon + message + timestamp
+- AlertCard: colored left border (red/orange/gray) by severity
+- Shows type, message, timestamp
+
