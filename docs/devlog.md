@@ -1540,3 +1540,7 @@
 - AlertCard: colored left border (red/orange/gray) by severity
 - Shows type, message, timestamp
 
+
+## 2025-08-03 - severity colors: red=critical, orange=warn, gray=info
+- CRITICAL: #ef4444, WARN: #f59e0b, INFO: #6b7280
+
