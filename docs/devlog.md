@@ -1530,3 +1530,8 @@
 - JSON payload displayed in console log
 - Time to build the UI
 
+
+## 2025-08-03 - app: alerts screen skeleton
+- AlertsScreen.js: FlatList of AlertCard components
+- Most recent alert at top
+
