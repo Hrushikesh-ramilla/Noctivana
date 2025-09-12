@@ -1524,3 +1524,9 @@
 - Connects to mqtt://edgewatch.local:8883
 - Subscribes to edgewatch/alert/#
 
+
+## 2025-08-02 - basic mqtt subscribe: receiving alert messages on phone!
+- First app milestone! Phone receives WARN alert from Pi
+- JSON payload displayed in console log
+- Time to build the UI
+
