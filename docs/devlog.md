@@ -1560,3 +1560,8 @@
 - System font stack for now (no custom fonts)
 - Clear hierarchy: severity (small) -> type (bold) -> message
 
+
+## 2025-08-03 - critical alert: full-screen red overlay with vibration
+- TODO: implement full-screen CRITICAL alert overlay
+- For now: loud sound + vibration via Vibration.vibrate([0,500,200,500])
+
