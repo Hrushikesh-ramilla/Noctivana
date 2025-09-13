@@ -1555,3 +1555,8 @@
 - Card: #161b22
 - Accent: #7c3aed (purple)
 
+
+## 2025-08-03 - app typography: using system fonts, clean and readable
+- System font stack for now (no custom fonts)
+- Clear hierarchy: severity (small) -> type (bold) -> message
+
