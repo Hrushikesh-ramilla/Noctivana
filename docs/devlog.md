@@ -1544,3 +1544,8 @@
 ## 2025-08-03 - severity colors: red=critical, orange=warn, gray=info
 - CRITICAL: #ef4444, WARN: #f59e0b, INFO: #6b7280
 
+
+## 2025-08-03 - alerts screen: flatlist of alert cards, most recent first
+- setAlerts(prev => [payload, ...prev].slice(0, 100))
+- Keep max 100 alerts in memory
+
