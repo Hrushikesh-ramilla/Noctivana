@@ -1596,3 +1596,8 @@
 - SettingsScreen: sliders for temp_high, db_threshold
 - Privacy mode toggle switch
 
+
+## 2025-08-04 - temp high/low threshold, humidity range, cry sensitivity
+- Temp slider: 20-35C range, step 0.5
+- dB slider: 50-90 dB range, step 1
+
