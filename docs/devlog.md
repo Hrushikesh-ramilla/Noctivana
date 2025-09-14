@@ -1581,3 +1581,13 @@
 - Shows: critical count, warn count, total events
 - Duration from first to last alert timestamp
 
+
+## 2025-08-03 - app navigation: bottom tab bar for alerts/sessions/settings
+- Bottom tab navigator: Alerts / Sessions / Settings / Setup
+- Dark tab bar matching overall theme
+
+
+## 2025-08-03 - navigation styling: clean icons, active tab highlight
+- Active: #7c3aed, Inactive: #6b7280
+- No icons yet (using text labels for now)
+
