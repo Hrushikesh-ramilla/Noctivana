@@ -1576,3 +1576,8 @@
 - App gets last state immediately on connect
 - Not ideal but works without direct DB access
 
+
+## 2025-08-03 - session detail: alert count, duration, env summary
+- Shows: critical count, warn count, total events
+- Duration from first to last alert timestamp
+
