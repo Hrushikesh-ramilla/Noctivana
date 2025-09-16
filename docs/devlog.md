@@ -1667,3 +1667,9 @@
 - BleManager.startDeviceScan(null, null, callback)
 - Filter: deviceName == 'EdgeWatch'
 
+
+## 2025-08-05 - 3-step wizard: scan -> select -> pair -> verify
+- Step 0 -> 1: scan finds EdgeWatch
+- Step 1 -> 2: connect + discover services
+- Step 2: verified, monitoring active
+
