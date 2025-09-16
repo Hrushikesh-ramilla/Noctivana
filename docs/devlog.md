@@ -1650,3 +1650,10 @@
 - StatusBanner: green when MQTT connected, red when disconnected
 - Fixed at top of AlertsScreen
 
+
+## 2025-08-05 - ble pairing flow in app: setup wizard
+- SetupScreen: 3-step wizard
+- Step 1: scan for EdgeWatch BLE
+- Step 2: connect + pair
+- Step 3: verify + done
+
