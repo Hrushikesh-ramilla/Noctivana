@@ -1657,3 +1657,8 @@
 - Step 2: connect + pair
 - Step 3: verify + done
 
+
+## 2025-08-05 - npm install react-native-ble-plx for ble in rn
+- react-native-ble-plx@2.0.3 installed
+- Requires Android permissions: BLUETOOTH_SCAN, BLUETOOTH_CONNECT
+
