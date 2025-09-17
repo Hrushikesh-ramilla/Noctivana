@@ -1698,3 +1698,14 @@
 - On disconnect: fall back to BLE notifications
 - ALT-04: no missed CRITICAL alerts
 
+
+## 2025-08-05 - app build: expo run:android, generates debug apk
+- expo run:android builds debug APK
+- Installed on Pixel 7 directly
+- Full app flow tested on real device
+
+
+## 2025-08-06 - overnight test #2: started at 11pm last night
+- Started all services at 23:00
+- Monitoring remotely...
+
