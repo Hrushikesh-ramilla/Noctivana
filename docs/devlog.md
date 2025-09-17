@@ -1682,3 +1682,13 @@
 - Samsung A52 Android 12: crash on BleManager init
 - 'BluetoothAdapter is null' -> react-native-ble-plx version issue
 
+
+## 2025-08-05 - react-native-ble-plx version incompatibility with expo
+- Latest version (3.x) breaks with Expo SDK 51
+- Need specific version 2.0.3
+
+
+## 2025-08-05 - downgrade ble-plx to 2.0.3, samsung crash fixed
+- npm install react-native-ble-plx@2.0.3
+- Samsung crash gone. Pixel 7 still works.
+
