@@ -1692,3 +1692,9 @@
 - npm install react-native-ble-plx@2.0.3
 - Samsung crash gone. Pixel 7 still works.
 
+
+## 2025-08-05 - ble fallback: if wifi mqtt fails, switch to ble alerts
+- App monitors MQTT connection state
+- On disconnect: fall back to BLE notifications
+- ALT-04: no missed CRITICAL alerts
+
