@@ -1715,3 +1715,9 @@
 - supervisor restarted it but session log shows gap
 - Core dump: crash in cv2.cvtColor
 
+
+## 2025-08-06 - segfault in cv2.cvtColor when camera returns corrupt frame
+- Crash happens at 06:00 local time = Pi starts thermal throttling
+- When throttling: picamera2 drops frames -> returns None or corrupt
+- cv2.cvtColor(None) = SIGSEGV (no null check in C extension)
+
