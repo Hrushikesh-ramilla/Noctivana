@@ -1789,3 +1789,15 @@
 - Ceiling mount at 1.5m above
 - 10 test scenarios: prone from different angles
 
+
+## 2025-08-07 - prone test: 10 scenarios - position baby, check alert
+- Scenario 1-5: straight prone (face-down)
+- Scenario 6-8: angled prone (45 degrees)
+- Scenario 9-10: prone near edge of crib
+
+
+## 2025-08-07 - prone result: 8/10 at default threshold
+- 8/10: miss #9 (near crib edge, keypoints partially out of ROI)
+- Miss #10: angled prone at 60 degrees (side-prone boundary)
+- Lowering confidence threshold from 0.30 to 0.25
+
