@@ -1741,3 +1741,15 @@
 - Full check: frame is not None AND frame.size > 0 AND frame.shape[2]==3
 - Belt-and-suspenders approach for all OpenCV inputs
 
+
+## 2025-08-06 - thermal monitoring: read cpu temp from sysfs
+- /sys/class/thermal/thermal_zone0/temp: Pi CPU temperature in milli-C
+- 72000 = 72°C
+- Added src/utils/thermal.py
+
+
+## 2025-08-06 - log cpu temp every 60s, warn at 70C, alert at 80C
+- alert_engine logs cpu temp every 60s via thermal.check_thermal()
+- WARN alert if temp > 70C
+- CRITICAL shutdown-sequence if temp > 80C (safety)
+
