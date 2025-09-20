@@ -1825,3 +1825,9 @@
 - IR mode (lights off): 6/10 detected
 - IR mode dramatically worse
 
+
+## 2025-08-07 - IR occlusion: keypoint dropout approach instead of bbox coverage
+- Daytime algorithm: coverage_pct based
+- IR algorithm: ALL face keypoints < 0.1 AND body visible
+- More aggressive for IR since contrast is lower
+
