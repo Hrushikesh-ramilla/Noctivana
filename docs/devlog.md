@@ -1831,3 +1831,14 @@
 - IR algorithm: ALL face keypoints < 0.1 AND body visible
 - More aggressive for IR since contrast is lower
 
+
+## 2025-08-07 - IR algorithm: if ALL face keypoints < 0.1 confidence + body visible = occluded
+- Updated occlusion.py night_mode branch
+- np.all(face_confs < 0.1) AND body_mean > 0.15
+
+
+## 2025-08-07 - IR occlusion retest: 8/10
+- After IR algorithm update: 8/10 detected in IR mode
+- Improvement from 6/10 to 8/10
+- Just meets acceptance criteria (marginal)
+
