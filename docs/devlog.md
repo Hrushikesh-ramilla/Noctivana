@@ -1842,3 +1842,13 @@
 - Improvement from 6/10 to 8/10
 - Just meets acceptance criteria (marginal)
 
+
+## 2025-08-07 - daytime occlusion still 9/10 with new algorithm
+- Confirmed: daytime algorithm unchanged, still 9/10
+- No regression from IR algorithm change
+
+
+## 2025-08-07 - document all test results in docs/test_results.md
+- docs/test_results.md: all acceptance criteria test outcomes
+- VIS-01: 9/10 PASS, VIS-02 day: 9/10 PASS, VIS-02 IR: 8/10 MARGINAL
+
