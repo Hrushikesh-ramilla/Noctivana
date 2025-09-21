@@ -1858,3 +1858,15 @@
 - Simulates chest rise at controlled rates
 - Test rates: 20, 30, 40 bpm
 
+
+## 2025-08-08 - set metronome at 30 bpm, measure optical flow output
+- Reference: 30 bpm mechanical
+- 10 consecutive 30s windows measured
+- Optical flow output vs reference
+
+
+## 2025-08-08 - result: +-4 bpm in 75% of 30s windows
+- At 30 bpm: 75% of windows within ±4 bpm
+- Target: 80%
+- Need to tune Farneback window_size parameter
+
