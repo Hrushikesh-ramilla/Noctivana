@@ -1875,3 +1875,8 @@
 - pyr_scale: controls pyramid scaling (0.5 = half-size each level)
 - Smaller pyr_scale = finer detail at expense of large motion
 
+
+## 2025-08-08 - worse. revert.
+- pyr_scale=0.3 gave worse results: 70% within ±4
+- Reverted to 0.5. Moving to poly_n.
+
