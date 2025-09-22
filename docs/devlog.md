@@ -1890,3 +1890,13 @@
 - poly_n=7: 77% within ±4 bpm. Better but not 80%.
 - Try window_size next.
 
+
+## 2025-08-08 - try: window_size 21 instead of 15 for more spatial averaging
+- window_size: size of pixel neighborhood for averaging
+- Larger = smoother flow estimate
+
+
+## 2025-08-08 - window_size 21: 80% at +-4 bpm!! barely
+- window_size=21: exactly 80% within ±4 bpm at 30 bpm reference
+- Confirmed with 20 and 40 bpm tests: avg 82%
+
