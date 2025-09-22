@@ -1924,3 +1924,10 @@
 - Count how many CRITICAL alerts are false positives
 - Run 3x 8-hour simulations
 
+
+## 2025-08-08 - false CRITICAL alert count: 2.1 per 8hr simulation
+- Session 1: 2 false CRITICAL
+- Session 2: 3 false CRITICAL
+- Session 3: 1 false CRITICAL
+- Average: 2.1 < 3 threshold. ALT-01 PASS!
+
