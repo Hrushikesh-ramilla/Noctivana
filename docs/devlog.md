@@ -1954,3 +1954,8 @@
 - Largest alert payload: 347 bytes (CO2 CRITICAL with sensors[] array)
 - Well under 512 byte limit (ALT-05)
 
+
+## 2025-08-09 - alert latency measurement: instrument timestamps at each stage
+- Added ts logging at: camera capture, zmq publish, alert_engine receive, mqtt publish
+- Calculated stage-by-stage latency
+
