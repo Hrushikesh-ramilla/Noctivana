@@ -1936,3 +1936,16 @@
 - Wireshark on Pi eth0/wlan0 during full session
 - Filter: ip.len > 1000 (looking for video/audio packets)
 
+
+## 2025-08-09 - 30 min capture during active session with all events
+- Triggered prone, occlusion, cry detection during capture
+- Checked for any large payloads leaving the network
+
+
+## 2025-08-09 - result: ZERO image/audio packets. only mqtt json payloads
+- All outbound traffic:
+  - MQTT PINGREQ/PINGRESP (tiny)
+  - MQTT PUBLISH: alert JSON < 400 bytes each
+  - MDNS/mDNS broadcasts (normal)
+- NFR-S1 CONFIRMED
+
