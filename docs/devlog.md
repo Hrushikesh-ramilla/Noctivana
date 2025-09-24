@@ -1965,3 +1965,9 @@
 - Mean: 5.8s, P50: 5.5s, P95: 7.2s, Max: 7.8s
 - All under 8s target (NFR-P1)
 
+
+## 2025-08-09 - latency breakdown logged: capture 200ms, inference 150ms, zmq 20ms, fusion 100ms, mqtt 80ms, network 200ms
+- Per-stage: camera_t=200ms, infer_t=150ms, zmq_t=20ms, fusion_t=100ms, mqtt_t=80ms, net_t=200ms
+- Fusion adds 5s (sustained detection requirement)
+- Pure delivery latency: ~750ms
+
