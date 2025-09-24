@@ -1991,3 +1991,9 @@
 - Found 18 bare `except:` clauses
 - Replaced with specific exception types or at least `except Exception as e:`
 
+
+## 2025-08-09 - add type hints to critical functions in alert engine
+- FusionEngine.ingest() -> None
+- FusionEngine.evaluate() -> list[AlertEvent]
+- AlertEngine._publish_alert() -> None
+
