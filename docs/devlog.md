@@ -1981,3 +1981,13 @@
 - grep -r 'print(' src/ -> found 23 print() calls
 - All replaced with logger.debug() calls
 
+
+## 2025-08-09 - code cleanup pass 2: fix docstrings and function signatures
+- Added/updated docstrings for all public functions
+- Type hints added to main service entry points
+
+
+## 2025-08-09 - code cleanup pass 3: replace bare except with specific exceptions
+- Found 18 bare `except:` clauses
+- Replaced with specific exception types or at least `except Exception as e:`
+
