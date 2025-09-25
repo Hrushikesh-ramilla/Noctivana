@@ -2002,3 +2002,8 @@
 - Merged config/alert_rules.yaml into config/config.yaml under 'rules' key
 - Fewer files to manage
 
+
+## 2025-08-10 - config schema validation on startup
+- Added required_keys check in Config.__init__()
+- Fail fast if critical config keys missing
+
