@@ -2017,3 +2017,8 @@
 - All config.get() calls verified against new unified schema
 - 4 services updated, 0 runtime errors
 
+
+## 2025-08-10 - app: loading spinner while connecting to mqtt
+- ActivityIndicator while connected=false and no alerts
+- Better UX than blank screen on startup
+
