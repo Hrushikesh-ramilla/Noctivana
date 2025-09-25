@@ -2022,3 +2022,7 @@
 - ActivityIndicator while connected=false and no alerts
 - Better UX than blank screen on startup
 
+
+## 2025-08-10 - app: error message if connection fails after 10s
+- 10s timeout: if MQTT not connected -> show 'Cannot reach EdgeWatch. Check WiFi'
+
