@@ -2007,3 +2007,8 @@
 - Added required_keys check in Config.__init__()
 - Fail fast if critical config keys missing
 
+
+## 2025-08-10 - move alert_rules.yaml content into main config.yaml
+- config/alert_rules.yaml deleted, content merged to config.yaml under 'rules:'
+- alert_engine.py updated to read cfg.get('rules', ...)
+
