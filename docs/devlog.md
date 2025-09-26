@@ -2031,3 +2031,8 @@
 - RefreshControl on FlatList in AlertsScreen
 - Re-subscribes to MQTT topics on refresh
 
+
+## 2025-08-10 - installation guide: step-by-step with troubleshooting
+- docs/installation.md: complete installation from Pi flash to first session
+- Troubleshooting section for common issues (I2S mic, I2C, BLE)
+
