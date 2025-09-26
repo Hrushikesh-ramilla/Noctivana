@@ -2042,3 +2042,13 @@
 - env/audio/vision/vitals: After=edgewatch-zmq-proxy.service
 - alert/session/ble: After=edgewatch-zmq-proxy.service
 
+
+## 2025-08-10 - boot sequence works: power on -> all services up in 45s
+- Timed from power-on to green LED (all services running): 45 seconds
+- LED sequence: blue (boot) -> amber (self-test) -> green (ready)
+
+
+## 2025-08-10 - final overnight test #4 starting: everything integrated
+- Starting final soak test: cleaned code, tuned params
+- Goal: 10+ hours, <3 false CRITICAL, no crashes
+
