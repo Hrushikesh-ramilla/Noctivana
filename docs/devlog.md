@@ -2026,3 +2026,8 @@
 ## 2025-08-10 - app: error message if connection fails after 10s
 - 10s timeout: if MQTT not connected -> show 'Cannot reach EdgeWatch. Check WiFi'
 
+
+## 2025-08-10 - app: pull-to-refresh on alerts and sessions screens
+- RefreshControl on FlatList in AlertsScreen
+- Re-subscribes to MQTT topics on refresh
+
