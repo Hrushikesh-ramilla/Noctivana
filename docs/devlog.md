@@ -2089,3 +2089,7 @@
 - docs/known_issues.md: BLE reconnect, IR occlusion, rPPG, SGP30, session detect
 - Not implemented: radar, OTA, iOS, PDF, multi-crib
 
+
+## 2025-08-11 - add BLE limitations to known issues
+- BLE section expanded: keepalive hack, reconnnect drops, Android battery optimization
+
