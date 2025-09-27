@@ -2063,3 +2063,14 @@
 - 1 false CRITICAL: caregiver detection failed (my arm entered frame briefly)
 - This is the best run we've had
 
+
+## 2025-08-11 - overnight test #4 PASSED: 11 hours, 0 crashes, 1 false critical
+- Final result: 11:02 runtime, 0 crashes, 1 false CRITICAL (caregiver)
+- Best result of all 4 overnight tests
+- Ready for demo!
+
+
+## 2025-08-11 - final test summary logged to docs/test_results.md
+- Updated test_results.md with overnight test #4 results
+- All acceptance criteria met or exceeded
+
