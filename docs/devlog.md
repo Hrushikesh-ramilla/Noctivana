@@ -2074,3 +2074,8 @@
 - Updated test_results.md with overnight test #4 results
 - All acceptance criteria met or exceeded
 
+
+## 2025-08-11 - update README with architecture diagram and feature list
+- README: architecture description, features, demo instructions
+- Acceptance test results summary
+
