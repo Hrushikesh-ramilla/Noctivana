@@ -2084,3 +2084,8 @@
 - 5-step quickstart: clone, setup.sh, configure, calibrate, start
 - Points to full installation guide
 
+
+## 2025-08-11 - known issues documented
+- docs/known_issues.md: BLE reconnect, IR occlusion, rPPG, SGP30, session detect
+- Not implemented: radar, OTA, iOS, PDF, multi-crib
+
