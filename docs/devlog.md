@@ -2098,3 +2098,8 @@
 - IR occlusion 8/10: thin muslin misses because IR transmits through
 - CLAHE helps but not sufficient for very thin fabrics
 
+
+## 2025-08-11 - add rppg disclaimer to known issues
+- rPPG: distance limitation documented
+- Recommendation: if rPPG needed, dedicated camera at 30cm distance
+
