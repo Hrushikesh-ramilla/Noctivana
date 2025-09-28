@@ -2113,3 +2113,8 @@
 - Removed commented-out spectral TV detection, old peak-counting breath detector
 - Removed unused imports in multiple files
 
+
+## 2025-08-11 - cleanup: remove personal TODO comments from source files
+- Found 11 personal TODO/FIXME comments with sensitive notes
+- Converted to professional issue references or removed
+
