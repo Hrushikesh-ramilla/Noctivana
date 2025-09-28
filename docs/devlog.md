@@ -2093,3 +2093,8 @@
 ## 2025-08-11 - add BLE limitations to known issues
 - BLE section expanded: keepalive hack, reconnnect drops, Android battery optimization
 
+
+## 2025-08-11 - add IR mode limitations to known issues
+- IR occlusion 8/10: thin muslin misses because IR transmits through
+- CLAHE helps but not sufficient for very thin fabrics
+
