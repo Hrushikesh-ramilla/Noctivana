@@ -2142,3 +2142,10 @@
 - 82.4C would NEVER be reached in a nursery!
 - This is why overnight never got temp WARN alert
 
+
+## 2025-08-11 - fix: convert all temp thresholds to celsius, add unit comment
+- config.yaml: temp_high_c: 28.0  # degrees Celsius
+- Added unit comment to EVERY temperature field
+- Confirmed alert fires at 28.5C test
+- HOW DID WE MISS THIS FOR 7 WEEKS
+
