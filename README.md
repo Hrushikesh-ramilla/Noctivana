@@ -15,9 +15,11 @@
 
 <br/>
 
-> **NOCTIVANA** is a ceiling-mounted, embedded AI infant monitor that watches while you sleep.
-> It detects prone sleeping positions, face occlusions, respiratory absence, and adverse
-> environmental conditions — all on a Raspberry Pi 4, without sending a single pixel to the cloud.
+> **NOCTIVANA** is a ceiling-mounted embedded AI infant monitoring system built on a Raspberry Pi 4.
+> It detects prone sleeping positions, face occlusions, respiratory absence, and adverse environmental conditions
+> entirely on-device — no video, no audio, and no sensor data leaves the hardware.
+>
+> This is an extended implementation of an Edge AI-based infant monitoring system accepted at **VDAT 2025**.
 
 <br/>
 
@@ -678,7 +680,7 @@ noctivana/
 ## Quick Start
 
 ```bash
-git clone https://github.com/ramil/noctivana.git && cd noctivana
+git clone https://github.com/Hrushikesh-ramilla/Noctivana.git && cd Noctivana
 pip install -r requirements.txt
 bash scripts/generate_certs.sh
 # Place yamnet.tflite + movenet_lightning.tflite in models/
@@ -698,10 +700,10 @@ python tests/benchmark.py
 <div align="center">
 <br/>
 
-**NOCTIVANA** — Final Year Engineering Grand Project, 2025
+**NOCTIVANA** — Extended implementation of an Edge AI infant monitoring system
 
-*Solo development by Ramil*
+Built by [Hrushikesh Ramilla](https://github.com/Hrushikesh-ramilla)
 
-*"The best baby monitor is the one that never cries wolf."*
+The baseline system was published at **VDAT 2025** (VLSI Design and Test Symposium).
 
 </div>
